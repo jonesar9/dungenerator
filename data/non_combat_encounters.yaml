@@ -1,0 +1,96 @@
+# Non-combat encounter subtable: d6 → encounter type
+# Rolled when contents_type rolls "special" and sub-roll (d6 3-6) selects non-combat.
+# Probability: ~11% of all rooms (special ~17% × 4/6).
+#
+# Each entry: type, name, descriptions (roll one), interactions (list of possible actions)
+
+1:
+  type: neutral_npc
+  name: "Neutral NPC"
+  descriptions:
+    - "A wounded mercenary sits propped against the wall, leg bound with a torn cloak. He's been here two days and knows what lies in the next room — he'll say so for a hot meal or a safe escort out."
+    - "A lost pilgrim clutches a holy symbol. She took a wrong turn in the dark and has been wandering for hours. Her god rewards those who help the faithful."
+    - "A goblin deserter, wide-eyed and trembling, crouches behind a barrel. It fled its warband after a dispute over loot and is willing to trade information for safe passage."
+    - "A chained servant, recently abandoned by their fleeing master. They know the layout of several nearby rooms and will share it freely for the price of their chains' lock."
+    - "A half-mad hermit who has made this dungeon home for years. He knows its rhythms, its monsters, and its secrets — and will trade them for stories from the surface."
+    - "A surviving member of a previous adventuring party — the sole one left. They look haunted. Their map may still be accurate, but they'll want company getting out."
+  interactions:
+    - "May trade a rumor, direction clue, or partial map for food, coin, or an escort to the exit."
+    - "Can become a hireling if offered pay (Morale 7, armed with whatever they carry)."
+    - "Knows the location of a nearby monster lair, secret door, or trapped room."
+    - "May betray the party if they appear weak, or if a former allegiance resurfaces."
+
+2:
+  type: trick
+  name: "Trick / Illusion"
+  descriptions:
+    - "The floor of this room is painted to look like the ceiling — convincing false shadows disorient anyone moving quickly. A stumble risks a fall (DEX check or 1d3 damage)."
+    - "The far door is an illusion. Stepping through deposits you back at the room entrance. Dispel Magic or careful examination (Int check, –2) reveals the deception."
+    - "A large mirror dominates one wall. Its reflection shows the room as it was decades ago — no monsters, full treasure chests, open exits where none exist. The mirror lies beautifully."
+    - "A carved stone face dispenses advice. Everything it says is the precise opposite of the truth. It cannot lie about being a liar."
+    - "The chamber smells of fresh air from the north wall, yet there is no visible opening. A painted mural conceals a secret door (Search: 1-in-6, 2-in-6 for elves)."
+    - "A treasure chest sits in the room's center — a permanent illusion, not a mimic. Anyone who touches it receives a mild shock (1 hp) and the chest vanishes for 1 hour."
+  interactions:
+    - "Detect Magic or an Int check reveals the trick; Dispel Magic dispels it."
+    - "Interacting physically with the illusion may trigger a minor penalty: stumble, shock, or brief disorientation (–1 to next roll)."
+    - "Decoding the trick correctly may expose a hidden passage, disable a ward, or yield a clue about the dungeon's master."
+
+3:
+  type: puzzle
+  name: "Interactive Puzzle"
+  descriptions:
+    - "Three iron levers, each labeled with a worn glyph. Pulling them in the correct sequence (1-in-6 to guess right) opens a sealed iron door. A wrong sequence locks it for 1 turn and rings a distant bell."
+    - "A mosaic floor shows a star pattern with several tiles out of place. The correct arrangement is carved faintly on the ceiling. Completing it (1 turn of effort) opens a cache in the east wall."
+    - "A riddle is carved above the only exit: 'I have cities but no houses, forests but no trees, rivers but no water.' The answer (MAP) spoken aloud causes the door's lock to click open."
+    - "Four pressure plates in a 2×2 grid. Only one combination opens the portcullis beyond. Each wrong attempt vents a puff of acrid smoke (save vs. poison or –1 to attack for 1 turn)."
+    - "A water channel bisects the room, feeding two basins at different levels. Redirecting the flow via a stone valve (takes 1 round, STR check) drains a flooded passage to the east."
+    - "Twelve stone pillars carved with months of the year. Touching them in seasonal order causes a slab to rise in the center of the floor, revealing a small chamber below — and whatever was left in it."
+  interactions:
+    - "Solving the puzzle correctly may open a passage, disable a trap, or reveal hidden treasure."
+    - "Failure often triggers a minor consequence: gas puff, noise, a portcullis drops."
+    - "Magic (Knock, Detect Magic, Read Languages) frequently bypasses the puzzle entirely."
+
+4:
+  type: sanctuary
+  name: "Sanctuary"
+  descriptions:
+    - "A shrine of a minor protective deity. Fresh water trickles from a carved basin. Drinking it restores 1d4 hp (once per person per day). No undead will enter this room voluntarily."
+    - "An abandoned campsite left by a previous adventuring party. Bedrolls, 2d6 days of trail rations, and a spent lantern. The rations are still good. A short note reads: 'We made it to level 2.'"
+    - "A warded alcove, magically sealed. No creature of harmful intent can enter. Inside: a cot, candles, a week-old journal entry. The party can rest here without triggering random encounter checks."
+    - "An underground spring, clean and cold. A small carving reads: 'Rest, wayfarer. Even the deep places have mercy.' Characters who drink and rest here wake with full hp from a short rest."
+    - "A crypt sealed with a protective sigil. The spirit within was a healer in life. Wounds dressed in this room bind themselves: characters regain 1 extra hp per Hit Die during rest."
+    - "A chamber of unnatural calm. Sound is muffled; dust lies undisturbed. Resting here grants +1 to the first saving throw each character makes after leaving."
+  interactions:
+    - "Characters may rest here without a random encounter roll (1-in-6 chance the protection has lapsed)."
+    - "Water, food, or the ambient magic may restore hp, replenish supplies, or grant a minor boon."
+    - "Desecrating the sanctuary (looting the shrine, breaking the ward) may attract a supernatural consequence — referee's discretion."
+
+5:
+  type: omen
+  name: "Omen or Message"
+  descriptions:
+    - "A crude map scratched into the plaster by a previous explorer. Three rooms are sketched, one marked with a skull and the notation 'LOUD — go around.' The map appears accurate."
+    - "Words written in dried blood on the floor: 'IT HEARS FOOTSTEPS. MOVE SILENTLY OR DO NOT MOVE AT ALL.' The warning seems to concern something in the adjacent room."
+    - "A ghostly replay loops silently in the room's center — adventurers fighting a creature, then retreating through the north door. The creature's weakness is visible in the replay if observed for a full round."
+    - "A crystal sphere on a stone plinth activates when touched, projecting a brief vision: treasure, a monster, a door, or a face. Roll d4: 1 treasure location, 2 monster lair, 3 secret door, 4 patron or rival NPC."
+    - "A disembodied voice intones a riddle about the dungeon's past. It will answer three yes/no questions truthfully before fading and not returning until the next day."
+    - "A dead adventurer's journal. Entries describe two rooms ahead in useful detail. The last entry is mid-sentence. A partial cipher key inside may unlock a sealed door mentioned earlier."
+  interactions:
+    - "The message may reveal a monster's location or weakness, a trap's type, a secret door, or an NPC's identity."
+    - "Misreading the omen may send the party the wrong way — or it may be intentional misdirection left by the dungeon's master."
+    - "Some omens are keyed to a condition: they only activate for characters of a specific class, alignment, or who carry a certain item."
+
+6:
+  type: hazard
+  name: "Environmental Hazard"
+  descriptions:
+    - "Toxic grey spores drift from a ceiling colony. Each round spent without covering nose and mouth requires a save vs. poison or suffer –1 to all attack rolls and saves for 1 turn. The colony can be burned (torch, 1 round, smoke fills the room for 3 rounds after)."
+    - "The floor has partially collapsed into a 20-ft void below. A 10-ft gap separates the entry from the exits. A narrow ledge allows careful crossing (DEX check or fall, 2d6 damage). A rope and iron spike make it trivial."
+    - "Water rises through cracks in the floor at 1 inch per round. It will reach knee-depth in 10 rounds and fill the room in 30. A drain valve is visible on the west wall — one round to operate, no check required."
+    - "Extreme cold radiates from a rift in the north wall. Movement costs are doubled. Fire magic deals +1 damage per die. Each turn without cold-weather gear requires a CON check or the character loses 1 hp."
+    - "Magical darkness fills the room completely. Torches and lanterns gutter out immediately. Darkvision and Light spells function normally. Something moves in the dark — it may be ambient, or it may not be."
+    - "The ceiling is descending — a triggered mechanism left permanently active. It drops 1 inch per round. A lever on the east wall halts it (no check, 1 round to reach). Characters have 10 rounds before the room becomes impassable to creatures larger than halfling-sized."
+  interactions:
+    - "Bypassing the hazard requires a skill check, saving throw, or creative problem-solving."
+    - "Rushing through may succeed at a cost: hp loss, expended resources, or noise that draws attention."
+    - "Some hazards can be permanently neutralized; others reset after the party leaves."

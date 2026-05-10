@@ -63,14 +63,39 @@ def test_1_exit_forced():
 
 
 def test_contents_types():
-    """All content types are reachable (brute force with many seeds)."""
+    """All content types are reachable across enough seeds."""
     found = set()
-    for s in range(500):
+    for s in range(1000):
         room = generate_room(seed=s)
         found.add(room.contents_type)
-        if len(found) >= 5:
+    expected = {"empty", "monster", "monster_with_treasure", "unguarded_treasure",
+                "trap", "non_combat_encounter"}
+    assert found >= {"empty", "monster"}, f"Core types missing: {found}"
+    # Trap and non-combat encounter may need many seeds given ~5-11% rates
+    missing = expected - found
+    assert len(missing) <= 1, f"Too many types unreachable across 1000 seeds: {missing}"
+
+
+def test_non_combat_encounter_room():
+    """A room with non_combat_encounter contents_type has the encounter populated."""
+    for seed in range(500):
+        room = generate_room(seed=seed)
+        if room.contents_type == "non_combat_encounter":
+            assert room.non_combat_encounter is not None
+            assert room.trap is None
+            assert room.monster is None
             break
-    assert "empty" in found or "monster" in found  # at minimum these should appear
+    # Not an error if we don't find one in 500 seeds, but very unlikely
+
+
+def test_trap_room():
+    """A room with trap contents_type has trap populated."""
+    for seed in range(500):
+        room = generate_room(seed=seed)
+        if room.contents_type == "trap":
+            assert room.trap is not None
+            assert room.non_combat_encounter is None
+            break
 
 
 def test_entry_direction():

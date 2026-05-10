@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, List
 
 
 @dataclass
@@ -56,6 +56,14 @@ class Exit:
 
 
 @dataclass
+class NonCombatEncounter:
+    encounter_type: str   # "neutral_npc", "trick", "puzzle", "sanctuary", "omen", "hazard"
+    name: str
+    description: str
+    interactions: List[str] = field(default_factory=list)
+
+
+@dataclass
 class Trap:
     trap_type: str        # "pit", "spear", "gas", "falling_block", "magic", "alarm"
     name: str
@@ -78,10 +86,11 @@ class Room:
     height_sq: int = 3
 
     # Stocking
-    contents_type: str = "empty"   # "empty", "monster", "special", "monster_with_treasure", "unguarded_treasure"
+    contents_type: str = "empty"   # "empty", "monster", "monster_with_treasure", "unguarded_treasure", "trap", "non_combat_encounter"
     monster: Optional[Monster] = None
     treasure: Optional[Treasure] = None
     trap: Optional[Trap] = None
+    non_combat_encounter: Optional[NonCombatEncounter] = None
     features: list[Feature] = field(default_factory=list)
     exits: list[Exit] = field(default_factory=list)
     entry_direction: str = "south"

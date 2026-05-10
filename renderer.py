@@ -32,11 +32,13 @@ DOOR_TYPES_DISPLAY = {
 }
 
 CONTENTS_DISPLAY = {
-    "empty":                "Empty",
-    "monster":              "Monster",
-    "special":              "Special (trap)",
-    "monster_with_treasure":"Monster (with treasure)",
-    "unguarded_treasure":   "Unguarded treasure",
+    "empty":                 "Empty",
+    "monster":               "Monster",
+    "monster_with_treasure": "Monster (with treasure)",
+    "unguarded_treasure":    "Unguarded treasure",
+    "trap":                  "Special (trap)",
+    "non_combat_encounter":  "Non-Combat Encounter",
+    "special":               "Special (trap)",  # fallback for old seeds
 }
 
 
@@ -249,6 +251,9 @@ class Renderer:
                 glyph = "^"
             elif ex.door_type == "stairs_up":
                 glyph = "v"
+            # South archway renders as @ on the map (already in legend as "Entry point")
+            if ex.direction == "south" and ex.door_type == "archway":
+                continue
             used.setdefault(glyph, door_glyphs.get(glyph, "Door"))
 
         for feat in room.features:
@@ -319,6 +324,19 @@ class Renderer:
                 lines.append(f"  {self._c(DIM, '[Hidden — not shown on map. Use --triggered to reveal.]')}")
             lines.append("")
 
+        # Non-combat encounter
+        if room.non_combat_encounter:
+            enc = room.non_combat_encounter
+            lines.append(self._c(BOLD, f"NON-COMBAT ENCOUNTER — {enc.name.upper()}"))
+            for line in textwrap.wrap(f"  {enc.description}", w - 2):
+                lines.append(line)
+            if enc.interactions:
+                lines.append(f"  {self._c(DIM, 'Possible interactions:')}")
+                for interaction in enc.interactions:
+                    for line in textwrap.wrap(f"    • {interaction}", w - 4):
+                        lines.append(line)
+            lines.append("")
+
         # Features
         if room.features:
             lines.append(self._c(BOLD, "FEATURES"))
@@ -374,6 +392,7 @@ class Renderer:
                 "monster": _monster_to_dict(room.monster),
                 "treasure": _treasure_to_dict(room.treasure),
                 "trap": _trap_to_dict(room.trap),
+                "non_combat_encounter": _non_combat_to_dict(room.non_combat_encounter),
                 "features": [
                     {"glyph": f.glyph, "name": f.name, "description": f.description}
                     for f in room.features
@@ -460,4 +479,15 @@ def _trap_to_dict(trap) -> Optional[dict]:
         "trigger": trap.trigger,
         "effect": trap.effect,
         "triggered": trap.triggered,
+    }
+
+
+def _non_combat_to_dict(enc) -> Optional[dict]:
+    if enc is None:
+        return None
+    return {
+        "type": enc.encounter_type,
+        "name": enc.name,
+        "description": enc.description,
+        "interactions": enc.interactions,
     }

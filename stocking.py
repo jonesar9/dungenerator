@@ -8,7 +8,7 @@ from typing import Optional
 
 import yaml
 
-from models import Exit, Feature, Monster, MonsterStats, Trap, Treasure, TreasureItem
+from models import Exit, Feature, Monster, MonsterStats, NonCombatEncounter, Trap, Treasure, TreasureItem
 
 _DATA = Path(__file__).parent / "data"
 
@@ -20,6 +20,7 @@ def _load_yaml(name: str) -> dict:
 
 _MONSTERS: dict = {}
 _TREASURES: dict = {}
+_NON_COMBAT: dict = {}
 
 
 def _monsters() -> dict:
@@ -34,6 +35,13 @@ def _treasures() -> dict:
     if not _TREASURES:
         _TREASURES = _load_yaml("treasures.yaml")
     return _TREASURES
+
+
+def _non_combat_data() -> dict:
+    global _NON_COMBAT
+    if not _NON_COMBAT:
+        _NON_COMBAT = _load_yaml("non_combat_encounters.yaml")
+    return _NON_COMBAT
 
 
 # ─── Dice ─────────────────────────────────────────────────────────────────────
@@ -293,6 +301,21 @@ def _estimate_gp(items: list[TreasureItem]) -> int:
                     except ValueError:
                         pass
     return total
+
+
+# ─── Non-Combat Encounter ─────────────────────────────────────────────────────
+
+def roll_non_combat_encounter(rng: random.Random) -> NonCombatEncounter:
+    data = _non_combat_data()
+    key = rng.randint(1, 6)
+    entry = data.get(key, data[1])
+    description = rng.choice(entry["descriptions"])
+    return NonCombatEncounter(
+        encounter_type=entry["type"],
+        name=entry["name"],
+        description=description,
+        interactions=list(entry.get("interactions", [])),
+    )
 
 
 # ─── Trap ─────────────────────────────────────────────────────────────────────

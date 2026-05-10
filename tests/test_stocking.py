@@ -1,4 +1,4 @@
-"""Tests for stocking.py — distribution, treasure rolls, traps."""
+"""Tests for stocking.py — distribution, treasure rolls, traps, non-combat encounters."""
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -8,6 +8,7 @@ from collections import Counter
 from stocking import (
     roll_contents_type,
     roll_monster,
+    roll_non_combat_encounter,
     roll_treasure,
     roll_trap,
     roll_dice,
@@ -152,7 +153,33 @@ def test_monster_count_scales_with_level():
     rng2 = random.Random(5)
     m_low = roll_monster("bandit_lair", 1, rng1)
     m_high = roll_monster("bandit_lair", 6, rng2)
-    # High level should have >= low level count (not guaranteed per roll, but on same seed)
-    # Just assert both are valid
     assert m_low.count >= 1
     assert m_high.count >= 1
+
+
+def test_roll_non_combat_encounter_fields():
+    rng = random.Random(7)
+    enc = roll_non_combat_encounter(rng)
+    assert enc.encounter_type != ""
+    assert enc.name != ""
+    assert enc.description != ""
+    assert isinstance(enc.interactions, list)
+    assert len(enc.interactions) > 0
+
+
+def test_roll_non_combat_encounter_all_types():
+    """All 6 encounter types should appear across enough seeds."""
+    rng = random.Random(42)
+    found_types = set()
+    for _ in range(200):
+        enc = roll_non_combat_encounter(rng)
+        found_types.add(enc.encounter_type)
+    expected = {"neutral_npc", "trick", "puzzle", "sanctuary", "omen", "hazard"}
+    assert found_types == expected, f"Missing types: {expected - found_types}"
+
+
+def test_roll_non_combat_encounter_deterministic():
+    enc1 = roll_non_combat_encounter(random.Random(99))
+    enc2 = roll_non_combat_encounter(random.Random(99))
+    assert enc1.encounter_type == enc2.encounter_type
+    assert enc1.description == enc2.description

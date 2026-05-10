@@ -14,6 +14,7 @@ from stocking import (
     roll_contents_type,
     roll_exits,
     roll_monster,
+    roll_non_combat_encounter,
     roll_trap,
     roll_treasure,
     select_features,
@@ -95,10 +96,11 @@ def generate_room(
     # Features
     features = select_features(theme_data, contents_type, feature_cap, rng)
 
-    # Monster / treasure / trap
+    # Monster / treasure / trap / non-combat encounter
     monster = None
     treasure = None
     trap = None
+    non_combat_encounter = None
 
     if contents_type in ("monster", "monster_with_treasure"):
         monster = roll_monster(resolved_theme, level, rng)
@@ -117,8 +119,15 @@ def generate_room(
                 item.hidden = True
 
     elif contents_type == "special":
-        trap = roll_trap(rng)
-        trap.triggered = triggered
+        # d6: 1-2 → trap (~33%), 3-6 → non-combat encounter (~67%)
+        # Overall: traps ~5.6% of rooms, non-combat encounters ~11.1%
+        if rng.randint(1, 6) <= 2:
+            trap = roll_trap(rng)
+            trap.triggered = triggered
+            contents_type = "trap"
+        else:
+            non_combat_encounter = roll_non_combat_encounter(rng)
+            contents_type = "non_combat_encounter"
 
     # Exits
     exit_list = roll_exits(theme_data, level, exits, entry, rng)
@@ -148,6 +157,7 @@ def generate_room(
         monster=monster,
         treasure=treasure,
         trap=trap,
+        non_combat_encounter=non_combat_encounter,
         features=features,
         exits=exit_list,
         entry_direction=entry,
