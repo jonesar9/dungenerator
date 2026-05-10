@@ -75,9 +75,9 @@ def test_roll_monster_returns_monster():
 
 
 def test_roll_monster_all_themes_all_bands():
-    from generator import THEME_IDS
+    from generator import get_theme_ids
     rng = random.Random(99)
-    for theme in THEME_IDS:
+    for theme in get_theme_ids():
         for level in (1, 3, 5):
             m = roll_monster(theme, level, rng)
             assert m is not None
@@ -128,7 +128,7 @@ def test_roll_trap_fields():
 def test_select_features_cap():
     import yaml
     from pathlib import Path
-    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes.yaml").read_text(encoding="utf-8"))
+    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes" / "themes.yaml").read_text(encoding="utf-8"))
     theme_data = themes["undead_crypt"]
     rng = random.Random(1)
     for cap in (0, 1, 3, 5):
@@ -139,7 +139,7 @@ def test_select_features_cap():
 def test_select_features_no_duplicates():
     import yaml
     from pathlib import Path
-    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes.yaml").read_text(encoding="utf-8"))
+    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes" / "themes.yaml").read_text(encoding="utf-8"))
     theme_data = themes["goblin_warren"]
     rng = random.Random(42)
     feats = select_features(theme_data, "monster", 7, rng)

@@ -20,17 +20,9 @@ from stocking import (
 )
 
 _DATA = Path(__file__).parent / "data"
+_THEMES_DIR = _DATA / "themes"
 
 _THEMES: dict = {}
-THEME_IDS = [
-    "undead_crypt",
-    "goblin_warren",
-    "ancient_temple",
-    "bandit_lair",
-    "natural_cave",
-    "dwarven_ruin",
-    "wizard_tower",
-]
 
 SIZE_PRESETS = {
     "small":  {"canvas_w": 40, "canvas_h": 20, "char_per_sq": 2, "feature_cap": 3},
@@ -52,17 +44,23 @@ _ROOM_DIM_TABLE = {
 def _load_themes() -> dict:
     global _THEMES
     if not _THEMES:
-        with open(_DATA / "themes.yaml", encoding="utf-8") as f:
-            _THEMES = yaml.safe_load(f)
+        for path in sorted(_THEMES_DIR.glob("*.yaml")):
+            with open(path, encoding="utf-8") as f:
+                _THEMES.update(yaml.safe_load(f))
     return _THEMES
 
 
+def get_theme_ids() -> list[str]:
+    return list(_load_themes().keys())
+
+
 def resolve_theme(theme_arg: str, rng: random.Random) -> str:
+    theme_ids = get_theme_ids()
     if theme_arg == "random":
-        return rng.choice(THEME_IDS)
-    if theme_arg in THEME_IDS:
+        return rng.choice(theme_ids)
+    if theme_arg in theme_ids:
         return theme_arg
-    raise ValueError(f"Unknown theme: {theme_arg!r}. Choose from: {', '.join(THEME_IDS)} or 'random'.")
+    raise ValueError(f"Unknown theme: {theme_arg!r}. Choose from: {', '.join(theme_ids)} or 'random'.")
 
 
 def generate_room(

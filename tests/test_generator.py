@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 import pytest
-from generator import generate_room, THEME_IDS, SIZE_PRESETS
+from generator import generate_room, get_theme_ids, SIZE_PRESETS
 
 
 def test_deterministic_output():
@@ -18,7 +18,7 @@ def test_deterministic_output():
 
 
 def test_all_themes_level1():
-    for theme in THEME_IDS:
+    for theme in get_theme_ids():
         room = generate_room(theme=theme, level=1, seed=42)
         assert room.theme == theme
         assert room.level == 1
@@ -26,7 +26,7 @@ def test_all_themes_level1():
 
 
 def test_all_themes_level6():
-    for theme in THEME_IDS:
+    for theme in get_theme_ids():
         room = generate_room(theme=theme, level=6, seed=99)
         assert room.theme == theme
         assert room.level == 6
@@ -34,7 +34,7 @@ def test_all_themes_level6():
 
 def test_random_theme_resolves():
     room = generate_room(theme="random", seed=12345)
-    assert room.theme in THEME_IDS
+    assert room.theme in get_theme_ids()
 
 
 def test_level_6_max_band():
