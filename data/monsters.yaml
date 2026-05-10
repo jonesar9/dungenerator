@@ -1,0 +1,1927 @@
+# Monster tables by theme and level band.
+# Levels 1-2, 3-4, 5-6 are the three bands.
+# Each band has a d6 table (entries 1-6).
+# Stats follow OSE format: HD, AC, attacks, damage, save, morale, xp, treasure_type.
+# 'count' is a dice expression for dungeon number appearing.
+# Behaviors are short phrases for the stat block.
+
+undead_crypt:
+  levels_1_2:
+    1:
+      name: "Skeleton"
+      hd: "1"
+      ac: 7
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 12
+      xp: 10
+      special: "Undead immunities"
+      treasure_type: ""
+      count: "1d6"
+      behaviors:
+        - "Guarding the sarcophagus. Attack on sight."
+        - "Animated by old necromancy, motionless until disturbed."
+        - "Patrols a fixed path, ignores anything not threatening."
+    2:
+      name: "Zombie"
+      hd: "2"
+      ac: 8
+      attacks: "1 strike"
+      damage: "1d8"
+      save: "F1"
+      morale: 12
+      xp: 20
+      special: "Undead immunities; always lose initiative"
+      treasure_type: ""
+      count: "1d6"
+      behaviors:
+        - "Shambling in place, waiting for the living."
+        - "Clustered around a body. Rise when approached within 10 ft."
+        - "Wedged in a coffin, falls out when opened."
+    3:
+      name: "Ghoul"
+      hd: "2"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d3/1d3/1d3"
+      save: "F2"
+      morale: 9
+      xp: 35
+      special: "Paralysis (claws/bite, save vs. paralysis); undead immunities"
+      treasure_type: "B"
+      count: "1d4"
+      behaviors:
+        - "Feasting on a corpse. Looks up when the door opens."
+        - "Lurking in a pit beneath the floor (Search to notice)."
+        - "Masquerading as a fresh corpse on a slab."
+    4:
+      name: "Skeleton"
+      hd: "1"
+      ac: 7
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 12
+      xp: 10
+      special: "Undead immunities"
+      treasure_type: ""
+      count: "2d4"
+      behaviors:
+        - "Armed with corroded swords, standing at attention."
+        - "Collapsed in a pile — animates when treasure is touched."
+    5:
+      name: "Zombie"
+      hd: "2"
+      ac: 8
+      attacks: "1 strike"
+      damage: "1d8"
+      save: "F1"
+      morale: 12
+      xp: 20
+      special: "Undead immunities; always lose initiative"
+      treasure_type: ""
+      count: "1d4"
+      behaviors:
+        - "Standing in alcoves along the walls. Animate on entry."
+        - "Risen grave-diggers, still holding rusted shovels."
+    6:
+      name: "Ghoul"
+      hd: "2"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d3/1d3/1d3"
+      save: "F2"
+      morale: 9
+      xp: 35
+      special: "Paralysis (claws/bite, save vs. paralysis); undead immunities"
+      treasure_type: "B"
+      count: "1d3"
+      behaviors:
+        - "Hiding behind a sarcophagus. Waits for the party to split."
+        - "Three ghouls sharing a meal. They do not like to be interrupted."
+
+  levels_3_4:
+    1:
+      name: "Ghoul"
+      hd: "2"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d3/1d3/1d3"
+      save: "F2"
+      morale: 9
+      xp: 35
+      special: "Paralysis (claws/bite, save vs. paralysis); undead immunities"
+      treasure_type: "B"
+      count: "1d6"
+      behaviors:
+        - "Pack behavior — one distracts, others flank."
+        - "Nesting in the burial niches."
+    2:
+      name: "Shadow"
+      hd: "2+2"
+      ac: 7
+      attacks: "1 touch"
+      damage: "1d4 + Str drain"
+      save: "F2"
+      morale: 12
+      xp: 35
+      special: "Str drain (1 point per hit, regained after rest); surprise on 1-5/6; immune to sleep/charm"
+      treasure_type: "F"
+      count: "1d4"
+      behaviors:
+        - "Merges with natural shadows. Difficult to see until it attacks."
+        - "Drawn to light sources. Extinguishes torches as a tactic."
+    3:
+      name: "Wight"
+      hd: "3"
+      ac: 5
+      attacks: "1 touch"
+      damage: "Energy drain (1 level)"
+      save: "F3"
+      morale: 12
+      xp: 50
+      special: "Energy drain; only harmed by silver or magic weapons; undead immunities"
+      treasure_type: "B"
+      count: "1d3"
+      behaviors:
+        - "The former crypt-keeper, risen to guard the vault."
+        - "Seated on a stone throne, motionless until approached."
+    4:
+      name: "Wraith"
+      hd: "4"
+      ac: 3
+      attacks: "1 touch"
+      damage: "Energy drain (1 level)"
+      save: "F4"
+      morale: 12
+      xp: 175
+      special: "Energy drain; only harmed by silver or magic weapons; fly; undead immunities"
+      treasure_type: "E"
+      count: "1d2"
+      behaviors:
+        - "Drifting near the ceiling, invisible from below."
+        - "Bound to a specific object in the room."
+    5:
+      name: "Shadow"
+      hd: "2+2"
+      ac: 7
+      attacks: "1 touch"
+      damage: "1d4 + Str drain"
+      save: "F2"
+      morale: 12
+      xp: 35
+      special: "Str drain (1 point per hit, regained after rest); surprise on 1-5/6"
+      treasure_type: "F"
+      count: "1d4"
+      behaviors:
+        - "Clustered in an unlit alcove."
+        - "Following the party since the last room."
+    6:
+      name: "Wight"
+      hd: "3"
+      ac: 5
+      attacks: "1 touch"
+      damage: "Energy drain (1 level)"
+      save: "F3"
+      morale: 12
+      xp: 50
+      special: "Energy drain; only harmed by silver or magic weapons"
+      treasure_type: "B"
+      count: "1d3"
+      behaviors:
+        - "Wight lord with 1d4 skeleton thralls."
+        - "Waiting in a sealed sarcophagus."
+
+  levels_5_6:
+    1:
+      name: "Wraith"
+      hd: "4"
+      ac: 3
+      attacks: "1 touch"
+      damage: "Energy drain (1 level)"
+      save: "F4"
+      morale: 12
+      xp: 175
+      special: "Energy drain; only harmed by silver or magic weapons; fly"
+      treasure_type: "E"
+      count: "1d4"
+      behaviors:
+        - "Ancient guardian, patient and malevolent."
+        - "Pack of wraiths circling the room's centerpiece."
+    2:
+      name: "Mummy"
+      hd: "5+1"
+      ac: 3
+      attacks: "1 strike"
+      damage: "1d12"
+      save: "F5"
+      morale: 12
+      xp: 300
+      special: "Cause mummy rot on hit (save vs. paralysis); immune to non-magical weapons; fear (save vs. spells or frozen)"
+      treasure_type: "D"
+      count: "1d2"
+      behaviors:
+        - "The tomb's true occupant, risen in wrath."
+        - "Seated in repose, surrounded by offerings."
+    3:
+      name: "Spectre"
+      hd: "6"
+      ac: 2
+      attacks: "1 touch"
+      damage: "Energy drain (2 levels)"
+      save: "F6"
+      morale: 11
+      xp: 725
+      special: "Double energy drain; only harmed by magic weapons; fly; undead immunities"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "The high priest of the crypt, never truly dead."
+        - "Bound to protect the inner vault."
+    4:
+      name: "Mummy"
+      hd: "5+1"
+      ac: 3
+      attacks: "1 strike"
+      damage: "1d12"
+      save: "F5"
+      morale: 12
+      xp: 300
+      special: "Mummy rot; immune to non-magical weapons; fear aura"
+      treasure_type: "D"
+      count: "1d2"
+      behaviors:
+        - "The dynasty's last ruler, wrapped in gold-thread linen."
+        - "Accompanied by 1d4 skeleton honor guard."
+    5:
+      name: "Wraith"
+      hd: "4"
+      ac: 3
+      attacks: "1 touch"
+      damage: "Energy drain (1 level)"
+      save: "F4"
+      morale: 12
+      xp: 175
+      special: "Energy drain; only harmed by silver or magic weapons; fly"
+      treasure_type: "E"
+      count: "1d3"
+      behaviors:
+        - "Guarding the approach to a mummy's tomb."
+        - "Former noble, unrecognizable now."
+    6:
+      name: "Vampire"
+      hd: "7"
+      ac: 2
+      attacks: "1 bite"
+      damage: "1d10 + energy drain (2 levels)"
+      save: "F7"
+      morale: 11
+      xp: 1250
+      special: "Energy drain; regenerate 3hp/round; charm gaze (save vs. spells); immune to non-magic weapons; gaseous form; spider climb"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Ancient vampire resting in a sealed sarcophagus."
+        - "In bat form, roosting on the ceiling."
+
+goblin_warren:
+  levels_1_2:
+    1:
+      name: "Goblin"
+      hd: "1-1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "NM"
+      morale: 7
+      xp: 5
+      special: "-1 to hit in full daylight"
+      treasure_type: "R"
+      count: "2d4"
+      behaviors:
+        - "Playing dice. Scramble for weapons when alarmed."
+        - "On guard duty, bored and inattentive."
+        - "Arguing noisily. Heard from outside the room."
+    2:
+      name: "Goblin"
+      hd: "1-1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "NM"
+      morale: 7
+      xp: 5
+      special: "-1 to hit in full daylight"
+      treasure_type: "R"
+      count: "3d4"
+      behaviors:
+        - "Sleeping in shifts. Half are awake."
+        - "Eating loudly around a fire pit."
+    3:
+      name: "Goblin (with wolf)"
+      hd: "1-1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "NM"
+      morale: 7
+      xp: 5
+      special: "-1 to hit in daylight; accompanied by 1d2 wolves"
+      treasure_type: "R"
+      count: "1d4"
+      behaviors:
+        - "Wolf-riders on patrol. The wolves smell the party first."
+        - "Handler and wolves blocking a chokepoint."
+    4:
+      name: "Hobgoblin"
+      hd: "1+1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F1"
+      morale: 8
+      xp: 15
+      special: ""
+      treasure_type: "Q+R"
+      count: "1d4"
+      behaviors:
+        - "Squad leader drilling three goblins."
+        - "Enforcer collecting tribute from goblin quarters."
+    5:
+      name: "Wolf"
+      hd: "2+2"
+      ac: 7
+      attacks: "1 bite"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 25
+      special: ""
+      treasure_type: ""
+      count: "1d6"
+      behaviors:
+        - "Wolves in a crude kennel, chained. They can be loosed."
+        - "Wolves roaming freely, loyal to a nearby goblin."
+    6:
+      name: "Hobgoblin"
+      hd: "1+1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F1"
+      morale: 8
+      xp: 15
+      special: ""
+      treasure_type: "Q+R"
+      count: "1d6"
+      behaviors:
+        - "Hobgoblin war-band, well-equipped."
+        - "Mercenaries hired by the goblin chief."
+
+  levels_3_4:
+    1:
+      name: "Hobgoblin"
+      hd: "1+1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F1"
+      morale: 8
+      xp: 15
+      special: ""
+      treasure_type: "Q+R"
+      count: "2d4"
+      behaviors:
+        - "Hobgoblin garrison, organized and alert."
+        - "Drilling formation — ready for a fight."
+    2:
+      name: "Bugbear"
+      hd: "3+1"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "2d4"
+      save: "F3"
+      morale: 9
+      xp: 75
+      special: "Surprise on 1-3/6"
+      treasure_type: "B"
+      count: "1d4"
+      behaviors:
+        - "Hulking bugbears waiting in ambush. They are very patient."
+        - "Bugbear chief and bodyguards, seated and expecting tribute."
+    3:
+      name: "Gnoll"
+      hd: "2"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "1d6+2"
+      save: "F2"
+      morale: 8
+      xp: 20
+      special: ""
+      treasure_type: "D"
+      count: "1d6"
+      behaviors:
+        - "Gnoll raiders using this as a base."
+        - "Gnoll slavers with 1d3 captured prisoners."
+    4:
+      name: "Bugbear"
+      hd: "3+1"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "2d4"
+      save: "F3"
+      morale: 9
+      xp: 75
+      special: "Surprise on 1-3/6"
+      treasure_type: "B"
+      count: "1d3"
+      behaviors:
+        - "Single massive bugbear, blocking the only exit."
+        - "Bugbear and two trained wolves."
+    5:
+      name: "Gnoll"
+      hd: "2"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "1d6+2"
+      save: "F2"
+      morale: 8
+      xp: 20
+      special: ""
+      treasure_type: "D"
+      count: "1d4"
+      behaviors:
+        - "Gnolls gambling over humanoid bones."
+        - "Gnoll patrol, just returned from outside."
+    6:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1"
+      behaviors:
+        - "Ogre mercenary the goblins are terrified of."
+        - "Ogre eating — interrupted meals make ogres angry."
+
+  levels_5_6:
+    1:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1d3"
+      behaviors:
+        - "Ogre warband allied with the goblin king."
+        - "Ogres with a shared treasure hoard."
+    2:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round; fire and acid prevent regeneration"
+      treasure_type: "D"
+      count: "1"
+      behaviors:
+        - "Troll enforcer for the goblin king."
+        - "Troll sleeping in a pile of bones."
+    3:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1d4"
+      behaviors:
+        - "Ogre gang with crude ranged weapons (javelins)."
+    4:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round; fire and acid prevent regeneration"
+      treasure_type: "D"
+      count: "1d2"
+      behaviors:
+        - "Pair of trolls, hunting together."
+        - "Troll with a pack of wolves."
+    5:
+      name: "Hill Giant"
+      hd: "8"
+      ac: 4
+      attacks: "1 weapon or boulder"
+      damage: "2d8 or 2d6"
+      save: "F8"
+      morale: 8
+      xp: 875
+      special: "Hurl boulders (2d6, 200ft range)"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "Hill giant warlord commanding a goblin army."
+        - "Hill giant prisoner the goblins foolishly tried to contain."
+    6:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round; fire and acid prevent regeneration"
+      treasure_type: "D"
+      count: "1d3"
+      behaviors:
+        - "Three trolls in a feeding frenzy."
+
+ancient_temple:
+  levels_1_2:
+    1:
+      name: "Cultist"
+      hd: "1"
+      ac: 9
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: ""
+      treasure_type: "U"
+      count: "2d4"
+      behaviors:
+        - "Cultists in mid-ritual. They do not take interruptions well."
+        - "Zealots guarding the inner sanctum."
+    2:
+      name: "Giant Fire Beetle"
+      hd: "1+2"
+      ac: 4
+      attacks: "1 bite"
+      damage: "2d4"
+      save: "F1"
+      morale: 7
+      xp: 15
+      special: "Glands glow (10ft radius) for 1d6 days after death"
+      treasure_type: ""
+      count: "1d8"
+      behaviors:
+        - "Beetles nesting behind the altar, skitter out when disturbed."
+        - "Beetles attracted to old offerings on the floor."
+    3:
+      name: "Giant Centipede"
+      hd: "1/2"
+      ac: 9
+      attacks: "1 bite"
+      damage: "1 + poison"
+      save: "NM"
+      morale: 7
+      xp: 6
+      special: "Poison (save vs. poison or 1d4 Con drain for 1d4 weeks)"
+      treasure_type: ""
+      count: "2d4"
+      behaviors:
+        - "Centipedes in the altar cracks. Hard to see."
+        - "Nesting under loose flagstones."
+    4:
+      name: "Cultist"
+      hd: "1"
+      ac: 9
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: ""
+      treasure_type: "U"
+      count: "1d6"
+      behaviors:
+        - "Cultist guard with a prisoner."
+        - "Cultists performing a summoning. Almost done."
+    5:
+      name: "Giant Spider (Crab)"
+      hd: "2"
+      ac: 7
+      attacks: "1 bite"
+      damage: "1d8 + poison"
+      save: "F1"
+      morale: 7
+      xp: 25
+      special: "Poison (save vs. poison or die)"
+      treasure_type: ""
+      count: "1d4"
+      behaviors:
+        - "Spiders in webbing on the ceiling. Drop on intruders."
+        - "Web-wrapped bodies along the wall conceal spiders."
+    6:
+      name: "Acolyte (Cleric-1)"
+      hd: "1"
+      ac: 7
+      attacks: "1 mace"
+      damage: "1d6"
+      save: "C1"
+      morale: 9
+      xp: 10
+      special: "1 first-level cleric spell"
+      treasure_type: "U"
+      count: "1d4"
+      behaviors:
+        - "Acolytes in prayer. Their god is listening."
+        - "Acolyte with a religious relic they will die to protect."
+
+  levels_3_4:
+    1:
+      name: "Medusa"
+      hd: "4"
+      ac: 8
+      attacks: "1 snake bite / 1 weapon"
+      damage: "1d6 + poison / 1d6"
+      save: "F4"
+      morale: 8
+      xp: 175
+      special: "Petrifying gaze (save vs. turn to stone); snake poison (save vs. poison or die)"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Medusa priestess of the old faith, still worshipped."
+        - "Medusa posing as a statue. Many real statues nearby for camouflage."
+    2:
+      name: "Cultist (Veteran)"
+      hd: "2"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F2"
+      morale: 9
+      xp: 20
+      special: ""
+      treasure_type: "U"
+      count: "1d6"
+      behaviors:
+        - "Veteran fanatics, trained fighters. Morale 10 near their altar."
+        - "Execution squad with a captured adventurer."
+    3:
+      name: "Gargoyle"
+      hd: "4"
+      ac: 5
+      attacks: "2 claws / 1 bite / 1 horn"
+      damage: "1d3/1d3/1d6/1d4"
+      save: "F4"
+      morale: 11
+      xp: 75
+      special: "Immune to non-magic weapons; fly"
+      treasure_type: "C"
+      count: "1d4"
+      behaviors:
+        - "Gargoyles disguised as decorative carvings on pillars."
+        - "Temple guardians, bound to attack on blasphemy."
+    4:
+      name: "Giant Spider (Black Widow)"
+      hd: "3"
+      ac: 6
+      attacks: "1 bite"
+      damage: "2d6 + poison"
+      save: "F2"
+      morale: 8
+      xp: 50
+      special: "Poison (save vs. poison or die)"
+      treasure_type: "U"
+      count: "1d3"
+      behaviors:
+        - "Giant spiders in elaborate webs across the ritual chamber."
+        - "Spider with a web-wrapped treasure chest."
+    5:
+      name: "Gargoyle"
+      hd: "4"
+      ac: 5
+      attacks: "2 claws / 1 bite / 1 horn"
+      damage: "1d3/1d3/1d6/1d4"
+      save: "F4"
+      morale: 11
+      xp: 75
+      special: "Immune to non-magic weapons; fly"
+      treasure_type: "C"
+      count: "1d2"
+      behaviors:
+        - "Gargoyle perched above the entrance, watching."
+    6:
+      name: "Ogre Mage"
+      hd: "5+2"
+      ac: 4
+      attacks: "1 weapon"
+      damage: "1d12"
+      save: "MU5"
+      morale: 9
+      xp: 700
+      special: "Fly; invisible; polymorph self; sleep cone; cold cone; darkness"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "High priest — an ogre mage in disguise as a holy elder."
+        - "Ogre mage conducting a rite of power."
+
+  levels_5_6:
+    1:
+      name: "Ogre Mage"
+      hd: "5+2"
+      ac: 4
+      attacks: "1 weapon"
+      damage: "1d12"
+      save: "MU5"
+      morale: 9
+      xp: 700
+      special: "Fly; invisible; polymorph self; sleep; cold cone; darkness"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "Avatar of the temple's patron, finally manifest."
+    2:
+      name: "Lamia"
+      hd: "9"
+      ac: 3
+      attacks: "2 claws / 1 weapon"
+      damage: "1d4/1d4/1d4"
+      save: "F9"
+      morale: 11
+      xp: 2300
+      special: "Touch drains 1 Wis (permanent); suggestion (as spell) at will; illusion at will"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "Lamia poses as the oracle the cultists serve."
+        - "Lamia surrounded by charmed cultist bodyguards."
+    3:
+      name: "Basilisk"
+      hd: "6+1"
+      ac: 4
+      attacks: "1 bite"
+      damage: "1d10"
+      save: "F6"
+      morale: 9
+      xp: 725
+      special: "Petrifying gaze (save vs. turn to stone)"
+      treasure_type: "F"
+      count: "1d2"
+      behaviors:
+        - "Temple guardian, locked in the inner sanctum."
+        - "Basilisk with petrified adventurers as decoration."
+    4:
+      name: "Vampire"
+      hd: "7"
+      ac: 2
+      attacks: "1 bite"
+      damage: "1d10 + energy drain (2 levels)"
+      save: "F7"
+      morale: 11
+      xp: 1250
+      special: "Energy drain; regenerate 3hp/round; charm gaze; gaseous form"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Vampire cult leader worshipped as a dark deity."
+        - "Vampire posing as the temple's high priest."
+    5:
+      name: "Lamia"
+      hd: "9"
+      ac: 3
+      attacks: "2 claws / 1 weapon"
+      damage: "1d4/1d4/1d4"
+      save: "F9"
+      morale: 11
+      xp: 2300
+      special: "Touch drains 1 Wis; suggestion at will; illusion at will"
+      treasure_type: "E"
+      count: "1"
+      behaviors:
+        - "Ancient lamia, the temple's true ruler."
+    6:
+      name: "Basilisk"
+      hd: "6+1"
+      ac: 4
+      attacks: "1 bite"
+      damage: "1d10"
+      save: "F6"
+      morale: 9
+      xp: 725
+      special: "Petrifying gaze (save vs. turn to stone)"
+      treasure_type: "F"
+      count: "1d2"
+      behaviors:
+        - "Basilisk pair nesting in the sanctum."
+
+bandit_lair:
+  levels_1_2:
+    1:
+      name: "Bandit"
+      hd: "1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: ""
+      treasure_type: "U"
+      count: "2d4"
+      behaviors:
+        - "Guards at ease. Challenging anyone who enters."
+        - "Bandits gambling. Weapons within reach."
+        - "Patrol, recently returned, still alert."
+    2:
+      name: "Bandit"
+      hd: "1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: ""
+      treasure_type: "U"
+      count: "3d4"
+      behaviors:
+        - "Off-duty bandits eating. Only half are armed."
+        - "Sleeping quarters — most are asleep."
+    3:
+      name: "Bandit (Archer)"
+      hd: "1"
+      ac: 7
+      attacks: "1 shortbow or 1 sword"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: "Ranged attack (shortbow, 70/140/210ft)"
+      treasure_type: "U"
+      count: "1d6"
+      behaviors:
+        - "Archers positioned on high ground in the room."
+        - "Marksmen covering the door."
+    4:
+      name: "Veteran (Ftr-3)"
+      hd: "3"
+      ac: 4
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F3"
+      morale: 9
+      xp: 35
+      special: ""
+      treasure_type: "V"
+      count: "1d4"
+      behaviors:
+        - "Veteran sergeants running drills."
+        - "Experienced fighters guarding the captain's quarters."
+    5:
+      name: "Bandit"
+      hd: "1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: ""
+      treasure_type: "U"
+      count: "2d6"
+      behaviors:
+        - "Large bandit mob, rowdy and overconfident."
+        - "Bandits dividing loot from a recent raid."
+    6:
+      name: "Bandit Captain (Ftr-5)"
+      hd: "5"
+      ac: 3
+      attacks: "1 weapon"
+      damage: "1d8+1"
+      save: "F5"
+      morale: 10
+      xp: 360
+      special: ""
+      treasure_type: "A"
+      count: "1"
+      behaviors:
+        - "The bandit captain, flanked by two veteran bodyguards."
+        - "Captain planning a raid on a map table."
+
+  levels_3_4:
+    1:
+      name: "Veteran (Ftr-3)"
+      hd: "3"
+      ac: 4
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F3"
+      morale: 9
+      xp: 35
+      special: ""
+      treasure_type: "V"
+      count: "2d4"
+      behaviors:
+        - "Elite bandit core, professional mercenaries."
+        - "Veterans interrogating a prisoner."
+    2:
+      name: "Mercenary (Ftr-4)"
+      hd: "4"
+      ac: 3
+      attacks: "1 weapon"
+      damage: "1d8+1"
+      save: "F4"
+      morale: 9
+      xp: 75
+      special: ""
+      treasure_type: "V"
+      count: "1d6"
+      behaviors:
+        - "Mercenaries hired to reinforce the lair."
+        - "Mercenary squad with a designated leader."
+    3:
+      name: "Orc"
+      hd: "1"
+      ac: 6
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "F1"
+      morale: 8
+      xp: 10
+      special: "-1 to hit in bright daylight"
+      treasure_type: "D"
+      count: "2d6"
+      behaviors:
+        - "Orc mercenaries employed by the bandits."
+        - "Orcs and bandits sharing a tense meal."
+    4:
+      name: "Bandit Captain (Ftr-5)"
+      hd: "5"
+      ac: 3
+      attacks: "1 weapon"
+      damage: "1d8+1"
+      save: "F5"
+      morale: 10
+      xp: 360
+      special: ""
+      treasure_type: "A"
+      count: "1"
+      behaviors:
+        - "Captain with full bodyguard retinue."
+        - "Lieutenant captain left in charge."
+    5:
+      name: "Gnoll"
+      hd: "2"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "1d6+2"
+      save: "F2"
+      morale: 8
+      xp: 20
+      special: ""
+      treasure_type: "D"
+      count: "1d6"
+      behaviors:
+        - "Gnoll auxiliaries, muscle for the bandits."
+        - "Gnolls doing the dirty work no bandit will."
+    6:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1"
+      behaviors:
+        - "Ogre enforcer for the bandit lord."
+        - "Ogre gatekeeper, very territorial."
+
+  levels_5_6:
+    1:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1d3"
+      behaviors:
+        - "Ogre war-band in the bandit army."
+    2:
+      name: "Bandit Lord (Ftr-8)"
+      hd: "8"
+      ac: 2
+      attacks: "1 weapon"
+      damage: "1d8+3"
+      save: "F8"
+      morale: 11
+      xp: 875
+      special: ""
+      treasure_type: "A"
+      count: "1"
+      behaviors:
+        - "The bandit lord in their throne room."
+        - "Bandit lord with a full council of captains."
+    3:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round; fire and acid prevent regeneration"
+      treasure_type: "D"
+      count: "1d2"
+      behaviors:
+        - "Troll prison guards. Their lair smells accordingly."
+        - "Troll bound in service to the bandit lord."
+    4:
+      name: "Bandit Lord (Ftr-8)"
+      hd: "8"
+      ac: 2
+      attacks: "1 weapon"
+      damage: "1d8+3"
+      save: "F8"
+      morale: 11
+      xp: 875
+      special: ""
+      treasure_type: "A"
+      count: "1"
+      behaviors:
+        - "Bandit lord planning a major assault."
+    5:
+      name: "Mercenary (Elite, Ftr-6)"
+      hd: "6"
+      ac: 2
+      attacks: "1 weapon"
+      damage: "1d8+2"
+      save: "F6"
+      morale: 10
+      xp: 500
+      special: ""
+      treasure_type: "V"
+      count: "1d4"
+      behaviors:
+        - "Elite mercenary company, professional and dangerous."
+        - "Battle-hardened veterans with magic equipment."
+    6:
+      name: "Ogre"
+      hd: "4+1"
+      ac: 5
+      attacks: "1 club"
+      damage: "1d10"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: ""
+      treasure_type: "C+1000gp"
+      count: "1d4"
+      behaviors:
+        - "Ogre mob, recently recruited."
+
+natural_cave:
+  levels_1_2:
+    1:
+      name: "Giant Bat"
+      hd: "2"
+      ac: 6
+      attacks: "1 bite"
+      damage: "1d4"
+      save: "F1"
+      morale: 8
+      xp: 20
+      special: "Echolocation; confused by silence spell"
+      treasure_type: ""
+      count: "1d10"
+      behaviors:
+        - "Bats roosting on the ceiling. Disturbed by light."
+        - "Colony disturbed by the party's noise."
+    2:
+      name: "Giant Rat"
+      hd: "1/2"
+      ac: 7
+      attacks: "1 bite"
+      damage: "1d3 + disease"
+      save: "NM"
+      morale: 8
+      xp: 6
+      special: "Disease (save vs. poison or fever, -2 to all rolls for 1d6 weeks)"
+      treasure_type: "C"
+      count: "3d6"
+      behaviors:
+        - "Rats in a den, defending their nest."
+        - "Rats swarming a food cache they found."
+    3:
+      name: "Cave Locust"
+      hd: "2"
+      ac: 4
+      attacks: "1 bite or spit"
+      damage: "1d2 or special"
+      save: "F2"
+      morale: 5
+      xp: 25
+      special: "Shriek (50% chance/round, surprise nearby wandering monsters); spit (5ft range, save vs. paralysis or blind 1 turn)"
+      treasure_type: ""
+      count: "2d6"
+      behaviors:
+        - "Cave locusts filling the chamber. They shriek when startled."
+        - "Locusts grazing on fungal patches."
+    4:
+      name: "Black Bear"
+      hd: "4"
+      ac: 7
+      attacks: "2 claws / 1 bite"
+      damage: "1d3/1d3/1d6"
+      save: "F2"
+      morale: 7
+      xp: 75
+      special: "Hug (if both claws hit, additional 2d8 damage)"
+      treasure_type: ""
+      count: "1d4"
+      behaviors:
+        - "Mother bear with 1d2 cubs. Extremely aggressive."
+        - "Bear defending a food cache."
+    5:
+      name: "Giant Ferret"
+      hd: "1+4"
+      ac: 5
+      attacks: "1 bite"
+      damage: "1d8"
+      save: "F1"
+      morale: 8
+      xp: 15
+      special: ""
+      treasure_type: ""
+      count: "1d8"
+      behaviors:
+        - "Ferrets hunting for prey. Fast and relentless."
+        - "Giant ferret with a nest of pups."
+    6:
+      name: "Gray Ooze"
+      hd: "3"
+      ac: 8
+      attacks: "1 strike"
+      damage: "2d8"
+      save: "F2"
+      morale: 12
+      xp: 50
+      special: "Corrodes metal on contact (save vs. death or item destroyed); immune to cold and fire; 90% undetectable on wet stone"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Gray ooze blending with wet cavern walls. Almost invisible."
+        - "Ooze covering the floor of a passage."
+
+  levels_3_4:
+    1:
+      name: "Cave Bear"
+      hd: "7"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d8/1d8/1d10"
+      save: "F3"
+      morale: 9
+      xp: 450
+      special: "Hug (both claws hit: 2d8 extra)"
+      treasure_type: ""
+      count: "1d2"
+      behaviors:
+        - "Cave bear in its den. Has it heard you yet?"
+        - "Enormous cave bear with two half-grown cubs."
+    2:
+      name: "Ochre Jelly"
+      hd: "5"
+      ac: 8
+      attacks: "1 strike"
+      damage: "2d6"
+      save: "F3"
+      morale: 12
+      xp: 175
+      special: "Corrodes wood and leather; immune to lightning (splits); immune to cold and fire"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Ochre jelly oozing from a crack in the wall."
+        - "Jelly filling a low passage; unavoidable."
+    3:
+      name: "Wererat"
+      hd: "3"
+      ac: 7
+      attacks: "1 bite or weapon"
+      damage: "1d4 or 1d6"
+      save: "F3"
+      morale: 8
+      xp: 65
+      special: "Lycanthropy; surprised on 1-4/6; immune to non-silver/magic weapons"
+      treasure_type: "C"
+      count: "1d6"
+      behaviors:
+        - "Wererats posing as human survivors."
+        - "Wererat thieves using the cave as a hideout."
+    4:
+      name: "Ghoul"
+      hd: "2"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d3/1d3/1d3"
+      save: "F2"
+      morale: 9
+      xp: 35
+      special: "Paralysis; undead immunities"
+      treasure_type: "B"
+      count: "1d4"
+      behaviors:
+        - "Ghouls driven from a crypt, now hunting in the caves."
+    5:
+      name: "Cockatrice"
+      hd: "5"
+      ac: 6
+      attacks: "1 beak"
+      damage: "1d6 + petrify"
+      save: "F5"
+      morale: 7
+      xp: 175
+      special: "Petrify on hit (save vs. turn to stone); immune to own petrification"
+      treasure_type: "D"
+      count: "1d4"
+      behaviors:
+        - "Cockatrice nesting among petrified victims."
+        - "Cockatrice flock blocking a passage."
+    6:
+      name: "Green Slime"
+      hd: "2"
+      ac: 9
+      attacks: "Special"
+      damage: "Special"
+      save: "NM"
+      morale: 12
+      xp: 25
+      special: "Adheres on contact (Str check to remove); converts flesh to slime in 1d4 rounds; killed by fire, cold, or cure disease"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Green slime hanging from the cave ceiling."
+        - "Slime covering an otherwise appealing ledge."
+
+  levels_5_6:
+    1:
+      name: "Cave Bear"
+      hd: "7"
+      ac: 6
+      attacks: "2 claws / 1 bite"
+      damage: "1d8/1d8/1d10"
+      save: "F3"
+      morale: 9
+      xp: 450
+      special: "Hug (both claws: 2d8 extra)"
+      treasure_type: ""
+      count: "1d3"
+      behaviors:
+        - "Cave bear pack — unheard of, but here we are."
+    2:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round"
+      treasure_type: "D"
+      count: "1d3"
+      behaviors:
+        - "Trolls using this cave as their hunting ground."
+    3:
+      name: "Minotaur"
+      hd: "6"
+      ac: 6
+      attacks: "1 gore / 1 bite"
+      damage: "1d6/1d6"
+      save: "F6"
+      morale: 12
+      xp: 350
+      special: "Never lost in underground mazes"
+      treasure_type: "C"
+      count: "1d2"
+      behaviors:
+        - "Minotaur lord of this cave system."
+        - "Minotaur guarding its territory with fury."
+    4:
+      name: "Purple Worm"
+      hd: "15"
+      ac: 6
+      attacks: "1 bite / 1 sting"
+      damage: "2d8 / 1d8 + poison"
+      save: "F8"
+      morale: 10
+      xp: 2300
+      special: "Swallow whole (on natural 20 or hit by 4+); sting poison (save vs. poison or die)"
+      treasure_type: "D"
+      count: "1"
+      behaviors:
+        - "Purple worm burrowed up through the floor."
+        - "The sound of the worm approaching — roll init."
+    5:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round"
+      treasure_type: "D"
+      count: "1d2"
+      behaviors:
+        - "Troll feeding on a giant bat."
+    6:
+      name: "Dragon (Young, Cave)"
+      hd: "8"
+      ac: 3
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/2d8"
+      save: "F8"
+      morale: 9
+      xp: 875
+      special: "Breath weapon (cold, 8d6, save vs. breath for half)"
+      treasure_type: "H"
+      count: "1"
+      behaviors:
+        - "Young cave dragon claiming this as its lair."
+        - "Dragon sleeping on a small hoard."
+
+dwarven_ruin:
+  levels_1_2:
+    1:
+      name: "Troglodyte"
+      hd: "2"
+      ac: 5
+      attacks: "2 claws / 1 bite"
+      damage: "1d4/1d4/1d4"
+      save: "F2"
+      morale: 9
+      xp: 25
+      special: "Stench (save vs. poison or -2 to hit/damage for 10 rounds); surprise on 1-4/6"
+      treasure_type: "A"
+      count: "1d8"
+      behaviors:
+        - "Troglodytes that moved in after the dwarves fled."
+        - "Troglodyte hunting party, surprised to see you."
+    2:
+      name: "Kobold"
+      hd: "1/2"
+      ac: 7
+      attacks: "1 weapon"
+      damage: "1d4"
+      save: "NM"
+      morale: 6
+      xp: 5
+      special: "-1 to hit in daylight"
+      treasure_type: "P"
+      count: "4d4"
+      behaviors:
+        - "Kobold scavengers stripping dwarven metal."
+        - "Kobolds with a crude trap they're very proud of."
+    3:
+      name: "Dwarf (Hostile Survivor)"
+      hd: "1"
+      ac: 4
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "D1"
+      morale: 8
+      xp: 10
+      special: "+1 to hit vs. giants/ogres/trolls; infravision 60ft"
+      treasure_type: "G"
+      count: "1d6"
+      behaviors:
+        - "Mad dwarf survivors, deeply suspicious of outsiders."
+        - "Dwarf recluse who never left. Attacks on sight."
+    4:
+      name: "Animated Statue (Stone)"
+      hd: "5"
+      ac: 4
+      attacks: "2 fists"
+      damage: "2d6/2d6"
+      save: "F5"
+      morale: 12
+      xp: 175
+      special: "Immune to sleep, charm, hold; immune to fire and cold"
+      treasure_type: ""
+      count: "1d2"
+      behaviors:
+        - "Dwarven ancestor statues, still animated by old magic."
+        - "Stone sentinel activates when treasure is approached."
+    5:
+      name: "Troglodyte"
+      hd: "2"
+      ac: 5
+      attacks: "2 claws / 1 bite"
+      damage: "1d4/1d4/1d4"
+      save: "F2"
+      morale: 9
+      xp: 25
+      special: "Stench (save vs. poison or -2 to hit/damage)"
+      treasure_type: "A"
+      count: "2d4"
+      behaviors:
+        - "Large troglodyte warband raiding the ruin."
+    6:
+      name: "Gnome (Hostile)"
+      hd: "1"
+      ac: 5
+      attacks: "1 weapon"
+      damage: "1d6"
+      save: "D1"
+      morale: 7
+      xp: 10
+      special: "Infravision 90ft; +1 to hit vs. kobolds/goblins; illusion once/day"
+      treasure_type: "C"
+      count: "1d6"
+      behaviors:
+        - "Gnome treasure-hunters, not friendly to competition."
+        - "Gnome tinkerers operating a surviving dwarven machine."
+
+  levels_3_4:
+    1:
+      name: "Animated Statue (Iron)"
+      hd: "4"
+      ac: 2
+      attacks: "2 fists"
+      damage: "1d8/1d8"
+      save: "F4"
+      morale: 12
+      xp: 75
+      special: "Immune to all mind/sleep/charm effects; immune to non-magic weapons"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Iron dwarf construct, guardian of the vault."
+        - "Iron sentinel awakening as the party enters."
+    2:
+      name: "Doppelganger"
+      hd: "4"
+      ac: 5
+      attacks: "1 bite"
+      damage: "1d12"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: "Polymorph (copy any humanoid seen); immune to sleep and charm"
+      treasure_type: "E"
+      count: "1d4"
+      behaviors:
+        - "Doppelganger posing as a friendly dwarven ghost."
+        - "Doppelgangers that have taken the forms of an earlier party."
+    3:
+      name: "Medusa"
+      hd: "4"
+      ac: 8
+      attacks: "1 snake bite / 1 weapon"
+      damage: "1d6 + poison / 1d6"
+      save: "F4"
+      morale: 8
+      xp: 175
+      special: "Petrifying gaze; snake venom"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Medusa using the ruin as a lair, surrounded by stone victims."
+    4:
+      name: "Berserker (Dwarf)"
+      hd: "1+1"
+      ac: 7
+      attacks: "1 weapon"
+      damage: "1d8"
+      save: "F1"
+      morale: 12
+      xp: 15
+      special: "Berserker: +2 to hit; never retreats"
+      treasure_type: "B"
+      count: "2d6"
+      behaviors:
+        - "Dwarven berserkers, cursed to guard the ruin forever."
+        - "Mad dwarf warriors, attacking everything."
+    5:
+      name: "Gargoyle"
+      hd: "4"
+      ac: 5
+      attacks: "2 claws / 1 bite / 1 horn"
+      damage: "1d3/1d3/1d6/1d4"
+      save: "F4"
+      morale: 11
+      xp: 75
+      special: "Immune to non-magic weapons; fly"
+      treasure_type: "C"
+      count: "1d4"
+      behaviors:
+        - "Stone gargoyles, mistaken for dwarven carvings."
+    6:
+      name: "Doppelganger"
+      hd: "4"
+      ac: 5
+      attacks: "1 bite"
+      damage: "1d12"
+      save: "F4"
+      morale: 10
+      xp: 125
+      special: "Polymorph; immune to sleep and charm"
+      treasure_type: "E"
+      count: "1d2"
+      behaviors:
+        - "Doppelganger has taken the form of a party member."
+
+  levels_5_6:
+    1:
+      name: "Stone Golem"
+      hd: "14"
+      ac: 5
+      attacks: "2 fists"
+      damage: "2d8/2d8"
+      save: "F7"
+      morale: 12
+      xp: 3100
+      special: "Immune to all spells except rock to mud (slows), stone to flesh (vulnerable for 1 round), and transmute rock to mud; slow attack (always acts last)"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Dwarven stone golem, the final guardian of the vault."
+        - "Golem damaged by age — but still terrifying."
+    2:
+      name: "Iron Golem"
+      hd: "18"
+      ac: 3
+      attacks: "1 fist"
+      damage: "4d10"
+      save: "F9"
+      morale: 12
+      xp: 3900
+      special: "Poison gas breath (10ft radius, save vs. death); immune to all spells except lightning (slows) and fire (heals); only damaged by magic weapons of +3 or better"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "The legendary iron golem of Clan Deepdelve, still active."
+        - "Iron golem forged to protect the clan vault."
+    3:
+      name: "Troll"
+      hd: "6+3"
+      ac: 4
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/1d10"
+      save: "F6"
+      morale: 10
+      xp: 820
+      special: "Regenerate 3hp/round"
+      treasure_type: "D"
+      count: "1d3"
+      behaviors:
+        - "Trolls drawn by old rumors of dwarven gold."
+    4:
+      name: "Vampire"
+      hd: "7"
+      ac: 2
+      attacks: "1 bite"
+      damage: "1d10 + energy drain"
+      save: "F7"
+      morale: 11
+      xp: 1250
+      special: "Energy drain (2 levels); charm gaze; gaseous form; regenerate"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Vampire lord who conquered the ruin centuries ago."
+    5:
+      name: "Stone Golem"
+      hd: "14"
+      ac: 5
+      attacks: "2 fists"
+      damage: "2d8/2d8"
+      save: "F7"
+      morale: 12
+      xp: 3100
+      special: "Immune to most spells; slow attack"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Second golem, paired with the first."
+    6:
+      name: "Dragon (Young, Earth)"
+      hd: "9"
+      ac: 2
+      attacks: "2 claws / 1 bite"
+      damage: "1d6/1d6/3d8"
+      save: "F9"
+      morale: 9
+      xp: 1350
+      special: "Breath weapon (acid, 9d6, save vs. breath for half)"
+      treasure_type: "H"
+      count: "1"
+      behaviors:
+        - "Young earth dragon denning in the collapsed great hall."
+
+wizard_tower:
+  levels_1_2:
+    1:
+      name: "Apprentice Mage (MU-2)"
+      hd: "2"
+      ac: 9
+      attacks: "1 dagger"
+      damage: "1d4"
+      save: "MU2"
+      morale: 7
+      xp: 20
+      special: "2 first-level spells prepared"
+      treasure_type: "U"
+      count: "1d4"
+      behaviors:
+        - "Apprentices working on an experiment. Interrupted."
+        - "Apprentice left in charge; panicking."
+    2:
+      name: "Giant Spider (Crab)"
+      hd: "2"
+      ac: 7
+      attacks: "1 bite"
+      damage: "1d8 + poison"
+      save: "F1"
+      morale: 7
+      xp: 25
+      special: "Poison (save vs. poison or die)"
+      treasure_type: ""
+      count: "1d6"
+      behaviors:
+        - "Escaped test subjects, extremely dangerous."
+        - "Spiders nesting among discarded spell components."
+    3:
+      name: "Homunculus"
+      hd: "2"
+      ac: 6
+      attacks: "1 bite"
+      damage: "1d3 + sleep"
+      save: "MU2"
+      morale: 10
+      xp: 25
+      special: "Bite causes sleep (save vs. spells); telepathic bond to creator (1500ft)"
+      treasure_type: ""
+      count: "1d3"
+      behaviors:
+        - "The wizard's little spies, defending their creator's lab."
+        - "Homunculi with orders to kill intruders."
+    4:
+      name: "Living Statue (Crystal)"
+      hd: "3"
+      ac: 4
+      attacks: "2 fists"
+      damage: "1d6/1d6"
+      save: "F3"
+      morale: 11
+      xp: 50
+      special: "Immune to sleep/charm; reflects magic missiles"
+      treasure_type: ""
+      count: "1d2"
+      behaviors:
+        - "Crystal guardian placed at the threshold."
+        - "Appears as decorative art. Activates when touched."
+    5:
+      name: "Mage (MU-4)"
+      hd: "4"
+      ac: 9
+      attacks: "1 dagger"
+      damage: "1d4"
+      save: "MU4"
+      morale: 8
+      xp: 75
+      special: "4 spells prepared (1st: sleep, shield; 2nd: mirror image, web)"
+      treasure_type: "V"
+      count: "1"
+      behaviors:
+        - "Resident mage, mid-experiment. Furious at the interruption."
+        - "Mage with a hostage using as a research subject."
+    6:
+      name: "Imp"
+      hd: "2"
+      ac: 2
+      attacks: "1 sting"
+      damage: "1d4 + poison"
+      save: "F2"
+      morale: 7
+      xp: 25
+      special: "Sting poison (save vs. poison or 1d4 Con loss); fly; invisible at will; regenerate 1hp/round; immune to fire and cold"
+      treasure_type: ""
+      count: "1d4"
+      behaviors:
+        - "The wizard's imp servants, chaotic and mischievous."
+        - "Imps escaped from a summoning circle."
+
+  levels_3_4:
+    1:
+      name: "Mage (MU-6)"
+      hd: "6"
+      ac: 9
+      attacks: "1 dagger or spells"
+      damage: "1d4 or by spell"
+      save: "MU6"
+      morale: 9
+      xp: 500
+      special: "6 spells (1st×3, 2nd×2, 3rd×1); typically: magic missile×2, sleep, web, invisibility, fireball"
+      treasure_type: "V"
+      count: "1"
+      behaviors:
+        - "Senior mage, powerful and paranoid."
+        - "Mage with a golem bodyguard."
+    2:
+      name: "Gargoyle"
+      hd: "4"
+      ac: 5
+      attacks: "2 claws / 1 bite / 1 horn"
+      damage: "1d3/1d3/1d6/1d4"
+      save: "F4"
+      morale: 11
+      xp: 75
+      special: "Immune to non-magic weapons; fly"
+      treasure_type: "C"
+      count: "1d4"
+      behaviors:
+        - "Magically bound guardians, cannot leave the room."
+        - "Gargoyles sculpted to look like failed experiments."
+    3:
+      name: "Flesh Golem"
+      hd: "9"
+      ac: 9
+      attacks: "2 fists"
+      damage: "2d8/2d8"
+      save: "F5"
+      morale: 12
+      xp: 1350
+      special: "Healed by lightning; slowed by fire; immune to all other spells and non-magic weapons"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "The wizard's failed creation, dangerously unstable."
+        - "Flesh golem escaped from its containment."
+    4:
+      name: "Basilisk"
+      hd: "6+1"
+      ac: 4
+      attacks: "1 bite"
+      damage: "1d10"
+      save: "F6"
+      morale: 9
+      xp: 725
+      special: "Petrifying gaze"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Experiment gone wrong — basilisk in a shattered cage."
+        - "Basilisk with mirror-system that turns its gaze back on intruders."
+    5:
+      name: "Phase Spider"
+      hd: "5+5"
+      ac: 6
+      attacks: "1 bite"
+      damage: "1d8 + poison"
+      save: "F3"
+      morale: 7
+      xp: 450
+      special: "Phase shift (ethereal plane) at will; poison (save vs. poison or die)"
+      treasure_type: ""
+      count: "1d3"
+      behaviors:
+        - "Phase spiders from a botched summoning."
+        - "Phase spider hunting prey, appearing and vanishing."
+    6:
+      name: "Djinni"
+      hd: "7+1"
+      ac: 6
+      attacks: "1 fist or whirlwind"
+      damage: "2d8 or 2d8"
+      save: "F14"
+      morale: 12
+      xp: 450
+      special: "Fly; create food/water; create objects; illusion; gaseous form; whirlwind (2d8, 1 round spin)"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Djinni bound in a flask. Released — and furious."
+        - "Bound djinni, neutral, will negotiate if spoken to."
+
+  levels_5_6:
+    1:
+      name: "Mage (MU-10)"
+      hd: "10"
+      ac: 9
+      attacks: "1 dagger or spells"
+      damage: "1d4 or by spell"
+      save: "MU10"
+      morale: 11
+      xp: 1400
+      special: "10 spells prepared across 5 spell levels; likely has contingency spells active"
+      treasure_type: "V"
+      count: "1"
+      behaviors:
+        - "The tower's master, expecting visitors."
+        - "Archmage mid-ritual, vulnerable only now."
+    2:
+      name: "Vampire (Mage)"
+      hd: "9"
+      ac: 2
+      attacks: "1 bite or spells"
+      damage: "1d10 + drain or by spell"
+      save: "MU9"
+      morale: 11
+      xp: 2300
+      special: "Vampire abilities + 9th-level mage spells"
+      treasure_type: "F"
+      count: "1"
+      behaviors:
+        - "Vampire archmage who betrayed the tower's founder."
+        - "Undead mage still conducting research."
+    3:
+      name: "Flesh Golem"
+      hd: "9"
+      ac: 9
+      attacks: "2 fists"
+      damage: "2d8/2d8"
+      save: "F5"
+      morale: 12
+      xp: 1350
+      special: "Healed by lightning; slowed by fire; immune to spells and non-magic weapons"
+      treasure_type: ""
+      count: "1d2"
+      behaviors:
+        - "A pair of flesh golems, the tower's last defense."
+    4:
+      name: "Efreeti"
+      hd: "10"
+      ac: 3
+      attacks: "1 fist or fire pillar"
+      damage: "2d8 or 2d8"
+      save: "F15"
+      morale: 12
+      xp: 2000
+      special: "Fly; create fire objects; wall of fire; polymorph self; grant 3 wishes (once)"
+      treasure_type: ""
+      count: "1"
+      behaviors:
+        - "Efreeti imprisoned here. It will offer three wishes — with strings."
+        - "Efreeti freed from a shattered binding circle. Angry."
+    5:
+      name: "Djinni"
+      hd: "7+1"
+      ac: 6
+      attacks: "1 fist or whirlwind"
+      damage: "2d8 or 2d8"
+      save: "F14"
+      morale: 12
+      xp: 450
+      special: "Fly; create objects; illusion; gaseous form; whirlwind"
+      treasure_type: ""
+      count: "1d2"
+      behaviors:
+        - "Two djinn, one bound and one free — they argue."
+    6:
+      name: "Lich"
+      hd: "14"
+      ac: 0
+      attacks: "1 touch"
+      damage: "1d10 + paralysis"
+      save: "MU14"
+      morale: 12
+      xp: 4750
+      special: "Paralytic touch (save vs. paralysis); aura of fear (sight, save vs. spells); undead immunities; 14th-level mage spells"
+      treasure_type: "A+V"
+      count: "1"
+      behaviors:
+        - "The tower's founder, never truly gone."
+        - "Lich in phylactery-meditation. Disturbing it is a mistake."

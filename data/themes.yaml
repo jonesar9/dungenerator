@@ -1,0 +1,487 @@
+# Dungeon Room Generator — Theme Data Bundles
+# Each theme defines room names, feature weights, atmosphere, exit flavor,
+# and references to monster tables defined in monsters.yaml.
+
+undead_crypt:
+  display_name: "Undead Crypt"
+  room_names:
+    - "Ossuary"
+    - "Preparation Chamber"
+    - "Burial Vault"
+    - "Crypt Antechamber"
+    - "Charnel Hall"
+    - "Reliquary"
+    - "Catacomb Passage"
+    - "Funerary Chapel"
+    - "Tomb of the Forgotten"
+    - "Bone Gallery"
+    - "Sarcophagus Chamber"
+    - "Wailing Pit"
+  feature_weights:
+    A: 3   # Altar
+    c: 4   # Coffin
+    S: 4   # Sarcophagus
+    P: 2   # Pillar
+    D: 2   # Debris
+    "*": 2  # Magical effect
+    B: 1   # Barrel
+    T: 1   # Table
+    F: 1   # Fountain/pool
+    I: 1   # Iron cage
+    W: 0
+    C: 1   # Chest
+    t: 1   # Throne
+  monster_table: undead_crypt
+  atmosphere:
+    smell:
+      - "Embalming herbs and old rot"
+      - "Dust and decay, centuries old"
+      - "Damp stone and mildew"
+      - "Faint incense, long burned out"
+      - "Charnel sweetness, cloying"
+      - "Stale air, still as a held breath"
+    sound:
+      - "Faint scratching from inside a coffin"
+      - "Distant moaning, source unclear"
+      - "Your own footsteps echo unnaturally"
+      - "A low, rhythmic grinding of stone"
+      - "Silence so complete it rings"
+      - "Dripping water, slow and irregular"
+    light:
+      - "Pitch black"
+      - "Faint phosphorescent lichen"
+      - "Cold blue witchlight from the walls"
+      - "A single guttered torch stub"
+      - "Total darkness"
+      - "Dim glow from runes on the floor"
+    temperature:
+      - "Bone-chilling cold"
+      - "Unnaturally cold, breath visible"
+      - "Cool and damp"
+      - "Cold, with an intermittent chill wind"
+      - "Frigid"
+      - "Cold, colder near the sarcophagus"
+  exit_flavor:
+    archway: ["Narrow stone archway", "Crumbling archway", "Arched passage, lintel carved with skulls"]
+    door_wood: ["Rotting wooden door", "Heavy oak door, iron-banded", "Warped door, swollen in its frame"]
+    door_iron: ["Iron door, green with age", "Heavy iron door, sealed with wax", "Iron door, hinges corroded"]
+    door_stuck: ["Wooden door swollen shut (Str check)", "Iron door rusted in place (Str check)"]
+    door_locked: ["Iron door, locked (key or thief)", "Iron door, barred from the other side"]
+    door_secret: ["Section of wall (Search to find)", "False sarcophagus front (Search to find)"]
+    stairs_down: ["Stone stairs descending into darkness"]
+    stairs_up: ["Stone stairs ascending, worn smooth"]
+
+goblin_warren:
+  display_name: "Goblin Warren"
+  room_names:
+    - "Guard Post"
+    - "Sleeping Den"
+    - "Refuse Pit"
+    - "Chieftain's Hall"
+    - "Storage Hole"
+    - "Pen"
+    - "Mushroom Garden"
+    - "Torture Pit"
+    - "Meeting Chamber"
+    - "Wolf Kennel"
+    - "Cooking Pit"
+    - "Latrine Alcove"
+  feature_weights:
+    B: 4   # Barrel (food, crude beer)
+    D: 4   # Debris
+    I: 3   # Iron cage (prisoners, animals)
+    T: 3   # Table/workbench
+    W: 3   # Weapon rack
+    F: 2   # Fountain/pool (foul water)
+    C: 2   # Chest
+    t: 2   # Throne (chieftain's chair)
+    P: 1   # Pillar
+    A: 0
+    c: 0
+    S: 0
+    "*": 0
+  monster_table: goblin_warren
+  atmosphere:
+    smell:
+      - "Unwashed bodies and rotten meat"
+      - "Smoke, grease, and filth"
+      - "Animal musk and old straw"
+      - "Sour beer and burnt bone"
+      - "Acrid torch smoke, everywhere"
+      - "Damp earth and refuse"
+    sound:
+      - "Goblin chatter echoing from deeper in"
+      - "The whine of wolves, nearby"
+      - "Something dripping onto bare stone"
+      - "Distant clanging of crude weapons"
+      - "Scurrying — rats or something larger"
+      - "Snoring, multiple sources"
+    light:
+      - "Guttering torches in iron brackets"
+      - "Crude fire pit casting orange light"
+      - "A single lantern, oil low"
+      - "Scattered embers, mostly dark"
+      - "Bioluminescent mushrooms, dim blue-green"
+      - "Nearly total darkness"
+    temperature:
+      - "Warm and stuffy, poorly ventilated"
+      - "Uncomfortably warm, fire nearby"
+      - "Mild, earth-temperature"
+      - "Warm with a fetid humidity"
+      - "Stifling"
+      - "Warm near the fire pit, cool at the edges"
+  exit_flavor:
+    archway: ["Rough-cut passage", "Low tunnel (duck to enter)", "Ragged hole knocked through the wall"]
+    door_wood: ["Crude plank door", "Hide curtain on wooden frame", "Rough door, lashed with rope hinges"]
+    door_iron: ["Stolen iron door, poorly fitted", "Iron gate, crude lock"]
+    door_stuck: ["Plank door jammed with debris (Str check)", "Rock-blocked passage (Str check)"]
+    door_locked: ["Iron gate, padlocked", "Plank door, bar on the far side"]
+    door_secret: ["Rubble-concealed passage (Search to find)", "Hide curtain concealing a tunnel (Search to find)"]
+    stairs_down: ["Rough earthen steps down"]
+    stairs_up: ["Earthen steps up, reinforced with timber"]
+
+ancient_temple:
+  display_name: "Ancient Temple"
+  room_names:
+    - "Antechamber"
+    - "Sanctum"
+    - "Offering Hall"
+    - "Priest's Study"
+    - "Ritual Chamber"
+    - "Vestibule"
+    - "Inner Sanctum"
+    - "Cloister"
+    - "Sacrifice Pit"
+    - "Relic Vault"
+    - "Columned Hall"
+    - "Forbidden Archive"
+  feature_weights:
+    A: 5   # Altar
+    P: 4   # Pillar
+    "*": 3 # Magical effect
+    C: 3   # Chest
+    T: 2   # Table/workbench
+    F: 2   # Fountain/pool
+    S: 2   # Sarcophagus (idol base)
+    D: 2   # Debris
+    t: 2   # Throne
+    B: 1   # Barrel
+    I: 1   # Iron cage
+    W: 1   # Weapon rack
+    c: 0
+  monster_table: ancient_temple
+  atmosphere:
+    smell:
+      - "Incense ash and old blood"
+      - "Dust disturbed after long years"
+      - "Sulfur, faint but unmistakable"
+      - "Stale air sealed for generations"
+      - "Crushed herbs, some burned, some not"
+      - "Damp stone and mold"
+    sound:
+      - "Wind moaning through cracks in the ceiling"
+      - "A low harmonic hum, source unknown"
+      - "Distant chanting — or is it wind?"
+      - "Skittering of insects across stone"
+      - "Silence, weighted and watchful"
+      - "The sound of your own heartbeat"
+    light:
+      - "Light streams from cracked ceiling"
+      - "Eternal flame in a bronze bowl"
+      - "Runes glow faint amber"
+      - "Phosphorescent mold on the altar"
+      - "Total darkness, suddenly oppressive"
+      - "Flickering from an unknown source"
+    temperature:
+      - "Warm, uncomfortably so near the altar"
+      - "Mild but with sudden cold patches"
+      - "Cool and still"
+      - "Dry heat radiates from the walls"
+      - "Shifting — warm at entry, cold deeper in"
+      - "Neutral, perfectly so — uncanny"
+  exit_flavor:
+    archway: ["Tall stone arch carved with glyphs", "Wide archway, curtain long gone", "Narrow arch, barely shoulder-width"]
+    door_wood: ["Ironwood door, carved with religious scenes", "Rotted ceremonial door", "Heavy door, painted with faded murals"]
+    door_iron: ["Bronze door, verdigris-thick", "Iron door, sealed with lead", "Ornate iron door, religious symbols"]
+    door_stuck: ["Stone door shifted on its pivot (Str check)", "Bronze door corroded shut (Str check)"]
+    door_locked: ["Bronze door, ritual lock (thief or key)", "Iron door, magically sealed (magic to open)"]
+    door_secret: ["False wall panel (Search to find)", "Altar swings aside (Search to find)"]
+    stairs_down: ["Carved stone stairs descending to lower sanctum"]
+    stairs_up: ["Wide ceremonial stairs ascending"]
+
+bandit_lair:
+  display_name: "Bandit Lair"
+  room_names:
+    - "Guard Post"
+    - "Bunkroom"
+    - "Common Room"
+    - "Captain's Quarters"
+    - "Armory"
+    - "Storeroom"
+    - "Torture Chamber"
+    - "Watchtower Base"
+    - "Meeting Hall"
+    - "Kitchen"
+    - "Holding Cell"
+    - "Treasury Anteroom"
+  feature_weights:
+    B: 4   # Barrel
+    W: 4   # Weapon rack
+    T: 4   # Table/workbench
+    C: 3   # Chest
+    t: 3   # Throne/chair
+    I: 3   # Iron cage (prisoners)
+    D: 2   # Debris
+    F: 1   # Fountain/pool
+    P: 1   # Pillar
+    A: 0
+    c: 0
+    S: 0
+    "*": 0
+  monster_table: bandit_lair
+  atmosphere:
+    smell:
+      - "Candle tallow, wine, and leather"
+      - "Unwashed bodies and iron"
+      - "Smoke from a recent fire"
+      - "Salted meat and ale"
+      - "Boot leather and torch pitch"
+      - "The iron tang of old blood"
+    sound:
+      - "Card game in the next room"
+      - "Sharpening of a blade, slow and deliberate"
+      - "Muffled argument through the wall"
+      - "Snoring"
+      - "Footsteps on patrol, fading"
+      - "Quiet — they heard you coming"
+    light:
+      - "Several candles on a rough table"
+      - "Oil lantern hung from the ceiling"
+      - "Torches in sconces, recently lit"
+      - "A fire in a crude hearth"
+      - "Dim — one candle stub remains"
+      - "Dark, extinguished on alarm"
+    temperature:
+      - "Warm, fire burning"
+      - "Mild and comfortable"
+      - "Stuffy with too many bodies"
+      - "Cool — fire's been out a while"
+      - "Comfortable but smoky"
+      - "Warm near the brazier, drafty at the door"
+  exit_flavor:
+    archway: ["Open doorway, curtain torn down", "Wide arch, used heavily", "Rough passage to next room"]
+    door_wood: ["Sturdy door, recently repaired", "Plank door with a peephole", "Heavy door, bolt on inside"]
+    door_iron: ["Iron door, looted from elsewhere", "Iron-reinforced door"]
+    door_stuck: ["Door jammed with a wedge (Str check)", "Door barred from this side (easily opened)"]
+    door_locked: ["Locked door (captain has key)", "Padlocked door"]
+    door_secret: ["False cabinet back (Search to find)", "Loose stones concealing passage (Search to find)"]
+    stairs_down: ["Rough stairs to lower level"]
+    stairs_up: ["Stairs up to guard post"]
+
+natural_cave:
+  display_name: "Natural Cave"
+  room_names:
+    - "Cavern"
+    - "Underground Lake Shore"
+    - "Mushroom Grotto"
+    - "Stalactite Hall"
+    - "Narrow Passage"
+    - "Sinkhole Chamber"
+    - "Bat Colony"
+    - "Crystal Pocket"
+    - "Flooded Tunnel"
+    - "Bear Den"
+    - "Fungal Garden"
+    - "Collapsed Gallery"
+  feature_weights:
+    F: 5   # Fountain/pool (underground lake, pool)
+    "~": 4 # Water/liquid
+    P: 4   # Pillar (stalagmite/stalactite)
+    D: 4   # Debris (rockfall)
+    "*": 2 # Magical effect (crystal glow)
+    B: 1   # Barrel (left by explorers)
+    C: 1   # Chest (left by explorers)
+    A: 0
+    c: 0
+    S: 0
+    T: 0
+    t: 0
+    W: 0
+    I: 0
+  monster_table: natural_cave
+  atmosphere:
+    smell:
+      - "Damp earth and wet stone"
+      - "Mushrooms and mineral water"
+      - "Guano and cave moss"
+      - "Clean underground air"
+      - "Sulfur from a hot spring"
+      - "The scent of deep earth, primeval"
+    sound:
+      - "Dripping water, echoing"
+      - "Wind through cracks in the stone"
+      - "Distant splashing in an underground stream"
+      - "Bat calls, high and rapid"
+      - "Shifting rubble, settling"
+      - "Your footsteps echo strangely"
+    light:
+      - "Total darkness"
+      - "Bioluminescent fungi, soft blue"
+      - "Glowing crystal veins in the walls"
+      - "Reflections off an underground pool"
+      - "Phosphorescent mold on the ceiling"
+      - "Absolute dark"
+    temperature:
+      - "Cool and damp, constant"
+      - "Cold with moisture in the air"
+      - "Warm from geothermal heat"
+      - "Chill, with underground drafts"
+      - "Humid and mild"
+      - "Cold near the water, mild away from it"
+  exit_flavor:
+    archway: ["Natural tunnel opening", "Low crawlway (crawl to enter)", "Wide cave passage"]
+    door_wood: ["Makeshift timber door (someone lives here)", "Crude door of lashed branches"]
+    door_iron: ["Iron gate, someone installed it", "Iron bars blocking a passage"]
+    door_stuck: ["Rockfall blocking passage (Str check to shift)", "Collapsed section (Str check)"]
+    door_locked: ["Iron gate, padlocked", "Bars sealed with iron spike"]
+    door_secret: ["Rock face conceals tunnel (Search to find)", "Waterfall conceals passage (Search to find)"]
+    stairs_down: ["Natural slope down to lower cave"]
+    stairs_up: ["Rocky slope up"]
+
+dwarven_ruin:
+  display_name: "Dwarven Ruin"
+  room_names:
+    - "Forge Chamber"
+    - "Hall of Ancestors"
+    - "Barracks"
+    - "Armory"
+    - "Mining Gallery"
+    - "Great Hall"
+    - "Workshop"
+    - "Clan Vault"
+    - "Guard Room"
+    - "Collapsed Hall"
+    - "Smelting Chamber"
+    - "Storage Depot"
+  feature_weights:
+    P: 5   # Pillar (carved stone columns)
+    T: 4   # Table/workbench (forge, workshop)
+    W: 4   # Weapon rack
+    C: 3   # Chest
+    B: 3   # Barrel
+    D: 3   # Debris (collapsed stone)
+    "*": 2 # Magical effect (runes, enchanted forge)
+    F: 2   # Fountain/pool (cistern)
+    I: 1   # Iron cage
+    t: 1   # Throne
+    A: 1   # Altar (ancestor shrine)
+    S: 1   # Sarcophagus (honored dead)
+    c: 0
+  monster_table: dwarven_ruin
+  atmosphere:
+    smell:
+      - "Old forge smoke embedded in stone"
+      - "Iron, cold and clean"
+      - "Dust of ground stone"
+      - "Faint sulfur from the old smelter"
+      - "Centuries of cold air"
+      - "Metal and old sweat, long faded"
+    sound:
+      - "Deep silence, heavy as stone"
+      - "Distant hammering — rhythmic, not human"
+      - "Water running through an old channel"
+      - "Rumbling from deep below"
+      - "Wind through ventilation shafts"
+      - "The creak of old mechanisms"
+    light:
+      - "Dwarven everburning lanterns, fading"
+      - "Runes glow faintly in the walls"
+      - "Dark, lanterns long dead"
+      - "Dim, from cracks to surface"
+      - "One torch sconce still holds a flame"
+      - "Total darkness"
+    temperature:
+      - "Cold, deep underground"
+      - "Warm near the old forge"
+      - "Cool and very dry"
+      - "Variable — cold stone, warm vents"
+      - "Mild and still"
+      - "Cold with a metallic bite"
+  exit_flavor:
+    archway: ["Carved stone arch, runes above lintel", "Wide dwarven arch, perfectly cut", "Narrow arch, deliberate design"]
+    door_wood: ["Oak door, iron-reinforced, still solid", "Rotted door in a solid stone frame"]
+    door_iron: ["Massive iron door, dwarven-made", "Iron door, still well-fitted", "Iron portcullis, mechanism jammed"]
+    door_stuck: ["Iron door, mechanism seized (Str check)", "Stone door, counterweight broken (Str check)"]
+    door_locked: ["Iron door, dwarven lock (thief or key)", "Stone door, rune-sealed (magic to open)"]
+    door_secret: ["False stone panel, craftsman-fitted (Search to find)", "Mechanism behind ancestor relief (Search to find)"]
+    stairs_down: ["Cut stone stairs descending, perfect geometry"]
+    stairs_up: ["Cut stone stairs ascending"]
+
+wizard_tower:
+  display_name: "Wizard's Delve"
+  room_names:
+    - "Laboratory"
+    - "Library"
+    - "Summoning Chamber"
+    - "Golem Workshop"
+    - "Transmutation Room"
+    - "Scrying Chamber"
+    - "Familiar Menagerie"
+    - "Alchemical Still"
+    - "Observatory"
+    - "Warding Room"
+    - "Experiment Chamber"
+    - "Runic Antechamber"
+  feature_weights:
+    "*": 5  # Magical effect
+    T: 5    # Table/workbench (alchemy, experimentation)
+    C: 4    # Chest (spell components)
+    B: 3    # Barrel (alchemical reagents)
+    F: 3    # Fountain/pool (alchemical, scrying)
+    P: 2    # Pillar (arcane)
+    I: 2    # Iron cage (contained creature)
+    A: 2    # Altar (ritual focus)
+    W: 1    # Weapon rack
+    D: 2    # Debris
+    S: 1    # Sarcophagus
+    t: 1    # Throne
+    c: 0
+  monster_table: wizard_tower
+  atmosphere:
+    smell:
+      - "Ozone and burnt copper"
+      - "Alchemical reagents, sharp and sweet"
+      - "Old parchment and candle wax"
+      - "Something burnt, recently"
+      - "A clean, medicinal sterility"
+      - "Sulfur and rose water, oddly combined"
+    sound:
+      - "Soft arcane hum from the walls"
+      - "Bubbling from an unattended alchemical apparatus"
+      - "Pages turning — no one is there"
+      - "A low thrum of contained energy"
+      - "Distant, regular tapping — mechanical"
+      - "Complete silence, magically enforced"
+    light:
+      - "Globes of cold light float near the ceiling"
+      - "Runes cast shifting colors"
+      - "Candles that don't melt, ever"
+      - "Alchemical fire in sealed glass"
+      - "Bright and sourceless"
+      - "Dim, apparatus glow only"
+    temperature:
+      - "Perfectly regulated, uncanny"
+      - "Warm from active apparatus"
+      - "Cold from a failed experiment"
+      - "Shifting — pockets of heat and cold"
+      - "Mild but with a static charge"
+      - "Hot near the still, cool elsewhere"
+  exit_flavor:
+    archway: ["Arched opening lined with runes", "Shimmering portal (safe to pass)", "Open arch, wards visible on jamb"]
+    door_wood: ["Heavy door, rune-carved", "Ironwood door with spell-lock"]
+    door_iron: ["Iron door, magically treated", "Iron door with a speaking grate"]
+    door_stuck: ["Door held by spell (dispel or Str check)", "Magically sealed (Str check if weakened)"]
+    door_locked: ["Spell-locked door (magic to open)", "Iron door, locked (key in lab)"]
+    door_secret: ["Illusory wall (Detect Magic to find)", "Bookshelf on pivot (Search to find)"]
+    stairs_down: ["Spiraling stone stairs down"]
+    stairs_up: ["Spiraling stone stairs up"]

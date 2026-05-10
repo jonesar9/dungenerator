@@ -1,0 +1,290 @@
+# OSE Treasure Type Tables
+# Each type lists components rolled independently.
+# 'chance' is a d100 roll-under percentage.
+# 'amount' is a dice expression.
+# Treasure types follow B/X / OSE conventions.
+
+# ─── Lair / Monster Treasure Types ───────────────────────────────────────────
+
+A:
+  cp: {chance: 25, amount: "1d6*1000"}
+  sp: {chance: 30, amount: "1d6*1000"}
+  ep: {chance: 20, amount: "1d4*1000"}
+  gp: {chance: 35, amount: "2d6*1000"}
+  pp: {chance: 25, amount: "1d2*1000"}
+  gems: {chance: 50, amount: "6d6"}
+  jewelry: {chance: 50, amount: "6d6"}
+  magic: {chance: 30, rolls: 3}
+
+B:
+  cp: {chance: 50, amount: "1d8*1000"}
+  sp: {chance: 25, amount: "1d6*1000"}
+  ep: {chance: 25, amount: "1d4*1000"}
+  gp: {chance: 25, amount: "1d3*1000"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 25, amount: "1d6"}
+  jewelry: {chance: 25, amount: "1d6"}
+  magic: {chance: 10, rolls: 1}
+
+C:
+  cp: {chance: 20, amount: "1d12*1000"}
+  sp: {chance: 30, amount: "1d4*1000"}
+  ep: {chance: 10, amount: "1d4*1000"}
+  gp: {chance: 0, amount: "0"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 25, amount: "1d4"}
+  jewelry: {chance: 25, amount: "1d4"}
+  magic: {chance: 10, rolls: 2}
+
+D:
+  cp: {chance: 10, amount: "1d8*1000"}
+  sp: {chance: 15, amount: "1d12*1000"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 60, amount: "1d6*1000"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 30, amount: "1d8"}
+  jewelry: {chance: 30, amount: "1d8"}
+  magic: {chance: 15, rolls: 2, plus_potion: true}
+
+E:
+  cp: {chance: 5, amount: "1d10*1000"}
+  sp: {chance: 30, amount: "1d12*1000"}
+  ep: {chance: 25, amount: "1d4*1000"}
+  gp: {chance: 25, amount: "1d8*1000"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 10, amount: "1d10"}
+  jewelry: {chance: 10, amount: "1d10"}
+  magic: {chance: 25, rolls: 3, plus_scroll: true}
+
+F:
+  cp: {chance: 0, amount: "0"}
+  sp: {chance: 10, amount: "2d10*1000"}
+  ep: {chance: 20, amount: "1d8*1000"}
+  gp: {chance: 45, amount: "1d12*1000"}
+  pp: {chance: 30, amount: "1d3*1000"}
+  gems: {chance: 20, amount: "2d12"}
+  jewelry: {chance: 10, amount: "1d12"}
+  magic: {chance: 30, rolls: 3, plus_potion: true, plus_scroll: true, no_weapons: true}
+
+G:
+  cp: {chance: 0, amount: "0"}
+  sp: {chance: 0, amount: "0"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 90, amount: "1d4*10000"}
+  pp: {chance: 75, amount: "1d6*1000"}
+  gems: {chance: 25, amount: "3d6"}
+  jewelry: {chance: 25, amount: "1d10"}
+  magic: {chance: 35, rolls: 4}
+
+H:
+  cp: {chance: 25, amount: "3d8*1000"}
+  sp: {chance: 50, amount: "1d100*1000"}
+  ep: {chance: 50, amount: "1d4*10000"}
+  gp: {chance: 50, amount: "1d6*10000"}
+  pp: {chance: 25, amount: "5d4*1000"}
+  gems: {chance: 50, amount: "1d100"}
+  jewelry: {chance: 50, amount: "10d4"}
+  magic: {chance: 15, rolls: 4}
+
+# ─── Individual / Small Monster Treasure Types ────────────────────────────────
+
+P:
+  cp: {chance: 100, amount: "3d8"}
+  sp: {chance: 0, amount: "0"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 0, amount: "0"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 0, amount: "0"}
+  jewelry: {chance: 0, amount: "0"}
+  magic: {chance: 0, rolls: 0}
+
+Q:
+  cp: {chance: 0, amount: "0"}
+  sp: {chance: 0, amount: "0"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 0, amount: "0"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 100, amount: "1d4"}
+  jewelry: {chance: 0, amount: "0"}
+  magic: {chance: 0, rolls: 0}
+
+R:
+  cp: {chance: 0, amount: "0"}
+  sp: {chance: 0, amount: "0"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 0, amount: "0"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 0, amount: "0"}
+  jewelry: {chance: 0, amount: "0"}
+  magic: {chance: 0, rolls: 0}
+  note: "Roll on personal possessions (3d6 cp, 1d6 sp, 10% chance 1d6 gp)"
+
+U:
+  cp: {chance: 10, amount: "1d100"}
+  sp: {chance: 10, amount: "1d100"}
+  ep: {chance: 0, amount: "0"}
+  gp: {chance: 5, amount: "1d100"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 5, amount: "1d4"}
+  jewelry: {chance: 0, amount: "0"}
+  magic: {chance: 2, rolls: 1}
+
+V:
+  cp: {chance: 0, amount: "0"}
+  sp: {chance: 10, amount: "1d100"}
+  ep: {chance: 5, amount: "1d100"}
+  gp: {chance: 10, amount: "1d100"}
+  pp: {chance: 0, amount: "0"}
+  gems: {chance: 5, amount: "1d4"}
+  jewelry: {chance: 0, amount: "0"}
+  magic: {chance: 5, rolls: 1}
+
+# ─── Gem Value Table (d20) ────────────────────────────────────────────────────
+gem_values:
+  1:  {value: 10, examples: ["Obsidian", "Rhodonite", "Turquoise", "Azurite"]}
+  2:  {value: 10, examples: ["Obsidian", "Malachite", "Tiger eye"]}
+  3:  {value: 50, examples: ["Bloodstone", "Carnelian", "Citrine", "Moonstone"]}
+  4:  {value: 50, examples: ["Jasper", "Rock crystal", "Zircon"]}
+  5:  {value: 100, examples: ["Amber", "Amethyst", "Chrysoprase", "Jade"]}
+  6:  {value: 100, examples: ["Coral", "Garnet", "Pearl (freshwater)", "Spinel"]}
+  7:  {value: 500, examples: ["Alexandrite", "Aquamarine", "Violet garnet"]}
+  8:  {value: 500, examples: ["Pearl (sea)", "Spessartine", "Tourmaline"]}
+  9:  {value: 500, examples: ["Chrysoberyl", "Peridot", "Topaz (yellow)"]}
+  10: {value: 1000, examples: ["Black pearl", "Golden topaz", "Opal"]}
+  11: {value: 1000, examples: ["Fire opal", "Blue sapphire (pale)", "Emerald (pale)"]}
+  12: {value: 1000, examples: ["Spinel (blue)", "Tourmaline (red)"]}
+  13: {value: 5000, examples: ["Black opal", "Fire opal (fine)", "Sapphire"]}
+  14: {value: 5000, examples: ["Emerald", "Ruby (medium)"]}
+  15: {value: 5000, examples: ["Diamond (medium)", "Oriental amethyst"]}
+  16: {value: 5000, examples: ["Oriental topaz", "Star ruby (pale)"]}
+  17: {value: 10000, examples: ["Black sapphire", "Diamond (large)"]}
+  18: {value: 10000, examples: ["Emerald (fine)", "Ruby (large)"]}
+  19: {value: 10000, examples: ["Star ruby", "Star sapphire"]}
+  20: {value: 50000, examples: ["Brilliant diamond", "Colossal ruby", "Colossal sapphire"]}
+
+# ─── Jewelry Value Table (d10) ───────────────────────────────────────────────
+jewelry_values:
+  1:  {value_range: [3, 18],    multiplier: 100,  description: "Cheap jewelry"}
+  2:  {value_range: [3, 18],    multiplier: 100,  description: "Cheap jewelry"}
+  3:  {value_range: [3, 18],    multiplier: 100,  description: "Cheap jewelry"}
+  4:  {value_range: [1, 6],     multiplier: 1000, description: "Good jewelry"}
+  5:  {value_range: [1, 6],     multiplier: 1000, description: "Good jewelry"}
+  6:  {value_range: [1, 6],     multiplier: 1000, description: "Good jewelry"}
+  7:  {value_range: [2, 12],    multiplier: 1000, description: "Fine jewelry"}
+  8:  {value_range: [2, 12],    multiplier: 1000, description: "Fine jewelry"}
+  9:  {value_range: [1, 6],     multiplier: 10000, description: "Exquisite jewelry"}
+  10: {value_range: [2, 12],    multiplier: 10000, description: "Exquisite jewelry"}
+
+jewelry_types:
+  - "armband"
+  - "bracelet"
+  - "brooch"
+  - "buckle"
+  - "chain"
+  - "choker"
+  - "circlet"
+  - "comb"
+  - "crown"
+  - "earring"
+  - "medallion"
+  - "necklace"
+  - "pendant"
+  - "pin"
+  - "ring"
+  - "tiara"
+  - "torc"
+
+jewelry_materials:
+  - "copper filigree"
+  - "silver"
+  - "electrum"
+  - "gold"
+  - "platinum"
+  - "bone and silver"
+  - "carved ivory"
+  - "enameled gold"
+  - "gem-set silver"
+  - "gem-set gold"
+
+# ─── Magic Item Roll Table (d100) ────────────────────────────────────────────
+# Simplified — roll once per magic item chance.
+# Subtables give specific results.
+magic_item_table:
+  1-5:   "Sword (roll on sword table)"
+  6-10:  "Sword (roll on sword table)"
+  11-15: "Weapon (non-sword, roll on weapon table)"
+  16-20: "Weapon (non-sword, roll on weapon table)"
+  21-35: "Potion (roll on potion table)"
+  36-40: "Ring (roll on ring table)"
+  41-50: "Scroll (roll on scroll table)"
+  51-55: "Wand/staff/rod"
+  56-60: "Miscellaneous magic"
+  61-70: "Armor/shield"
+  71-100: "Potion (roll on potion table)"
+
+potion_table:
+  1:  "Potion of Clairaudience"
+  2:  "Potion of Clairvoyance"
+  3:  "Potion of Control (Animals)"
+  4:  "Potion of Control (Dragon)"
+  5:  "Potion of Control (Giants)"
+  6:  "Potion of Control (Humans)"
+  7:  "Potion of Control (Plants)"
+  8:  "Potion of Control (Undead)"
+  9:  "Potion of Diminution"
+  10: "Potion of ESP"
+  11: "Potion of Flying"
+  12: "Potion of Gaseous Form"
+  13: "Potion of Giant Strength"
+  14: "Potion of Growth"
+  15: "Potion of Healing"
+  16: "Potion of Heroism"
+  17: "Potion of Invisibility"
+  18: "Potion of Invulnerability"
+  19: "Potion of Levitation"
+  20: "Potion of Longevity"
+
+scroll_table:
+  1:  "Scroll: 1 spell (random, level 1)"
+  2:  "Scroll: 1 spell (random, level 1)"
+  3:  "Scroll: 2 spells (random, levels 1-2)"
+  4:  "Scroll: 3 spells (random, levels 1-3)"
+  5:  "Scroll: Curse (reverse side hidden)"
+  6:  "Scroll: Protection from Lycanthropes"
+  7:  "Scroll: Protection from Magic"
+  8:  "Scroll: Protection from Undead"
+  9:  "Scroll: Treasure Map (to nearby cache)"
+  10: "Scroll: Ward vs. Elementals"
+
+# ─── Trap Types ──────────────────────────────────────────────────────────────
+trap_table:
+  1:
+    type: "pit"
+    name: "Pit Trap"
+    trigger: "Pressure plate in the floor (10×10ft section)"
+    effect: "Fall 10ft (1d6 damage). Save vs. paralysis to grab ledge."
+  2:
+    type: "spear"
+    name: "Spear Trap"
+    trigger: "Tripwire across doorway or path"
+    effect: "1d4+1 spears fire from wall holes. Each target in 10ft: +4 to hit, 1d6 damage."
+  3:
+    type: "gas"
+    name: "Poison Gas Trap"
+    trigger: "Pressure plate or moving an object on a pedestal"
+    effect: "Gas fills room (2d6 rounds). Save vs. poison each round or take 1d6 damage. Dissipates when door is opened."
+  4:
+    type: "falling_block"
+    name: "Falling Block"
+    trigger: "Pressure plate or removing an item from a plinth"
+    effect: "Stone block (400 lbs) drops from ceiling. 1d8 damage, save vs. petrify (paralysis) to dodge. Door may seal."
+  5:
+    type: "magic"
+    name: "Magic Trap"
+    trigger: "Touching a glowing rune, gem, or magical object"
+    effect: "Roll d6: 1-2 sleep spell, 3-4 hold person, 5 lightning bolt (3d6, save vs. spells for half), 6 curse (save vs. spells or -2 to all rolls until removed)."
+  6:
+    type: "alarm"
+    name: "Alarm Trap"
+    trigger: "Tripwire or pressure plate near the entrance"
+    effect: "Loud bell or horn sounds. Roll for wandering monster immediately and again in 1d3 turns. No direct damage."

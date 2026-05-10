@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dungeonroom"
+version = "1.0.0"
+description = "OSE Solo Dungeon Room Generator"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "colorama>=0.4.6",
+]
+
+[project.scripts]
+dungeonroom = "dungeonroom:main"
+
+[tool.setuptools]
+py-modules = ["dungeonroom", "generator", "renderer", "stocking", "models"]
+
+[tool.setuptools.package-data]
+"*" = ["data/*.yaml"]
+
+[tool.setuptools.data-files]
+"data" = ["data/themes.yaml", "data/monsters.yaml", "data/treasures.yaml"]
