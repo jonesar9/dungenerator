@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from generator import THEME_IDS, SIZE_PRESETS, generate_room
+from generator import get_theme_ids, SIZE_PRESETS, generate_room
 from renderer import Renderer
 
 
@@ -14,7 +14,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="OSE Solo Dungeon Room Generator — generates one dungeon room per invocation.",
     )
     p.add_argument("-t", "--theme", default="random",
-                   help=f"Dungeon theme: {', '.join(THEME_IDS)}, or 'random' (default: random)")
+                   help=f"Dungeon theme: {', '.join(get_theme_ids())}, or 'random' (default: random)")
     p.add_argument("-l", "--level", type=int, default=1, metavar="1-6",
                    help="Dungeon level 1-6 (default: 1)")
     p.add_argument("-s", "--size", default="medium",
