@@ -1,46 +1,53 @@
 """OSE stocking logic: contents rolls, treasure, traps, monsters."""
 from __future__ import annotations
 
+import json
 import math
 import random
 from pathlib import Path
 from typing import Optional
-
-import yaml
 
 from models import Exit, Feature, Monster, MonsterStats, NonCombatEncounter, Trap, Treasure, TreasureItem
 
 _DATA = Path(__file__).parent / "data"
 
 
-def _load_yaml(name: str) -> dict:
+def _load_json(name: str) -> dict | list:
     with open(_DATA / name, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        return json.load(f)
 
 
-_MONSTERS: dict = {}
+_MONSTER_DB: dict = {}
+_MONSTER_TABLES: dict = {}
 _TREASURES: dict = {}
-_NON_COMBAT: dict = {}
+_NON_COMBAT: list = []
 
 
-def _monsters() -> dict:
-    global _MONSTERS
-    if not _MONSTERS:
-        _MONSTERS = _load_yaml("monsters.yaml")
-    return _MONSTERS
+def _monster_db() -> dict:
+    global _MONSTER_DB
+    if not _MONSTER_DB:
+        _MONSTER_DB = _load_json("monster_db.json")
+    return _MONSTER_DB
+
+
+def _monster_tables() -> dict:
+    global _MONSTER_TABLES
+    if not _MONSTER_TABLES:
+        _MONSTER_TABLES = _load_json("monster_tables.json")
+    return _MONSTER_TABLES
 
 
 def _treasures() -> dict:
     global _TREASURES
     if not _TREASURES:
-        _TREASURES = _load_yaml("treasures.yaml")
+        _TREASURES = _load_json("treasures.json")
     return _TREASURES
 
 
-def _non_combat_data() -> dict:
+def _non_combat_data() -> list:
     global _NON_COMBAT
     if not _NON_COMBAT:
-        _NON_COMBAT = _load_yaml("non_combat_encounters.yaml")
+        _NON_COMBAT = _load_json("non_combat_encounters.json")
     return _NON_COMBAT
 
 
@@ -106,35 +113,33 @@ def _level_band(level: int) -> str:
 # ─── Monster ──────────────────────────────────────────────────────────────────
 
 def roll_monster(theme: str, level: int, rng: random.Random) -> Monster:
-    monsters = _monsters()
+    tables = _monster_tables()
+    db = _monster_db()
     band = _level_band(level)
-    table = monsters.get(theme, {}).get(band, {})
+    table = tables.get(theme, {}).get(band)
     if not table:
-        # Fallback: use undead_crypt level band
-        table = monsters["undead_crypt"][band]
+        table = tables["undead_crypt"][band]
 
-    entry_key = rng.randint(1, 6)
-    entry = table.get(entry_key, table[list(table.keys())[0]])
+    entry = rng.choice(table)
+    monster_key = entry["monster"]
+    stat_block = db.get(monster_key, db["skeleton"])
 
     stats = MonsterStats(
-        name=entry["name"],
-        hd=str(entry["hd"]),
-        ac=entry["ac"],
-        attacks=entry["attacks"],
-        damage=entry["damage"],
-        save=entry["save"],
-        morale=entry["morale"],
-        xp=entry["xp"],
-        special=entry.get("special", ""),
-        treasure_type=entry.get("treasure_type", ""),
+        name=stat_block["name"],
+        hd=str(stat_block["hd"]),
+        ac=stat_block["ac"],
+        attacks=stat_block["attacks"],
+        damage=stat_block["damage"],
+        save=stat_block["save"],
+        morale=stat_block["morale"],
+        xp=stat_block["xp"],
+        special=stat_block.get("special", ""),
+        treasure_type=stat_block.get("treasure_type", ""),
     )
 
-    count_expr = entry.get("count", "1d4")
-    base_count = roll_dice(count_expr, rng)
+    base_count = roll_dice(entry.get("count", "1d4"), rng)
     count = _scale_count(base_count, level)
-
-    behaviors = entry.get("behaviors", ["Lurking."])
-    behavior = rng.choice(behaviors)
+    behavior = rng.choice(entry.get("behaviors", ["Lurking."]))
 
     return Monster(stats=stats, count=count, behavior=behavior)
 
@@ -213,10 +218,9 @@ def _roll_type(tdata: dict, rng: random.Random) -> list[TreasureItem]:
     gem_chance = gem_entry.get("chance", 0)
     if gem_chance and rng.randint(1, 100) <= gem_chance:
         gem_count = roll_dice(gem_entry.get("amount", "1"), rng)
-        gem_vals = treasures.get("gem_values", {})
+        gem_vals = treasures.get("gem_values", [])
         for _ in range(gem_count):
-            d20 = min(20, max(1, rng.randint(1, 20)))
-            gval = gem_vals.get(d20, gem_vals.get("1"))
+            gval = rng.choice(gem_vals)
             value = gval["value"]
             examples = gval.get("examples", ["gem"])
             name = rng.choice(examples)
@@ -227,12 +231,11 @@ def _roll_type(tdata: dict, rng: random.Random) -> list[TreasureItem]:
     jewelry_chance = jewelry_entry.get("chance", 0)
     if jewelry_chance and rng.randint(1, 100) <= jewelry_chance:
         j_count = roll_dice(jewelry_entry.get("amount", "1"), rng)
-        j_vals = treasures.get("jewelry_values", {})
+        j_vals = treasures.get("jewelry_values", [])
         j_types = treasures.get("jewelry_types", ["ring"])
         j_mats = treasures.get("jewelry_materials", ["silver"])
         for _ in range(j_count):
-            d10 = rng.randint(1, 10)
-            jval = j_vals.get(d10, j_vals.get(1))
+            jval = rng.choice(j_vals)
             vr = jval["value_range"]
             mult = jval["multiplier"]
             value = rng.randint(vr[0], vr[1]) * mult
@@ -256,16 +259,14 @@ def _roll_type(tdata: dict, rng: random.Random) -> list[TreasureItem]:
 def _roll_magic_item(rng: random.Random, treasures: dict) -> str:
     d100 = rng.randint(1, 100)
     if d100 <= 30:
-        potions = treasures.get("potion_table", {})
+        potions = treasures.get("potion_table", [])
         if potions:
-            key = rng.choice(list(potions.keys()))
-            return potions[key]
+            return rng.choice(potions)
         return "Potion (random)"
     elif d100 <= 45:
-        scrolls = treasures.get("scroll_table", {})
+        scrolls = treasures.get("scroll_table", [])
         if scrolls:
-            key = rng.choice(list(scrolls.keys()))
-            return scrolls[key]
+            return rng.choice(scrolls)
         return "Scroll (random)"
     elif d100 <= 60:
         return rng.choice([
@@ -306,9 +307,7 @@ def _estimate_gp(items: list[TreasureItem]) -> int:
 # ─── Non-Combat Encounter ─────────────────────────────────────────────────────
 
 def roll_non_combat_encounter(rng: random.Random) -> NonCombatEncounter:
-    data = _non_combat_data()
-    key = rng.randint(1, 6)
-    entry = data.get(key, data[1])
+    entry = rng.choice(_non_combat_data())
     description = rng.choice(entry["descriptions"])
     return NonCombatEncounter(
         encounter_type=entry["type"],
@@ -321,10 +320,8 @@ def roll_non_combat_encounter(rng: random.Random) -> NonCombatEncounter:
 # ─── Trap ─────────────────────────────────────────────────────────────────────
 
 def roll_trap(rng: random.Random) -> Trap:
-    treasures = _treasures()
-    trap_table = treasures.get("trap_table", {})
-    key = rng.randint(1, 6)
-    entry = trap_table.get(key, trap_table[1])
+    trap_table = _treasures().get("trap_table", [])
+    entry = rng.choice(trap_table)
     return Trap(
         trap_type=entry["type"],
         name=entry["name"],

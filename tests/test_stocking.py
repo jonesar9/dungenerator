@@ -127,9 +127,9 @@ def test_roll_trap_fields():
 
 
 def test_select_features_cap():
-    import yaml
+    import json
     from pathlib import Path
-    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes" / "themes.yaml").read_text(encoding="utf-8"))
+    themes = json.loads((Path(__file__).parent.parent / "data" / "themes" / "themes.json").read_text(encoding="utf-8"))
     theme_data = themes["undead_crypt"]
     rng = random.Random(1)
     for cap in (0, 1, 3, 5):
@@ -138,9 +138,9 @@ def test_select_features_cap():
 
 
 def test_select_features_no_duplicates():
-    import yaml
+    import json
     from pathlib import Path
-    themes = yaml.safe_load((Path(__file__).parent.parent / "data" / "themes" / "themes.yaml").read_text(encoding="utf-8"))
+    themes = json.loads((Path(__file__).parent.parent / "data" / "themes" / "themes.json").read_text(encoding="utf-8"))
     theme_data = themes["goblin_warren"]
     rng = random.Random(42)
     feats = select_features(theme_data, "monster", 7, rng)

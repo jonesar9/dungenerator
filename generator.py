@@ -1,11 +1,10 @@
 """Core room generation logic."""
 from __future__ import annotations
 
+import json
 import random
 from pathlib import Path
 from typing import Optional
-
-import yaml
 
 from models import Feature, Room, Trap
 from stocking import (
@@ -45,9 +44,9 @@ _ROOM_DIM_TABLE = {
 def _load_themes() -> dict:
     global _THEMES
     if not _THEMES:
-        for path in sorted(_THEMES_DIR.glob("*.yaml")):
+        for path in sorted(_THEMES_DIR.glob("*.json")):
             with open(path, encoding="utf-8") as f:
-                _THEMES.update(yaml.safe_load(f))
+                _THEMES.update(json.load(f))
     return _THEMES
 
 

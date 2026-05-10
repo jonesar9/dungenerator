@@ -1,0 +1,544 @@
+{
+  "undead_crypt": {
+    "levels_1_2": [
+      {"monster": "skeleton", "count": "1d6", "behaviors": [
+        "Guarding the sarcophagus. Attack on sight.",
+        "Animated by old necromancy, motionless until disturbed.",
+        "Patrols a fixed path, ignores anything not threatening."
+      ]},
+      {"monster": "zombie", "count": "1d6", "behaviors": [
+        "Shambling in place, waiting for the living.",
+        "Clustered around a body. Rise when approached within 10 ft.",
+        "Wedged in a coffin, falls out when opened."
+      ]},
+      {"monster": "ghoul", "count": "1d4", "behaviors": [
+        "Feasting on a corpse. Looks up when the door opens.",
+        "Lurking in a pit beneath the floor (Search to notice).",
+        "Masquerading as a fresh corpse on a slab."
+      ]},
+      {"monster": "skeleton", "count": "2d4", "behaviors": [
+        "Armed with corroded swords, standing at attention.",
+        "Collapsed in a pile — animates when treasure is touched."
+      ]},
+      {"monster": "zombie", "count": "1d4", "behaviors": [
+        "Standing in alcoves along the walls. Animate on entry.",
+        "Risen grave-diggers, still holding rusted shovels."
+      ]},
+      {"monster": "ghoul", "count": "1d3", "behaviors": [
+        "Hiding behind a sarcophagus. Waits for the party to split.",
+        "Three ghouls sharing a meal. They do not like to be interrupted."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "ghoul", "count": "1d6", "behaviors": [
+        "Pack behavior — one distracts, others flank.",
+        "Nesting in the burial niches."
+      ]},
+      {"monster": "shadow", "count": "1d4", "behaviors": [
+        "Merges with natural shadows. Difficult to see until it attacks.",
+        "Drawn to light sources. Extinguishes torches as a tactic."
+      ]},
+      {"monster": "wight", "count": "1d3", "behaviors": [
+        "The former crypt-keeper, risen to guard the vault.",
+        "Seated on a stone throne, motionless until approached."
+      ]},
+      {"monster": "wraith", "count": "1d2", "behaviors": [
+        "Drifting near the ceiling, invisible from below.",
+        "Bound to a specific object in the room."
+      ]},
+      {"monster": "shadow", "count": "1d4", "behaviors": [
+        "Clustered in an unlit alcove.",
+        "Following the party since the last room."
+      ]},
+      {"monster": "wight", "count": "1d3", "behaviors": [
+        "Wight lord with 1d4 skeleton thralls.",
+        "Waiting in a sealed sarcophagus."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "wraith", "count": "1d4", "behaviors": [
+        "Ancient guardian, patient and malevolent.",
+        "Pack of wraiths circling the room's centerpiece."
+      ]},
+      {"monster": "mummy", "count": "1d2", "behaviors": [
+        "The tomb's true occupant, risen in wrath.",
+        "Seated in repose, surrounded by offerings."
+      ]},
+      {"monster": "spectre", "count": "1", "behaviors": [
+        "The high priest of the crypt, never truly dead.",
+        "Bound to protect the inner vault."
+      ]},
+      {"monster": "mummy", "count": "1d2", "behaviors": [
+        "The dynasty's last ruler, wrapped in gold-thread linen.",
+        "Accompanied by 1d4 skeleton honor guard."
+      ]},
+      {"monster": "wraith", "count": "1d3", "behaviors": [
+        "Guarding the approach to a mummy's tomb.",
+        "Former noble, unrecognizable now."
+      ]},
+      {"monster": "vampire", "count": "1", "behaviors": [
+        "Ancient vampire resting in a sealed sarcophagus.",
+        "In bat form, roosting on the ceiling."
+      ]}
+    ]
+  },
+  "goblin_warren": {
+    "levels_1_2": [
+      {"monster": "goblin", "count": "2d4", "behaviors": [
+        "Playing dice. Scramble for weapons when alarmed.",
+        "On guard duty, bored and inattentive.",
+        "Arguing noisily. Heard from outside the room."
+      ]},
+      {"monster": "goblin", "count": "3d4", "behaviors": [
+        "Sleeping in shifts. Half are awake.",
+        "Eating loudly around a fire pit."
+      ]},
+      {"monster": "goblin_wolf_rider", "count": "1d4", "behaviors": [
+        "Wolf-riders on patrol. The wolves smell the party first.",
+        "Handler and wolves blocking a chokepoint."
+      ]},
+      {"monster": "hobgoblin", "count": "1d4", "behaviors": [
+        "Squad leader drilling three goblins.",
+        "Enforcer collecting tribute from goblin quarters."
+      ]},
+      {"monster": "wolf", "count": "1d6", "behaviors": [
+        "Wolves in a crude kennel, chained. They can be loosed.",
+        "Wolves roaming freely, loyal to a nearby goblin."
+      ]},
+      {"monster": "hobgoblin", "count": "1d6", "behaviors": [
+        "Hobgoblin war-band, well-equipped.",
+        "Mercenaries hired by the goblin chief."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "hobgoblin", "count": "2d4", "behaviors": [
+        "Hobgoblin garrison, organized and alert.",
+        "Drilling formation — ready for a fight."
+      ]},
+      {"monster": "bugbear", "count": "1d4", "behaviors": [
+        "Hulking bugbears waiting in ambush. They are very patient.",
+        "Bugbear chief and bodyguards, seated and expecting tribute."
+      ]},
+      {"monster": "gnoll", "count": "1d6", "behaviors": [
+        "Gnoll raiders using this as a base.",
+        "Gnoll slavers with 1d3 captured prisoners."
+      ]},
+      {"monster": "bugbear", "count": "1d3", "behaviors": [
+        "Single massive bugbear, blocking the only exit.",
+        "Bugbear and two trained wolves."
+      ]},
+      {"monster": "gnoll", "count": "1d4", "behaviors": [
+        "Gnolls gambling over humanoid bones.",
+        "Gnoll patrol, just returned from outside."
+      ]},
+      {"monster": "ogre", "count": "1", "behaviors": [
+        "Ogre mercenary the goblins are terrified of.",
+        "Ogre eating — interrupted meals make ogres angry."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "ogre", "count": "1d3", "behaviors": [
+        "Ogre warband allied with the goblin king.",
+        "Ogres with a shared treasure hoard."
+      ]},
+      {"monster": "troll", "count": "1", "behaviors": [
+        "Troll enforcer for the goblin king.",
+        "Troll sleeping in a pile of bones."
+      ]},
+      {"monster": "ogre", "count": "1d4", "behaviors": [
+        "Ogre gang with crude ranged weapons (javelins)."
+      ]},
+      {"monster": "troll", "count": "1d2", "behaviors": [
+        "Pair of trolls, hunting together.",
+        "Troll with a pack of wolves."
+      ]},
+      {"monster": "hill_giant", "count": "1", "behaviors": [
+        "Hill giant warlord commanding a goblin army.",
+        "Hill giant prisoner the goblins foolishly tried to contain."
+      ]},
+      {"monster": "troll", "count": "1d3", "behaviors": [
+        "Three trolls in a feeding frenzy."
+      ]}
+    ]
+  },
+  "ancient_temple": {
+    "levels_1_2": [
+      {"monster": "cultist", "count": "2d4", "behaviors": [
+        "Cultists in mid-ritual. They do not take interruptions well.",
+        "Zealots guarding the inner sanctum."
+      ]},
+      {"monster": "giant_fire_beetle", "count": "1d8", "behaviors": [
+        "Beetles nesting behind the altar, skitter out when disturbed.",
+        "Beetles attracted to old offerings on the floor."
+      ]},
+      {"monster": "giant_centipede", "count": "2d4", "behaviors": [
+        "Centipedes in the altar cracks. Hard to see.",
+        "Nesting under loose flagstones."
+      ]},
+      {"monster": "cultist", "count": "1d6", "behaviors": [
+        "Cultist guard with a prisoner.",
+        "Cultists performing a summoning. Almost done."
+      ]},
+      {"monster": "giant_spider_crab", "count": "1d4", "behaviors": [
+        "Spiders in webbing on the ceiling. Drop on intruders.",
+        "Web-wrapped bodies along the wall conceal spiders."
+      ]},
+      {"monster": "acolyte", "count": "1d4", "behaviors": [
+        "Acolytes in prayer. Their god is listening.",
+        "Acolyte with a religious relic they will die to protect."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "medusa", "count": "1", "behaviors": [
+        "Medusa priestess of the old faith, still worshipped.",
+        "Medusa posing as a statue. Many real statues nearby for camouflage."
+      ]},
+      {"monster": "cultist_veteran", "count": "1d6", "behaviors": [
+        "Veteran fanatics, trained fighters. Morale 10 near their altar.",
+        "Execution squad with a captured adventurer."
+      ]},
+      {"monster": "gargoyle", "count": "1d4", "behaviors": [
+        "Gargoyles disguised as decorative carvings on pillars.",
+        "Temple guardians, bound to attack on blasphemy."
+      ]},
+      {"monster": "giant_spider_black_widow", "count": "1d3", "behaviors": [
+        "Giant spiders in elaborate webs across the ritual chamber.",
+        "Spider with a web-wrapped treasure chest."
+      ]},
+      {"monster": "gargoyle", "count": "1d2", "behaviors": [
+        "Gargoyle perched above the entrance, watching."
+      ]},
+      {"monster": "ogre_mage", "count": "1", "behaviors": [
+        "High priest — an ogre mage in disguise as a holy elder.",
+        "Ogre mage conducting a rite of power."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "ogre_mage", "count": "1", "behaviors": [
+        "Avatar of the temple's patron, finally manifest."
+      ]},
+      {"monster": "lamia", "count": "1", "behaviors": [
+        "Lamia poses as the oracle the cultists serve.",
+        "Lamia surrounded by charmed cultist bodyguards."
+      ]},
+      {"monster": "basilisk", "count": "1d2", "behaviors": [
+        "Temple guardian, locked in the inner sanctum.",
+        "Basilisk with petrified adventurers as decoration."
+      ]},
+      {"monster": "vampire", "count": "1", "behaviors": [
+        "Vampire cult leader worshipped as a dark deity.",
+        "Vampire posing as the temple's high priest."
+      ]},
+      {"monster": "lamia", "count": "1", "behaviors": [
+        "Ancient lamia, the temple's true ruler."
+      ]},
+      {"monster": "basilisk", "count": "1d2", "behaviors": [
+        "Basilisk pair nesting in the sanctum."
+      ]}
+    ]
+  },
+  "bandit_lair": {
+    "levels_1_2": [
+      {"monster": "bandit", "count": "2d4", "behaviors": [
+        "Guards at ease. Challenging anyone who enters.",
+        "Bandits gambling. Weapons within reach.",
+        "Patrol, recently returned, still alert."
+      ]},
+      {"monster": "bandit", "count": "3d4", "behaviors": [
+        "Off-duty bandits eating. Only half are armed.",
+        "Sleeping quarters — most are asleep."
+      ]},
+      {"monster": "bandit_archer", "count": "1d6", "behaviors": [
+        "Archers positioned on high ground in the room.",
+        "Marksmen covering the door."
+      ]},
+      {"monster": "veteran_ftr3", "count": "1d4", "behaviors": [
+        "Veteran sergeants running drills.",
+        "Experienced fighters guarding the captain's quarters."
+      ]},
+      {"monster": "bandit", "count": "2d6", "behaviors": [
+        "Large bandit mob, rowdy and overconfident.",
+        "Bandits dividing loot from a recent raid."
+      ]},
+      {"monster": "bandit_captain_ftr5", "count": "1", "behaviors": [
+        "The bandit captain, flanked by two veteran bodyguards.",
+        "Captain planning a raid on a map table."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "veteran_ftr3", "count": "2d4", "behaviors": [
+        "Elite bandit core, professional mercenaries.",
+        "Veterans interrogating a prisoner."
+      ]},
+      {"monster": "mercenary_ftr4", "count": "1d6", "behaviors": [
+        "Mercenaries hired to reinforce the lair.",
+        "Mercenary squad with a designated leader."
+      ]},
+      {"monster": "orc", "count": "2d6", "behaviors": [
+        "Orc mercenaries employed by the bandits.",
+        "Orcs and bandits sharing a tense meal."
+      ]},
+      {"monster": "bandit_captain_ftr5", "count": "1", "behaviors": [
+        "Captain with full bodyguard retinue.",
+        "Lieutenant captain left in charge."
+      ]},
+      {"monster": "gnoll", "count": "1d6", "behaviors": [
+        "Gnoll auxiliaries, muscle for the bandits.",
+        "Gnolls doing the dirty work no bandit will."
+      ]},
+      {"monster": "ogre", "count": "1", "behaviors": [
+        "Ogre enforcer for the bandit lord.",
+        "Ogre gatekeeper, very territorial."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "ogre", "count": "1d3", "behaviors": [
+        "Ogre war-band in the bandit army."
+      ]},
+      {"monster": "bandit_lord_ftr8", "count": "1", "behaviors": [
+        "The bandit lord in their throne room.",
+        "Bandit lord with a full council of captains."
+      ]},
+      {"monster": "troll", "count": "1d2", "behaviors": [
+        "Troll prison guards. Their lair smells accordingly.",
+        "Troll bound in service to the bandit lord."
+      ]},
+      {"monster": "bandit_lord_ftr8", "count": "1", "behaviors": [
+        "Bandit lord planning a major assault."
+      ]},
+      {"monster": "mercenary_elite_ftr6", "count": "1d4", "behaviors": [
+        "Elite mercenary company, professional and dangerous.",
+        "Battle-hardened veterans with magic equipment."
+      ]},
+      {"monster": "ogre", "count": "1d4", "behaviors": [
+        "Ogre mob, recently recruited."
+      ]}
+    ]
+  },
+  "natural_cave": {
+    "levels_1_2": [
+      {"monster": "giant_bat", "count": "1d10", "behaviors": [
+        "Bats roosting on the ceiling. Disturbed by light.",
+        "Colony disturbed by the party's noise."
+      ]},
+      {"monster": "giant_rat", "count": "3d6", "behaviors": [
+        "Rats in a den, defending their nest.",
+        "Rats swarming a food cache they found."
+      ]},
+      {"monster": "cave_locust", "count": "2d6", "behaviors": [
+        "Cave locusts filling the chamber. They shriek when startled.",
+        "Locusts grazing on fungal patches."
+      ]},
+      {"monster": "black_bear", "count": "1d4", "behaviors": [
+        "Mother bear with 1d2 cubs. Extremely aggressive.",
+        "Bear defending a food cache."
+      ]},
+      {"monster": "giant_ferret", "count": "1d8", "behaviors": [
+        "Ferrets hunting for prey. Fast and relentless.",
+        "Giant ferret with a nest of pups."
+      ]},
+      {"monster": "gray_ooze", "count": "1", "behaviors": [
+        "Gray ooze blending with wet cavern walls. Almost invisible.",
+        "Ooze covering the floor of a passage."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "cave_bear", "count": "1d2", "behaviors": [
+        "Cave bear in its den. Has it heard you yet?",
+        "Enormous cave bear with two half-grown cubs."
+      ]},
+      {"monster": "ochre_jelly", "count": "1", "behaviors": [
+        "Ochre jelly oozing from a crack in the wall.",
+        "Jelly filling a low passage; unavoidable."
+      ]},
+      {"monster": "wererat", "count": "1d6", "behaviors": [
+        "Wererats posing as human survivors.",
+        "Wererat thieves using the cave as a hideout."
+      ]},
+      {"monster": "ghoul", "count": "1d4", "behaviors": [
+        "Ghouls driven from a crypt, now hunting in the caves."
+      ]},
+      {"monster": "cockatrice", "count": "1d4", "behaviors": [
+        "Cockatrice nesting among petrified victims.",
+        "Cockatrice flock blocking a passage."
+      ]},
+      {"monster": "green_slime", "count": "1", "behaviors": [
+        "Green slime hanging from the cave ceiling.",
+        "Slime covering an otherwise appealing ledge."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "cave_bear", "count": "1d3", "behaviors": [
+        "Cave bear pack — unheard of, but here we are."
+      ]},
+      {"monster": "troll", "count": "1d3", "behaviors": [
+        "Trolls using this cave as their hunting ground."
+      ]},
+      {"monster": "minotaur", "count": "1d2", "behaviors": [
+        "Minotaur lord of this cave system.",
+        "Minotaur guarding its territory with fury."
+      ]},
+      {"monster": "purple_worm", "count": "1", "behaviors": [
+        "Purple worm burrowed up through the floor.",
+        "The sound of the worm approaching — roll init."
+      ]},
+      {"monster": "troll", "count": "1d2", "behaviors": [
+        "Troll feeding on a giant bat."
+      ]},
+      {"monster": "dragon_young_cave", "count": "1", "behaviors": [
+        "Young cave dragon claiming this as its lair.",
+        "Dragon sleeping on a small hoard."
+      ]}
+    ]
+  },
+  "dwarven_ruin": {
+    "levels_1_2": [
+      {"monster": "troglodyte", "count": "1d8", "behaviors": [
+        "Troglodytes that moved in after the dwarves fled.",
+        "Troglodyte hunting party, surprised to see you."
+      ]},
+      {"monster": "kobold", "count": "4d4", "behaviors": [
+        "Kobold scavengers stripping dwarven metal.",
+        "Kobolds with a crude trap they're very proud of."
+      ]},
+      {"monster": "dwarf_hostile", "count": "1d6", "behaviors": [
+        "Mad dwarf survivors, deeply suspicious of outsiders.",
+        "Dwarf recluse who never left. Attacks on sight."
+      ]},
+      {"monster": "animated_statue_stone", "count": "1d2", "behaviors": [
+        "Dwarven ancestor statues, still animated by old magic.",
+        "Stone sentinel activates when treasure is approached."
+      ]},
+      {"monster": "troglodyte", "count": "2d4", "behaviors": [
+        "Large troglodyte warband raiding the ruin."
+      ]},
+      {"monster": "gnome_hostile", "count": "1d6", "behaviors": [
+        "Gnome treasure-hunters, not friendly to competition.",
+        "Gnome tinkerers operating a surviving dwarven machine."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "animated_statue_iron", "count": "1", "behaviors": [
+        "Iron dwarf construct, guardian of the vault.",
+        "Iron sentinel awakening as the party enters."
+      ]},
+      {"monster": "doppelganger", "count": "1d4", "behaviors": [
+        "Doppelganger posing as a friendly dwarven ghost.",
+        "Doppelgangers that have taken the forms of an earlier party."
+      ]},
+      {"monster": "medusa", "count": "1", "behaviors": [
+        "Medusa using the ruin as a lair, surrounded by stone victims."
+      ]},
+      {"monster": "berserker_dwarf", "count": "2d6", "behaviors": [
+        "Dwarven berserkers, cursed to guard the ruin forever.",
+        "Mad dwarf warriors, attacking everything."
+      ]},
+      {"monster": "gargoyle", "count": "1d4", "behaviors": [
+        "Stone gargoyles, mistaken for dwarven carvings."
+      ]},
+      {"monster": "doppelganger", "count": "1d2", "behaviors": [
+        "Doppelganger has taken the form of a party member."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "stone_golem", "count": "1", "behaviors": [
+        "Dwarven stone golem, the final guardian of the vault.",
+        "Golem damaged by age — but still terrifying."
+      ]},
+      {"monster": "iron_golem", "count": "1", "behaviors": [
+        "The legendary iron golem of Clan Deepdelve, still active.",
+        "Iron golem forged to protect the clan vault."
+      ]},
+      {"monster": "troll", "count": "1d3", "behaviors": [
+        "Trolls drawn by old rumors of dwarven gold."
+      ]},
+      {"monster": "vampire", "count": "1", "behaviors": [
+        "Vampire lord who conquered the ruin centuries ago."
+      ]},
+      {"monster": "stone_golem", "count": "1", "behaviors": [
+        "Second golem, paired with the first."
+      ]},
+      {"monster": "dragon_young_earth", "count": "1", "behaviors": [
+        "Young earth dragon denning in the collapsed great hall."
+      ]}
+    ]
+  },
+  "wizard_tower": {
+    "levels_1_2": [
+      {"monster": "apprentice_mage", "count": "1d4", "behaviors": [
+        "Apprentices working on an experiment. Interrupted.",
+        "Apprentice left in charge; panicking."
+      ]},
+      {"monster": "giant_spider_crab", "count": "1d6", "behaviors": [
+        "Escaped test subjects, extremely dangerous.",
+        "Spiders nesting among discarded spell components."
+      ]},
+      {"monster": "homunculus", "count": "1d3", "behaviors": [
+        "The wizard's little spies, defending their creator's lab.",
+        "Homunculi with orders to kill intruders."
+      ]},
+      {"monster": "living_statue_crystal", "count": "1d2", "behaviors": [
+        "Crystal guardian placed at the threshold.",
+        "Appears as decorative art. Activates when touched."
+      ]},
+      {"monster": "mage_mu4", "count": "1", "behaviors": [
+        "Resident mage, mid-experiment. Furious at the interruption.",
+        "Mage with a hostage using as a research subject."
+      ]},
+      {"monster": "imp", "count": "1d4", "behaviors": [
+        "The wizard's imp servants, chaotic and mischievous.",
+        "Imps escaped from a summoning circle."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "mage_mu6", "count": "1", "behaviors": [
+        "Senior mage, powerful and paranoid.",
+        "Mage with a golem bodyguard."
+      ]},
+      {"monster": "gargoyle", "count": "1d4", "behaviors": [
+        "Magically bound guardians, cannot leave the room.",
+        "Gargoyles sculpted to look like failed experiments."
+      ]},
+      {"monster": "flesh_golem", "count": "1", "behaviors": [
+        "The wizard's failed creation, dangerously unstable.",
+        "Flesh golem escaped from its containment."
+      ]},
+      {"monster": "basilisk", "count": "1", "behaviors": [
+        "Experiment gone wrong — basilisk in a shattered cage.",
+        "Basilisk with mirror-system that turns its gaze back on intruders."
+      ]},
+      {"monster": "phase_spider", "count": "1d3", "behaviors": [
+        "Phase spiders from a botched summoning.",
+        "Phase spider hunting prey, appearing and vanishing."
+      ]},
+      {"monster": "djinni", "count": "1", "behaviors": [
+        "Djinni bound in a flask. Released — and furious.",
+        "Bound djinni, neutral, will negotiate if spoken to."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "mage_mu10", "count": "1", "behaviors": [
+        "The tower's master, expecting visitors.",
+        "Archmage mid-ritual, vulnerable only now."
+      ]},
+      {"monster": "vampire_mage", "count": "1", "behaviors": [
+        "Vampire archmage who betrayed the tower's founder.",
+        "Undead mage still conducting research."
+      ]},
+      {"monster": "flesh_golem", "count": "1d2", "behaviors": [
+        "A pair of flesh golems, the tower's last defense."
+      ]},
+      {"monster": "efreeti", "count": "1", "behaviors": [
+        "Efreeti imprisoned here. It will offer three wishes — with strings.",
+        "Efreeti freed from a shattered binding circle. Angry."
+      ]},
+      {"monster": "djinni", "count": "1d2", "behaviors": [
+        "Two djinn, one bound and one free — they argue."
+      ]},
+      {"monster": "lich", "count": "1", "behaviors": [
+        "The tower's founder, never truly gone.",
+        "Lich in phylactery-meditation. Disturbing it is a mistake."
+      ]}
+    ]
+  }
+}
