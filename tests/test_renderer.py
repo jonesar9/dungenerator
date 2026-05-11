@@ -103,6 +103,39 @@ def test_walls_present_in_map():
     assert len(wall_lines) >= 2  # at least top and bottom walls
 
 
+def test_all_shape_types_generated():
+    """All three shape types should appear across seeds at medium size."""
+    shapes = set()
+    for seed in range(300):
+        room = generate_room(seed=seed, size="medium")
+        shapes.add(room.shape_type)
+    assert "rect" in shapes
+    assert "l_shape" in shapes
+    assert "organic" in shapes
+
+
+def test_non_rect_rooms_have_floor_cells():
+    """Every non-rectangular room must still contain walkable floor cells."""
+    for seed in range(200):
+        room = generate_room(seed=seed, size="medium")
+        if room.shape_type == "rect":
+            continue
+        lines = _ascii_map_lines(room)
+        assert any('.' in line for line in lines), (
+            f"shape={room.shape_type} seed={seed} produced no floor cells"
+        )
+
+
+def test_shape_in_json():
+    """JSON output must include the shape field."""
+    import json
+    for seed in range(30):
+        room = generate_room(seed=seed, size="medium")
+        data = json.loads(Renderer(room, color=False).render_json())
+        assert "shape" in data["room"]["size"]
+        assert data["room"]["size"]["shape"] == room.shape_type
+
+
 def test_exit_drift_varies_across_seeds():
     """North exit column should not be identical across different room seeds."""
     seen_cols = set()
@@ -151,7 +184,7 @@ def test_legend_only_shows_present_glyphs():
     legend_start = next((i for i, l in enumerate(lines) if "Legend" in l), None)
     if legend_start is None:
         return
-    # Slice to the legend column so padding from the left (map) side doesn't confuse the match.
+    # Legend is side-by-side with the map; find its start column.
     legend_col = lines[legend_start].index("Legend")
     legend_glyphs = set()
     for line in lines[legend_start + 1:]:
@@ -159,6 +192,8 @@ def test_legend_only_shows_present_glyphs():
         m = _LEGEND_ENTRY.match(right)
         if m:
             legend_glyphs.add(m.group(1))
-    map_text = "\n".join(lines[:legend_start])
+    # Map content is the left portion of every line (not just lines before legend_start,
+    # since the legend is interleaved from line 0 in the combined output).
+    map_text = "\n".join(line[:legend_col] for line in lines)
     for g in legend_glyphs:
         assert g in map_text or g == "@", f"Legend glyph {g!r} not found in map"

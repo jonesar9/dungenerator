@@ -10,6 +10,7 @@ from typing import Optional
 
 from models import Exit, Feature, Room, Trap
 from generator import SIZE_PRESETS
+from shapes import make_floor_mask
 
 # ─── ANSI color codes ─────────────────────────────────────────────────────────
 RESET  = "\033[0m"
@@ -113,32 +114,34 @@ class Renderer:
         grid_h = rh + 2
         grid = [["#"] * grid_w for _ in range(grid_h)]
 
-        # Fill interior with floor
+        mask = make_floor_mask(room.shape_type, rw, rh, room.seed)
+
+        # Fill interior using floor mask
         for r in range(1, rh + 1):
             for c in range(1, rw + 1):
-                grid[r][c] = "."
+                if mask[r - 1][c - 1]:
+                    grid[r][c] = "."
 
-        # Place exit glyphs on walls
+        # Place exit glyphs on walls (mask used to pick floor-adjacent positions)
         exit_positions: dict[str, tuple[int, int]] = {}
         for ex in room.exits:
-            glyph, pos = self._exit_glyph_and_pos(ex, rw, rh)
+            glyph, pos = self._exit_glyph_and_pos(ex, rw, rh, mask)
             r, c = pos
             grid[r][c] = glyph
             exit_positions[ex.direction] = (r, c)
 
-        # Place features
+        # Place features (only on floor cells)
         for feat in room.features:
-            # feat.col/row are 0-indexed interior coords
             gr = feat.row + 1
             gc = feat.col + 1
-            if 1 <= gr <= rh and 1 <= gc <= rw:
+            if 1 <= gr <= rh and 1 <= gc <= rw and mask[feat.row][feat.col]:
                 grid[gr][gc] = feat.glyph
 
-        # Place triggered trap
+        # Place triggered trap (only on floor cells)
         if room.trap and room.trap.triggered:
             tr = room.trap.row + 1
             tc = room.trap.col + 1
-            if 1 <= tr <= rh and 1 <= tc <= rw:
+            if 1 <= tr <= rh and 1 <= tc <= rw and mask[room.trap.row][room.trap.col]:
                 grid[tr][tc] = "X"
 
         # Build map lines
@@ -160,7 +163,7 @@ class Renderer:
         map_lines.append("  S (entry)" if room.entry_direction == "south" else "  S")
 
         # Legend lines alongside the map
-        legend_lines = self._render_legend(room, exit_positions)
+        legend_lines = self._render_legend(room, exit_positions, mask)
 
         GUTTER = "   "
         map_width = max(_visual_len(line) for line in map_lines)
@@ -177,8 +180,8 @@ class Renderer:
 
         return "\n".join(result)
 
-    def _exit_glyph_and_pos(self, ex: Exit,
-                             rw: int, rh: int) -> tuple[str, tuple[int, int]]:
+    def _exit_glyph_and_pos(self, ex: Exit, rw: int, rh: int,
+                             mask: list[list[bool]]) -> tuple[str, tuple[int, int]]:
         glyph_map = {
             "archway":     "/",
             "door_wood":   "+",
@@ -191,21 +194,25 @@ class Renderer:
         }
         glyph = glyph_map.get(ex.door_type, "+")
 
-        # Deterministic per-room, per-direction drift — avoids corner cells
         _DIR_SALT = {"north": 0, "south": 1, "east": 2, "west": 3}
         rng = random.Random(self.room.seed * 7 + _DIR_SALT[ex.direction])
-        col = rng.randint(2, rw - 1) if rw >= 3 else (rw + 2) // 2
-        row = rng.randint(2, rh - 1) if rh >= 3 else (rh + 2) // 2
 
         if ex.direction == "north":
+            valid = [c for c in range(2, rw - 1) if mask[0][c - 1]]
+            col = rng.choice(valid or list(range(2, rw - 1)) or [(rw + 2) // 2])
             return glyph, (0, col)
         elif ex.direction == "south":
-            if ex.door_type == "archway":
-                return "@", (rh + 1, col)
+            valid = [c for c in range(2, rw - 1) if mask[rh - 1][c - 1]]
+            col = rng.choice(valid or list(range(2, rw - 1)) or [(rw + 2) // 2])
+            glyph = "@" if ex.door_type == "archway" else glyph
             return glyph, (rh + 1, col)
         elif ex.direction == "west":
+            valid = [r for r in range(2, rh - 1) if mask[r - 1][0]]
+            row = rng.choice(valid or list(range(2, rh - 1)) or [(rh + 2) // 2])
             return glyph, (row, 0)
         else:  # east
+            valid = [r for r in range(2, rh - 1) if mask[r - 1][rw - 1]]
+            row = rng.choice(valid or list(range(2, rh - 1)) or [(rh + 2) // 2])
             return glyph, (row, rw + 1)
 
     def _render_row(self, r: int, row: list[str], grid_h: int, rh: int,
@@ -258,7 +265,8 @@ class Renderer:
         return self._c(BOLD, ch)
 
     def _render_legend(self, room: Room,
-                       exit_positions: dict) -> list[str]:
+                       exit_positions: dict,
+                       mask: list[list[bool]]) -> list[str]:
         lines = ["Legend:"]
         used: dict[str, str] = {}
 
@@ -284,8 +292,10 @@ class Renderer:
                 continue
             used.setdefault(glyph, door_glyphs.get(glyph, "Door"))
 
+        # Only include features that will actually be drawn (mask-visible floor cells)
         for feat in room.features:
-            used.setdefault(feat.glyph, feat.name)
+            if 0 <= feat.row < len(mask) and 0 <= feat.col < len(mask[0]) and mask[feat.row][feat.col]:
+                used.setdefault(feat.glyph, feat.name)
 
         if room.trap and room.trap.triggered:
             used["X"] = "Trap (triggered)"
@@ -414,6 +424,7 @@ class Renderer:
                 "size": {
                     "w": room.width_sq,
                     "h": room.height_sq,
+                    "shape": room.shape_type,
                     "units": "10ft squares",
                 },
                 "contents_type": room.contents_type,

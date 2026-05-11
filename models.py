@@ -84,6 +84,7 @@ class Room:
     # Geometry (in 10-ft squares, inner dimensions)
     width_sq: int = 3
     height_sq: int = 3
+    shape_type: str = "rect"
 
     # Stocking
     contents_type: str = "empty"   # "empty", "monster", "monster_with_treasure", "unguarded_treasure", "trap", "non_combat_encounter"

@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Optional
 
 from models import Feature, Room, Trap
+from shapes import make_floor_mask
 from stocking import (
     pick_hiding_location,
     roll_atmosphere,
@@ -82,15 +83,22 @@ def generate_room(
     resolved_theme = resolve_theme(theme, rng)
     theme_data = themes[resolved_theme]
 
+    preset = SIZE_PRESETS.get(size, SIZE_PRESETS["medium"])
+    feature_cap = preset["feature_cap"]
+    char_per_sq = preset["char_per_sq"]
+
     # Room geometry
     d6 = rng.randint(1, 6)
     width_sq, height_sq = _ROOM_DIM_TABLE[d6]
 
+    # Shape — organic requires a large enough interior for CA to look meaningful
+    rw = width_sq * char_per_sq
+    rh = height_sq * char_per_sq
+    available_shapes = ["rect", "l_shape", "organic"] if rw >= 6 and rh >= 6 else ["rect", "l_shape"]
+    shape_type = rng.choice(available_shapes)
+
     # Contents
     contents_type = roll_contents_type(rng)
-
-    preset = SIZE_PRESETS.get(size, SIZE_PRESETS["medium"])
-    feature_cap = preset["feature_cap"]
 
     # Features
     features = select_features(theme_data, contents_type, feature_cap, rng)
@@ -152,6 +160,7 @@ def generate_room(
         seed=seed,
         width_sq=width_sq,
         height_sq=height_sq,
+        shape_type=shape_type,
         contents_type=contents_type,
         monster=monster,
         treasure=treasure,
@@ -163,8 +172,9 @@ def generate_room(
         atmosphere=atmosphere,
     )
 
-    # Place features in room grid
-    _place_features(room, preset["char_per_sq"], canvas_w, canvas_h, preset)
+    # Place features only on floor cells
+    mask = make_floor_mask(shape_type, rw, rh, seed)
+    _place_features(room, char_per_sq, canvas_w, canvas_h, preset, mask)
 
     return room
 
@@ -181,35 +191,24 @@ def _unguarded_treasure_type(level: int, rng: random.Random) -> str:
 
 def _place_features(room: Room, char_per_sq: int,
                     canvas_w: Optional[int], canvas_h: Optional[int],
-                    preset: dict) -> None:
-    """Assign grid (col, row) coordinates to each feature, avoiding exits and entry."""
+                    preset: dict, mask: list[list[bool]]) -> None:
+    """Assign grid (col, row) coordinates to each feature, on floor cells only."""
     w = room.width_sq * char_per_sq
     h = room.height_sq * char_per_sq
-
-    # Interior cells: (col, row) starting at (0,0) = top-left of room interior
     occupied: set[tuple[int, int]] = set()
-
-    # Mark exit positions (approximate — on walls, not interior)
-    # Interior is (1..w-2, 1..h-2) in rendered coordinates;
-    # here we work in interior space, so just track center offsets
-    # We'll place features starting from center, spiraling out
-    center_col = w // 2
-    center_row = h // 2
-
-    spiral = _spiral_coords(center_col, center_row, w, h)
+    spiral = _spiral_coords(w // 2, h // 2, w, h)
 
     for feature in room.features:
         for col, row in spiral:
-            if (col, row) not in occupied and 0 <= col < w and 0 <= row < h:
+            if (col, row) not in occupied and 0 <= col < w and 0 <= row < h and mask[row][col]:
                 feature.col = col
                 feature.row = row
                 occupied.add((col, row))
                 break
 
-    # Place trap (if triggered, it gets a spot)
     if room.trap and room.trap.triggered:
         for col, row in spiral:
-            if (col, row) not in occupied:
+            if (col, row) not in occupied and mask[row][col]:
                 room.trap.col = col
                 room.trap.row = row
                 occupied.add((col, row))
