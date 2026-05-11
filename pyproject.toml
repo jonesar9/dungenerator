@@ -15,7 +15,7 @@ dependencies = [
 dungeonroom = "dungeonroom:main"
 
 [tool.setuptools]
-py-modules = ["dungeonroom", "generator", "renderer", "stocking", "models"]
+py-modules = ["dungeonroom", "generator", "renderer", "stocking", "models", "shapes"]
 
 [tool.setuptools.package-data]
 "*" = ["data/*.json", "data/themes/*.json"]
