@@ -7,61 +7,54 @@ A command-line tool for **Old-School Essentials** (and B/X-compatible) solo play
 ---
 
 ```
-══════════════════════════════════════════════════════════
- DUNGEON ROOM GENERATOR  |  seed: 481620
- Theme: Undead Crypt  |  Level: 2  |  Size: 3×3 sq
-══════════════════════════════════════════════════════════
+════════════════════════════════════════════════════════════
+ DUNGEON ROOM GENERATOR  |  seed: 363007
+ Theme: Gonzo Far Future Mutant  |  Level: 1  |  Size: 3×2 sq
+════════════════════════════════════════════════════════════
 
-         N
-         +
-  ###########+######
-  #.................#
-W +..c.....S.......+ E
-  #.................#
-  #....A............#
-  #+################
-    @              Legend:
-    S (entry)        @  Entry point
-                     +  Door (closed)
-                     c  Coffin
-                     S  Sarcophagus
-                     A  Altar
+      N           Legend:
+  ####+######       @  Entry point
+  #.........#       +  Door (closed)
+  #.........#       /  Open archway / entry
+  #.........#       P  Pillar
+  #....P..../ E
+  #.........#
+  #.........#
+  ######@####
+        @
+  S (entry)
 
-------------------------------------------------------------
-ROOM: Preparation Chamber
+────────────────────────────────────────────────────────────
+ROOM: Reactor Overflow
 CONTENTS: Monster (with treasure)
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
 MONSTER
-  2 Skeletons (HD 1, AC 7, #AT 1, D 1d6)
-  Save: F1  |  Morale: 12  |  XP: 10 each
-  Behavior: Guarding the sarcophagus. Attack on sight.
+  8 Station Mutants (HD 1, AC 8, #AT 1 weapon, D 1d6)
+  Save: NM  |  Morale: 6  |  XP: 10 each
+  Special: Cosmetic mutations only (extra limbs,
+bioluminescence, etc.) — no mechanical effect
+  Behavior: Tribals with salvaged weapons and strong opinions about territory.
 
 TREASURE (with monster)
-  Hidden in sarcophagus:
-    35 sp
-    1 gem (10 gp, cracked quartz)
+  Behind a loose section of pillar:
+    100 sp
 
 FEATURES
-  Coffin (c):
-    Empty. Lid ajar — drag marks on the floor.
-  Sarcophagus (S):
-    Sealed stone sarcophagus. Contains monster treasure.
-  Altar (A):
-    Black-stained stone altar. Nothing of value. Disturbing
-    it triggers a morale check for any undead in the room.
+  Pillar (P):
+    Pillar cluster. Space between them is tight.
 
 EXITS
-  North   Rotting wooden door
-  East    Iron door, green with age
-  South   Narrow stone archway <- entry
+  South  Entry (where you came from) <- entry
+  North  No wood — rotted or burned long ago; replaced with sheet metal or welded scrap
+  East   Pressurized tunnel, the hiss of escaping atmosphere at the join
 
 ATMOSPHERE
-  Smell: Embalming herbs and old rot
-  Sound: Faint scratching from inside a coffin
+  Light: Total darkness in the dead sections; harsh white in the active ones
+  Smell: Antiseptic under decay — old cleanliness, new rot
 
-------------------------------------------------------------
-Seed: 481620 | Roll --seed 481620 to reproduce
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
+Seed: 363007 | Roll --seed 363007 to reproduce
+────────────────────────────────────────────────────────────
 ```
 
 ---
@@ -118,7 +111,7 @@ cd dungeonroom
 pip install -e .
 ```
 
-Dependencies are minimal: `PyYAML` (for the data files) and `colorama` (for ANSI colors on Windows). Both are installed automatically.
+The only dependency is `colorama` (for ANSI colors on Windows). It is installed automatically.
 
 ### Verify it works
 
@@ -198,7 +191,7 @@ Seven dungeon themes are included. Each theme is a self-contained data bundle: r
 | `wizard_tower` | **Wizard's Delve** | Experimental chambers. Apprentices, golems, djinn, liches. |
 | `random` | _(roll on theme table)_ | Selects uniformly at random from the seven themes above. |
 
-Themes are data-driven. To add a new theme, add an entry to `data/themes/themes.json` and a matching block in `data/monsters.yaml`. No source code changes required.
+Themes are data-driven. To add a new theme, add an entry to `data/themes/themes.json` and matching entries in `data/monster_tables.json` and `data/monster_db.json`. No source code changes required.
 
 ---
 
@@ -502,9 +495,11 @@ dungeonroom/
 ├── models.py           — Dataclasses: Room, Monster, Treasure, Feature, Exit, Trap
 ├── data/
 │   ├── themes/
-│   │   └── themes.json     — All 7 theme bundles (room names, features, atmosphere, exits)
-│   ├── monsters.yaml        — Monster stat blocks, level bands, behavior strings
-│   └── treasures.yaml       — OSE treasure types A–V, gem and jewelry tables
+│   │   └── themes.json              — All 7 theme bundles (room names, features, atmosphere, exits)
+│   ├── monster_db.json              — Monster stat blocks and behavior strings
+│   ├── monster_tables.json          — Theme/level-band monster lookup tables
+│   ├── treasures.json               — OSE treasure types A–V, gem and jewelry tables
+│   └── non_combat_encounters.json   — Non-combat encounter pool (tricks, NPCs, hazards, omens)
 └── tests/
     ├── test_generator.py   — Determinism, all themes, forced exits, edge cases
     ├── test_renderer.py    — Canvas dimensions, color/no-color, JSON validity, legend

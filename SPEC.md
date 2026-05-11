@@ -284,25 +284,28 @@ The room is scaled to fit within the canvas, with each square represented by 2�
 
 ```
 dungeonroom/
-├── dungeonroom.py          # Entry point, CLI arg parsing (argparse or click)
+├── dungeonroom.py          # Entry point, CLI arg parsing
 ├── generator.py            # Core generation logic
 ├── renderer.py             # ASCII map rendering
 ├── stocking.py             # OSE stocking tables and rolls
+├── shapes.py               # Floor mask generation (rect, l_shape, organic)
 ├── data/
-│   ├── themes.yaml         # All theme data bundles
-│   ├── monsters.yaml       # Monster stat blocks by theme/level
-│   └── treasures.yaml      # Treasure type tables
+│   ├── themes/
+│   │   └── themes.json              # All theme data bundles
+│   ├── monster_db.json              # Monster stat blocks and behavior strings
+│   ├── monster_tables.json          # Theme/level-band monster lookup tables
+│   ├── treasures.json               # Treasure type tables
+│   └── non_combat_encounters.json   # Non-combat encounter pool
 ├── models.py               # Dataclasses: Room, Feature, Exit, Monster, Treasure
 ├── tests/
 │   ├── test_generator.py
 │   ├── test_renderer.py
 │   └── test_stocking.py
-├── requirements.txt        # Standard library only preferred; yaml via PyYAML
 └── README.md
 ```
 
 **Language:** Python 3.10+
-**Dependencies:** PyYAML (data files), `colorama` (optional, for `--no-color` cross-platform). No other third-party dependencies. Standard library `random` module with explicit seed support.
+**Dependencies:** `colorama` (for ANSI color support on Windows). All data files are JSON; no YAML dependency. Standard library `random` module with explicit seed support.
 
 ---
 

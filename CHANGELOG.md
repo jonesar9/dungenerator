@@ -30,7 +30,7 @@ Initial release of the OSE Solo Dungeon Room Generator.
 - `--entry` — specify which wall the player entered from: `north`, `south` (default), `east`, `west`
 - `--triggered` — reveal triggered traps with glyph `X` on the ASCII map
 
-#### Themes (7 total, data-driven via `data/themes.yaml`)
+#### Themes (7 total, data-driven via `data/themes/themes.json`)
 - `undead_crypt` — ancient burial complex; skeletons, zombies, wights, mummies
 - `goblin_warren` — cramped tunnels; goblins, hobgoblins, bugbears, ogres
 - `ancient_temple` — collapsed religion; cultists, gargoyles, basilisks, lamia
@@ -40,14 +40,14 @@ Initial release of the OSE Solo Dungeon Room Generator.
 - `wizard_tower` — experimental chambers; apprentices, golems, djinn, liches
 - `random` — selects uniformly from the seven themes
 
-#### Monster tables (`data/monsters.yaml`)
+#### Monster tables (`data/monster_tables.json`, `data/monster_db.json`)
 - Full OSE-format stat blocks: HD, AC, #AT, Damage, Save, Morale, XP, Treasure Type
 - Three level bands per theme: 1–2, 3–4, 5–6
 - Multiple behavior descriptions per monster entry; one selected at random
 - Monster count scaled by level: ×1.5 (rounded up) at levels 4–6, ×2 at levels 7+ (future)
 - Cross-theme monster reuse where thematically appropriate (e.g. skeletons appear in crypts and temples)
 
-#### Treasure system (`data/treasures.yaml`)
+#### Treasure system (`data/treasures.json`)
 - Full OSE treasure types A–H (lair) and P, Q, R, U, V (individual)
 - Each component rolled independently: cp, sp, ep, gp, pp, gems, jewelry, magic items
 - Gem value table (d20, 10 gp–50,000 gp) with named examples per value tier
@@ -84,7 +84,7 @@ Initial release of the OSE Solo Dungeon Room Generator.
 #### Packaging
 - Installable as a standalone command via `pip install -e .`
 - `pyproject.toml` with `setuptools` build backend
-- Dependencies: `PyYAML>=6.0`, `colorama>=0.4.6`
+- Dependencies: `colorama>=0.4.6` (all data files are JSON; no YAML dependency)
 - Python 3.10+ required
 - UTF-8 stdout forced on Windows terminals that default to CP1252
 
