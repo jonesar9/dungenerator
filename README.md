@@ -178,7 +178,7 @@ Feature count is capped per preset: 3 (small), 5 (medium), 7 (large) — keeping
 
 ## Themes
 
-Seven dungeon themes are included. Each theme is a self-contained data bundle: room name table, monster table by level band, treasure flavor, atmosphere descriptors, exit vocabulary, and feature weights.
+Thirteen dungeon themes are included. Each theme is a self-contained data bundle: room name table, monster table by level band, treasure flavor, atmosphere descriptors, exit vocabulary, and feature weights.
 
 | ID | Name | Flavor |
 |----|------|--------|
@@ -189,7 +189,14 @@ Seven dungeon themes are included. Each theme is a self-contained data bundle: r
 | `natural_cave` | **Natural Cave** | Unworked stone. Giant animals, oozes, cave bears, dragons. |
 | `dwarven_ruin` | **Dwarven Ruin** | Worked stone, old machinery. Troglodytes, constructs, golems, vampires. |
 | `wizard_tower` | **Wizard's Delve** | Experimental chambers. Apprentices, golems, djinn, liches. |
-| `random` | _(roll on theme table)_ | Selects uniformly at random from the seven themes above. |
+| `mutoid_sewer` | **Mutoid Sewer** | Fetid cisterns and outflow tunnels. Giant toads, crocodiles, sewer mutoids, oozes. |
+| `subterranean_wasteland` | **Subterranean Wasteland** | Desiccated ruins in lightless deep. Skeletons, giant scorpions, fire beetles, giant lizards. |
+| `arthurian_weird` | **Arthurian Weird** | Fae-haunted halls and green chapels. Faerie knights, oath-bound wights, enchanted wolves, redcaps. |
+| `iron_age_dread` | **Iron Age Dread** | Earthen chambers and bog shrines. Apemen, wererats, giant bats, cave centipedes. |
+| `gonzo_fantasy` | **Gonzo Fantasy** | Absurdist dungeon logic. Bureaucratic goblins, sentient statues, organized fire beetles, imps. |
+| `gonzo_far_future_mutant` | **Gonzo Far-Future Mutant** | Post-collapse irradiated complex. Gamma mutants, death machines, station mutants, oozes. |
+| `gonzo_space_weirdos` | **Gonzo Space Weirdos** | Derelict space station. Station mutants, void crawlers, grey outsiders, space rats. |
+| `random` | _(roll on theme table)_ | Selects uniformly at random from the thirteen themes above. |
 
 Themes are data-driven. To add a new theme, add an entry to `data/themes/themes.json` and matching entries in `data/monster_tables.json` and `data/monster_db.json`. No source code changes required.
 

@@ -30,7 +30,7 @@ Initial release of the OSE Solo Dungeon Room Generator.
 - `--entry` — specify which wall the player entered from: `north`, `south` (default), `east`, `west`
 - `--triggered` — reveal triggered traps with glyph `X` on the ASCII map
 
-#### Themes (7 total, data-driven via `data/themes/themes.json`)
+#### Themes (13 total, data-driven via `data/themes/themes.json`)
 - `undead_crypt` — ancient burial complex; skeletons, zombies, wights, mummies
 - `goblin_warren` — cramped tunnels; goblins, hobgoblins, bugbears, ogres
 - `ancient_temple` — collapsed religion; cultists, gargoyles, basilisks, lamia
@@ -38,7 +38,14 @@ Initial release of the OSE Solo Dungeon Room Generator.
 - `natural_cave` — unworked stone; giant animals, oozes, cave bears, dragons
 - `dwarven_ruin` — worked stone; troglodytes, constructs, golems, vampires
 - `wizard_tower` — experimental chambers; apprentices, golems, djinn, liches
-- `random` — selects uniformly from the seven themes
+- `mutoid_sewer` — fetid cisterns and outflow tunnels; giant toads, crocodiles, sewer mutoids, oozes
+- `subterranean_wasteland` — desiccated deep ruins; skeletons, giant scorpions, fire beetles, giant lizards
+- `arthurian_weird` — fae-haunted halls; faerie knights, oath-bound wights, enchanted wolves, redcaps
+- `iron_age_dread` — earthen chambers and bog shrines; apemen, wererats, giant bats, cave centipedes
+- `gonzo_fantasy` — absurdist dungeon logic; bureaucratic goblins, sentient statues, imps, organized beetles
+- `gonzo_far_future_mutant` — post-collapse irradiated complex; gamma mutants, death machines, station mutants
+- `gonzo_space_weirdos` — derelict space station; station mutants, void crawlers, grey outsiders, space rats
+- `random` — selects uniformly from the thirteen themes
 
 #### Monster tables (`data/monster_tables.json`, `data/monster_db.json`)
 - Full OSE-format stat blocks: HD, AC, #AT, Damage, Save, Morale, XP, Treasure Type

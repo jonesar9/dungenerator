@@ -346,13 +346,14 @@ dungeonroom --no-color --size small
 ## 11. Out of Scope for v1.0
 
 - Multi-room level generation (the tool is intentionally single-room)
-- Non-rectangular room shapes (L-shapes, irregular caverns)
 - Connecting rooms into a graph / tracking visited rooms
 - Web or GUI interface
 - Sound/music
 - Save/load session state (use `--seed` and session notes for continuity)
 
 These are natural v2 targets once the single-room core is solid.
+
+*Note: Non-rectangular room shapes (L-shapes, organic caverns) were originally listed here but were implemented in v1.0 via `shapes.py`.*
 
 ---
 
