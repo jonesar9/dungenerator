@@ -95,7 +95,11 @@ def generate_room(
     rw = width_sq * char_per_sq
     rh = height_sq * char_per_sq
     available_shapes = ["rect", "l_shape", "organic"] if rw >= 6 and rh >= 6 else ["rect", "l_shape"]
-    shape_type = rng.choice(available_shapes)
+    theme_shape_w = theme_data.get("shape_weights", {})
+    shape_weights = [max(theme_shape_w.get(s, 1), 0) for s in available_shapes]
+    if sum(shape_weights) == 0:
+        shape_weights = [1] * len(available_shapes)
+    shape_type = rng.choices(available_shapes, weights=shape_weights, k=1)[0]
 
     # Contents
     contents_type = roll_contents_type(rng)

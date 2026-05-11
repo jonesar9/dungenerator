@@ -10,6 +10,7 @@
       "A": 3, "c": 4, "S": 4, "P": 2, "D": 2, "*": 2,
       "B": 1, "T": 1, "F": 1, "I": 1, "W": 0, "C": 1, "t": 1
     },
+    "shape_weights": {"rect": 5, "l_shape": 3, "organic": 1},
     "monster_table": "undead_crypt",
     "atmosphere": {
       "smell": [
@@ -67,6 +68,7 @@
       "B": 4, "D": 4, "I": 3, "T": 3, "W": 3, "F": 2,
       "C": 2, "t": 2, "P": 1, "A": 0, "c": 0, "S": 0, "*": 0
     },
+    "shape_weights": {"rect": 1, "l_shape": 2, "organic": 5},
     "monster_table": "goblin_warren",
     "atmosphere": {
       "smell": [
@@ -124,6 +126,7 @@
       "A": 5, "P": 4, "*": 3, "C": 3, "T": 2, "F": 2,
       "S": 2, "D": 2, "t": 2, "B": 1, "I": 1, "W": 1, "c": 0
     },
+    "shape_weights": {"rect": 5, "l_shape": 3, "organic": 0},
     "monster_table": "ancient_temple",
     "atmosphere": {
       "smell": [
@@ -181,6 +184,7 @@
       "B": 4, "W": 4, "T": 4, "C": 3, "t": 3, "I": 3,
       "D": 2, "F": 1, "P": 1, "A": 0, "c": 0, "S": 0, "*": 0
     },
+    "shape_weights": {"rect": 3, "l_shape": 3, "organic": 2},
     "monster_table": "bandit_lair",
     "atmosphere": {
       "smell": [
@@ -238,6 +242,7 @@
       "F": 5, "~": 4, "P": 4, "D": 4, "*": 2, "B": 1,
       "C": 1, "A": 0, "c": 0, "S": 0, "T": 0, "t": 0, "W": 0, "I": 0
     },
+    "shape_weights": {"rect": 0, "l_shape": 1, "organic": 7},
     "monster_table": "natural_cave",
     "atmosphere": {
       "smell": [
@@ -295,6 +300,7 @@
       "P": 5, "T": 4, "W": 4, "C": 3, "B": 3, "D": 3,
       "*": 2, "F": 2, "I": 1, "t": 1, "A": 1, "S": 1, "c": 0
     },
+    "shape_weights": {"rect": 4, "l_shape": 4, "organic": 1},
     "monster_table": "dwarven_ruin",
     "atmosphere": {
       "smell": [
@@ -352,6 +358,7 @@
       "*": 5, "T": 5, "C": 4, "B": 3, "F": 3, "P": 2,
       "I": 2, "A": 2, "W": 1, "D": 2, "S": 1, "t": 1, "c": 0
     },
+    "shape_weights": {"rect": 2, "l_shape": 5, "organic": 2},
     "monster_table": "wizard_tower",
     "atmosphere": {
       "smell": [
@@ -409,6 +416,7 @@
       "~": 5, "F": 4, "B": 4, "D": 4, "I": 3, "*": 2,
       "C": 2, "T": 1, "P": 1, "A": 0, "c": 0, "S": 0, "W": 0, "t": 0
     },
+    "shape_weights": {"rect": 2, "l_shape": 3, "organic": 4},
     "monster_table": "mutoid_sewer",
     "atmosphere": {
       "smell": [
@@ -466,6 +474,7 @@
       "P": 5, "D": 5, "A": 3, "*": 3, "T": 2, "W": 2,
       "B": 1, "F": 1, "C": 1, "I": 1, "t": 1, "~": 0, "c": 0, "S": 0
     },
+    "shape_weights": {"rect": 2, "l_shape": 3, "organic": 4},
     "monster_table": "subterranean_wasteland",
     "atmosphere": {
       "smell": [
@@ -523,6 +532,7 @@
       "A": 5, "P": 4, "*": 4, "t": 3, "F": 3, "c": 2,
       "S": 2, "C": 2, "T": 1, "W": 1, "D": 1, "~": 1, "I": 0, "B": 0
     },
+    "shape_weights": {"rect": 3, "l_shape": 4, "organic": 2},
     "monster_table": "arthurian_weird",
     "atmosphere": {
       "smell": [
@@ -580,6 +590,7 @@
       "D": 5, "A": 4, "*": 4, "B": 3, "F": 2, "P": 2,
       "c": 2, "C": 1, "I": 1, "T": 1, "W": 1, "~": 1, "t": 0, "S": 0
     },
+    "shape_weights": {"rect": 1, "l_shape": 2, "organic": 5},
     "monster_table": "iron_age_dread",
     "atmosphere": {
       "smell": [
@@ -638,6 +649,7 @@
       "*": 5, "C": 4, "A": 4, "T": 3, "B": 3, "D": 2,
       "P": 2, "W": 2, "F": 2, "I": 2, "t": 2, "c": 1, "S": 1, "~": 1
     },
+    "shape_weights": {"rect": 2, "l_shape": 3, "organic": 3},
     "monster_table": "gonzo_fantasy",
     "atmosphere": {
       "smell": [
@@ -695,6 +707,7 @@
       "*": 5, "T": 5, "I": 4, "B": 3, "D": 3, "C": 3,
       "P": 2, "F": 2, "W": 1, "A": 1, "~": 1, "c": 0, "S": 0, "t": 0
     },
+    "shape_weights": {"rect": 2, "l_shape": 3, "organic": 4},
     "monster_table": "gonzo_far_future_mutant",
     "atmosphere": {
       "smell": [
@@ -752,6 +765,7 @@
       "*": 5, "T": 4, "I": 4, "P": 4, "C": 3, "B": 3,
       "D": 2, "F": 2, "~": 2, "W": 1, "A": 1, "t": 1, "c": 0, "S": 0
     },
+    "shape_weights": {"rect": 3, "l_shape": 5, "organic": 1},
     "monster_table": "gonzo_space_weirdos",
     "atmosphere": {
       "smell": [
