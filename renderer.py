@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import random
 import re
 import textwrap
 from dataclasses import asdict
@@ -188,21 +189,24 @@ class Renderer:
             "stairs_down": "^",
             "stairs_up":   "v",
         }
-        # Entry direction always shows @
         glyph = glyph_map.get(ex.door_type, "+")
-        mid_col = (rw + 2) // 2
-        mid_row = (rh + 2) // 2
+
+        # Deterministic per-room, per-direction drift — avoids corner cells
+        _DIR_SALT = {"north": 0, "south": 1, "east": 2, "west": 3}
+        rng = random.Random(self.room.seed * 7 + _DIR_SALT[ex.direction])
+        col = rng.randint(2, rw - 1) if rw >= 3 else (rw + 2) // 2
+        row = rng.randint(2, rh - 1) if rh >= 3 else (rh + 2) // 2
 
         if ex.direction == "north":
-            return glyph, (0, mid_col)
+            return glyph, (0, col)
         elif ex.direction == "south":
             if ex.door_type == "archway":
-                return "@", (rh + 1, mid_col)
-            return glyph, (rh + 1, mid_col)
+                return "@", (rh + 1, col)
+            return glyph, (rh + 1, col)
         elif ex.direction == "west":
-            return glyph, (mid_row, 0)
+            return glyph, (row, 0)
         else:  # east
-            return glyph, (mid_row, rw + 1)
+            return glyph, (row, rw + 1)
 
     def _render_row(self, r: int, row: list[str], grid_h: int, rh: int,
                     exit_positions: dict) -> str:

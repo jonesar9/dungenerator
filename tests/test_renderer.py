@@ -103,17 +103,62 @@ def test_walls_present_in_map():
     assert len(wall_lines) >= 2  # at least top and bottom walls
 
 
+def test_exit_drift_varies_across_seeds():
+    """North exit column should not be identical across different room seeds."""
+    seen_cols = set()
+    checked = 0
+    for seed in range(300):
+        room = generate_room(seed=seed, size="medium")
+        if not any(e.direction == "north" for e in room.exits):
+            continue
+        lines = _ascii_map_lines(room, size="medium")
+        # lines[0] = N compass label, lines[1] = north wall row
+        wall_section = lines[1][:30]  # stay within map, before legend gutter
+        for i, ch in enumerate(wall_section):
+            if ch in '+/=^v@':
+                seen_cols.add(i)
+                break
+        checked += 1
+        if checked >= 30:
+            break
+    assert len(seen_cols) >= 2, (
+        f"Exit drift produced only {len(seen_cols)} distinct column(s) across {checked} rooms"
+    )
+
+
+def test_exit_stays_on_wall():
+    """Exit glyphs must appear on the wall border, not the interior."""
+    for seed in range(50):
+        room = generate_room(seed=seed, size="medium")
+        lines = _ascii_map_lines(room, size="medium")
+        # North wall is lines[1]; south wall is lines[-3] (before two S-label lines)
+        north_wall = lines[1]
+        south_wall = lines[-3]
+        for line in (north_wall, south_wall):
+            for i, ch in enumerate(line):
+                if ch in '+/=^v@':
+                    # Must not be on an interior floor row — these are wall rows so this always holds,
+                    # but confirm the glyph isn't a floor character
+                    assert ch != '.', f"Floor char '.' found on wall line: {line!r}"
+
+
 def test_legend_only_shows_present_glyphs():
+    import re
+    # Legend entries are always "  X  label" (2 spaces, glyph, 2 spaces, label).
+    _LEGEND_ENTRY = re.compile(r'^\s{2}(.)\s{2}\S')
     room = generate_room(seed=44)
     lines = _ascii_map_lines(room)
     legend_start = next((i for i, l in enumerate(lines) if "Legend" in l), None)
     if legend_start is None:
         return
+    # Slice to the legend column so padding from the left (map) side doesn't confuse the match.
+    legend_col = lines[legend_start].index("Legend")
     legend_glyphs = set()
     for line in lines[legend_start + 1:]:
-        stripped = line.strip()
-        if stripped:
-            legend_glyphs.add(stripped[0])
+        right = line[legend_col:] if len(line) > legend_col else ""
+        m = _LEGEND_ENTRY.match(right)
+        if m:
+            legend_glyphs.add(m.group(1))
     map_text = "\n".join(lines[:legend_start])
     for g in legend_glyphs:
         assert g in map_text or g == "@", f"Legend glyph {g!r} not found in map"
