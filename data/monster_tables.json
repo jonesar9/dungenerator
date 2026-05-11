@@ -540,5 +540,639 @@
         "Lich in phylactery-meditation. Disturbing it is a mistake."
       ]}
     ]
+  },
+  "mutoid_sewer": {
+    "levels_1_2": [
+      {"monster": "giant_toad", "count": "1d4", "behaviors": [
+        "Squatting in the shallows. Tongue strikes before anyone notices it moved.",
+        "Roosting on a ledge above the water. Drops on the first person through.",
+        "Two toads sharing a narrow channel. They don't move for anything."
+      ]},
+      {"monster": "giant_rat", "count": "3d6", "behaviors": [
+        "Swarm surging out of a cracked pipe. They're not afraid of you.",
+        "Rats gnawing on a bloated carcass. They scatter but circle back.",
+        "Nesting behind a collapsed grate. The nest has something in it."
+      ]},
+      {"monster": "crocodile", "count": "1d2", "behaviors": [
+        "Nearly invisible in the murk. You might walk past it.",
+        "Floating motionless in the center of a flooded chamber. Waiting.",
+        "Draped half-in, half-out of the water along the walkway."
+      ]},
+      {"monster": "sewer_mutoid", "count": "2d4", "behaviors": [
+        "Scavengers stripping a dead thing. They look up when the door opens.",
+        "Standing waist-deep in the outflow, watching the tunnel entrance.",
+        "A pack moving in loose formation, driven here from somewhere worse."
+      ]},
+      {"monster": "giant_leech", "count": "1d3", "behaviors": [
+        "Clinging to the underside of a wooden walkway. Drops when weight crosses.",
+        "Barely distinguishable from the black slick on the walls.",
+        "Floating in a cistern. Looks like a waterlogged rope."
+      ]},
+      {"monster": "gray_ooze", "count": "1", "behaviors": [
+        "Coating the floor of a low passage. Unavoidable.",
+        "Blending perfectly with the wet stone wall. 90% chance to be missed.",
+        "Seeping in through a crack overhead. Still arriving."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "giant_crocodile", "count": "1", "behaviors": [
+        "Filling a flooded chamber — there is barely room for anything else.",
+        "Lurking beneath a collapsed walkway. The water here is very still.",
+        "Ancient and huge. Has been here longer than anyone remembers."
+      ]},
+      {"monster": "mutoid_brute", "count": "1d3", "behaviors": [
+        "Territorial. The smell alone announces them thirty feet early.",
+        "Guarding a cached stash of salvage. They built it, they'll die for it.",
+        "Three brutes in a feeding dispute. They turn on intruders the moment they agree."
+      ]},
+      {"monster": "wererat", "count": "1d6", "behaviors": [
+        "Posing as desperate sewer workers. The story almost holds.",
+        "Wererats using the lower cisterns as a base, watching from the dark.",
+        "One in human form negotiating; others have already flanked the party."
+      ]},
+      {"monster": "ochre_jelly", "count": "1", "behaviors": [
+        "Occupying a whole side-passage. Something good is on the other side.",
+        "Oozing down a drain from above as the party moves beneath.",
+        "Disguised as spilled alchemical sludge on the floor."
+      ]},
+      {"monster": "green_slime", "count": "1", "behaviors": [
+        "Hanging from the ceiling of a low tunnel. Drip. Drip.",
+        "Covering the ladder rungs. Discovered too late.",
+        "Growing over a sealed door — only visible when you're already touching it."
+      ]},
+      {"monster": "black_pudding", "count": "1", "behaviors": [
+        "Following the party through the pipes. The oozing sound is getting closer.",
+        "Filling a side-chamber completely. The chest in the middle is visible through it.",
+        "Oozing from a cracked cistern wall. Growing larger as it feeds."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "black_pudding", "count": "1", "behaviors": [
+        "Massive. Has been here for decades. Everything metal it touches corrodes.",
+        "Blocking the only passage forward. It is patient and it is not hungry."
+      ]},
+      {"monster": "giant_crocodile", "count": "1d2", "behaviors": [
+        "A breeding pair. The female is between the party and the exit.",
+        "Patriarch of the lower cistern. Every mutoid down here defers to it."
+      ]},
+      {"monster": "troll", "count": "1", "behaviors": [
+        "A troll-thing warped by decades of alchemical runoff. Regenerates slime.",
+        "Squatting over a heap of gnawed bones. Looks up with milky, luminous eyes."
+      ]},
+      {"monster": "mutoid_brute", "count": "2d4", "behaviors": [
+        "A war-pack under a hulking chieftain. They know these tunnels intimately.",
+        "Returning from a surface raid. Carrying stolen food and a captive."
+      ]},
+      {"monster": "black_pudding", "count": "1", "behaviors": [
+        "Split into three smaller puddings from a past lightning strike. All hungry."
+      ]},
+      {"monster": "giant_leech", "count": "1d4", "behaviors": [
+        "A colony — the whole flooded corridor is alive with them.",
+        "Leech nest in a collapsed tank. Disturbing the tank releases all of them."
+      ]}
+    ]
+  },
+  "subterranean_wasteland": {
+    "levels_1_2": [
+      {"monster": "skeleton", "count": "2d4", "behaviors": [
+        "Standing at attention in alcoves, as they have for centuries.",
+        "Collapsed in dust-drifts — they rise when the threshold is crossed.",
+        "Scattered across the floor; they reassemble at the sound of voices."
+      ]},
+      {"monster": "giant_fire_beetle", "count": "1d8", "behaviors": [
+        "Their glow is the only light down here. They're also territorial.",
+        "Beetles drawn to residual magical heat in the walls. Disturbed by light.",
+        "A colony nesting in a cracked relief sculpture. The glow is beautiful. Don't touch it."
+      ]},
+      {"monster": "giant_scorpion", "count": "1d3", "behaviors": [
+        "Adapted to perfect stillness in dry dust. The pincers twitch.",
+        "Sheltering in the shadow of a toppled column. Barely visible.",
+        "One hunting, two more somewhere nearby."
+      ]},
+      {"monster": "giant_centipede", "count": "2d6", "behaviors": [
+        "Swarming out of a crack in a desiccated fresco.",
+        "Living inside a hollow pillar that sheds them when struck.",
+        "Concealed in the bone-dust on the floor. Moving looks like rippling."
+      ]},
+      {"monster": "giant_lizard", "count": "1d4", "behaviors": [
+        "Scavengers adapted to mineral-licking for hydration. Skittish but territorial.",
+        "Basking in the faint warmth of magical residue in the walls.",
+        "A clutch — small ones everywhere, large ones defending."
+      ]},
+      {"monster": "cave_locust", "count": "2d6", "behaviors": [
+        "Filling a vaulted chamber. Their shriek echoes catastrophically.",
+        "Grazing on patches of pale lichen that glow where the old magic is strongest.",
+        "Dormant in a pile until something warm disturbs them."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "cave_fisher", "count": "1d3", "behaviors": [
+        "Anchored in the ceiling of a passage, filaments hanging like tripwires.",
+        "A cave fisher has been here long enough that bones litter the floor below it.",
+        "Two perched at opposite ends of a chamber. Filaments cross in the middle."
+      ]},
+      {"monster": "gnoll", "count": "1d6", "behaviors": [
+        "Scavengers from the surface, deep and thirsty. They'll fight for water.",
+        "A war-band stripped down to essentials, moving fast, looking for something.",
+        "Gnolls with a gnawed prisoner they're debating the value of."
+      ]},
+      {"monster": "animated_statue_stone", "count": "1d2", "behaviors": [
+        "Guardians of the elder people, still at their post. Motionless until approached.",
+        "A sentinel half-buried in collapse. One arm is free. One is enough.",
+        "Positioned in front of a sealed vault door. It hasn't moved in two centuries."
+      ]},
+      {"monster": "mummy", "count": "1", "behaviors": [
+        "The desiccated ruler of whatever this place was. Still enthroned.",
+        "Wrapped in scorched linen, surrounded by offerings turned to ash.",
+        "A mummy so dry it barely registers as organic until it moves."
+      ]},
+      {"monster": "giant_scorpion", "count": "1d2", "behaviors": [
+        "Huge. Has grown large feeding on cave fishers and lizards.",
+        "Guarding a dead end where it has made its lair. The bones suggest it wins."
+      ]},
+      {"monster": "ghoul", "count": "1d4", "behaviors": [
+        "Ghouls driven down from higher crypts by something worse. Desperate.",
+        "Desiccated ghouls, dry as paper, but no less dangerous for it."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "mummy", "count": "1d2", "behaviors": [
+        "Two dynastic rulers, entombed together. They remember each other.",
+        "A mummy lord with 1d4 skeleton honor guard still at their stations."
+      ]},
+      {"monster": "gorgon", "count": "1", "behaviors": [
+        "An iron bull, wandering halls too large for anything else. Its breath leaves stone.",
+        "Gorgon guarding the deepest vault. The statues outside were adventurers."
+      ]},
+      {"monster": "stone_golem", "count": "1", "behaviors": [
+        "The last guardian, built by the elder people, still faithfully waiting.",
+        "A golem damaged by time, missing one arm. Still an eight-HD problem."
+      ]},
+      {"monster": "xorn", "count": "1", "behaviors": [
+        "Passing through the walls, pausing to investigate the party's metal equipment.",
+        "A xorn has been living in the stone here for generations. It is not pleased to see you."
+      ]},
+      {"monster": "basilisk", "count": "1d2", "behaviors": [
+        "Nesting in the deepest vault. The statues are not decorative.",
+        "A basilisk with a collection of former treasure-hunters arranged artfully."
+      ]},
+      {"monster": "purple_worm", "count": "1", "behaviors": [
+        "Burrowed up through the floor of the largest chamber. The sound precedes it.",
+        "A purple worm that has colonized a whole wing. The tunnels are its burrows."
+      ]}
+    ]
+  },
+  "arthurian_weird": {
+    "levels_1_2": [
+      {"monster": "faerie_knight", "count": "1d3", "behaviors": [
+        "Oath-bound to this place. Challenges the party formally before attacking.",
+        "A lone knight in tarnished armor, carrying a quest they cannot complete alone.",
+        "Three knights of opposing courts, currently at impasse. The party is a new variable."
+      ]},
+      {"monster": "wolf", "count": "1d6", "behaviors": [
+        "Enchanted wolves, sleek and silver-eyed. They understand Common.",
+        "Pack serving an absent fae lord. They test the party's worthiness.",
+        "Wolves that are not entirely wolves. They leave no tracks."
+      ]},
+      {"monster": "wight", "count": "1d3", "behaviors": [
+        "Knights who broke an oath and cannot die until it is fulfilled.",
+        "The former champions of this place, risen in service to old geasa.",
+        "Wights still wearing heraldic devices. The devices are recognizable."
+      ]},
+      {"monster": "hobgoblin", "count": "2d4", "behaviors": [
+        "Redcaps — fae-touched goblins with iron-shod boots and terrible morale against silver.",
+        "Boggart militia, nominally serving a fae court. Demanding a toll.",
+        "Hobgoblins bound to this hall by compact. They resent it. They resent you."
+      ]},
+      {"monster": "bandit", "count": "2d4", "behaviors": [
+        "Knight-errants who have lost their patrons and turned to the old ways.",
+        "Wandering men-at-arms, desperate, pledged to no lord. They'll negotiate.",
+        "Sell-swords who stumbled in and now can't find the exit."
+      ]},
+      {"monster": "giant_spider_crab", "count": "1d4", "behaviors": [
+        "The curse-weavers of this hall. Their webs carry enchantments.",
+        "Spiders that look almost like crabs. No one knows why. The fae don't explain.",
+        "Nesting in a heap of armor that once belonged to someone important."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "wraith", "count": "1d3", "behaviors": [
+        "The wronged dead — knights murdered, lords betrayed. They are specific about their grievances.",
+        "Oath-wraiths, bound to repeat a moment of failure until someone ends it.",
+        "Wraiths circling a sealed chapel. They guard something and hate doing it."
+      ]},
+      {"monster": "green_knight", "count": "1", "behaviors": [
+        "Seated at a table. Makes an offer. The offer involves the party's necks.",
+        "Standing in the entrance of a green chapel, axe in hand. Very still.",
+        "The green knight is on a quest. The party has accidentally become part of it."
+      ]},
+      {"monster": "gargoyle", "count": "1d4", "behaviors": [
+        "Heraldic guardians, bound to the coats of arms carved into the pillars.",
+        "Perched in the vaulted ceiling, mistaken for ornamental grotesques.",
+        "Fae-bound stone things. They speak riddles. They do not have to make sense."
+      ]},
+      {"monster": "medusa", "count": "1", "behaviors": [
+        "The enchantress at the heart of this place, wearing the face of a holy woman.",
+        "A medusa posing as an oracle. The petrified figures around her were believers.",
+        "Medusa and her 1d6 charmed knight servants. She calls them her champions."
+      ]},
+      {"monster": "shadow", "count": "1d4", "behaviors": [
+        "The shadows of knights who refused to leave. They are not the knights.",
+        "Shadows that move against the light source, following the party since two rooms ago.",
+        "Cast by nothing. Moving with intention through a hall lit by sourceless light."
+      ]},
+      {"monster": "faerie_knight", "count": "1d2", "behaviors": [
+        "A lord of the fae court, here on errand. The errand is not explained.",
+        "Two knights of opposing allegiance, bound by prophecy to meet here. The party is the witness."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "banshee", "count": "1", "behaviors": [
+        "The lady of this place, who died in it and never forgave the fact.",
+        "A banshee bound to warn of doom. She is overdue. She is also angry."
+      ]},
+      {"monster": "will_o_wisp", "count": "1d3", "behaviors": [
+        "Lights leading deeper in, toward the sound of a horn that isn't there.",
+        "Three wisps — one real, two reflections. Only one is dangerous. Probably.",
+        "A will-o'-wisp playing at being the Holy Grail. It's worked before."
+      ]},
+      {"monster": "vampire", "count": "1", "behaviors": [
+        "A cursed lord, immortal by compact with something older than the kingdom.",
+        "Seated at the head of a long table, waiting for a worthy enough guest."
+      ]},
+      {"monster": "lamia", "count": "1", "behaviors": [
+        "The lady of the lake, considerably less helpful than the legends suggest.",
+        "A lamia who has been the oracle of this place for three centuries. Many questors have come. Few left."
+      ]},
+      {"monster": "green_knight", "count": "1", "behaviors": [
+        "The original — the compact made flesh. It is very old and very patient.",
+        "An elder green knight whose head has been carried so long it has opinions."
+      ]},
+      {"monster": "wight", "count": "2d4", "behaviors": [
+        "The entire former garrison, risen in service to the last oath sworn here.",
+        "A wight court, with its own hierarchy, its own grievances, and a wight king."
+      ]}
+    ]
+  },
+  "iron_age_dread": {
+    "levels_1_2": [
+      {"monster": "apeman", "count": "2d6", "behaviors": [
+        "A raiding band, returned from the surface. They took something. It cries.",
+        "Gathered around a fire, performing something that might be ritual. They stop.",
+        "A pack in the dark — you hear them before you see anything. Then silence."
+      ]},
+      {"monster": "giant_rat", "count": "3d6", "behaviors": [
+        "Unnaturally quiet for rats. Something else is with them. Something is using them.",
+        "Nest in the debris. They scatter. One doesn't.",
+        "Rats that have been here long enough to learn the party's route."
+      ]},
+      {"monster": "giant_bat", "count": "2d6", "behaviors": [
+        "Colony in the vault above. Disturbed by torchlight. Not hostile — not yet.",
+        "A few bats following the party since three chambers back.",
+        "The bats are leaving. All of them. Quickly."
+      ]},
+      {"monster": "wererat", "count": "1d6", "behaviors": [
+        "Disguised as human survivors of something. Their story has holes.",
+        "Wererats that have gone feral. They don't maintain human form anymore.",
+        "One in each shadow. They've been tracking the party since the entrance."
+      ]},
+      {"monster": "giant_centipede", "count": "2d6", "behaviors": [
+        "Everywhere underfoot. Unavoidable without light.",
+        "In the walls. The walls are moving. Not the walls.",
+        "Under the body in the corner. Disturbing it releases them."
+      ]},
+      {"monster": "cave_locust", "count": "2d6", "behaviors": [
+        "In the dark, you hear them before you can see them.",
+        "Something has disturbed a colony nearby. The shrieking started a minute ago.",
+        "Cave locusts filling a passage. They spit at torchlight."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "werewolf", "count": "1d3", "behaviors": [
+        "Something has been following the party. Not quite a wolf. Not quite a man.",
+        "A pack-leader and two turned followers. They hunt in relays.",
+        "Werewolf in human form, sitting by a cold fire. Friendly. For now."
+      ]},
+      {"monster": "pale_crawler", "count": "1d2", "behaviors": [
+        "You didn't see it enter the room. It was already here.",
+        "A crawler that has learned patience. It is better at waiting than the party is.",
+        "Pale and enormous. Something humanity drove underground before it had writing."
+      ]},
+      {"monster": "bog_horror", "count": "1", "behaviors": [
+        "A shape in the dark that does not resolve into anything familiar.",
+        "The sound is wrong — too wet, too large, too close.",
+        "Something ancient and hateful, drawn by the warmth of torchlight."
+      ]},
+      {"monster": "ghoul", "count": "1d4", "behaviors": [
+        "Ghouls that have been here since the age of sacrifice. They remember the taste.",
+        "Dug up through the floor from an older layer. This was their place first.",
+        "A ghoul that looks almost like someone the party might know."
+      ]},
+      {"monster": "cave_bear", "count": "1d2", "behaviors": [
+        "Its den. The bones at the entrance were people.",
+        "A huge old bear with something wrong about the eyes.",
+        "Two — a male and a female, separated by the party's path. They are not happy."
+      ]},
+      {"monster": "orc", "count": "2d6", "behaviors": [
+        "Raiders from a deeper tribe. Surface-bleached and desperate.",
+        "Orcs that have been underground long enough to change. Something about the eyes.",
+        "A war-band performing a ritual they don't understand over a body they do."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "bog_horror", "count": "1", "behaviors": [
+        "The great horror. Old before the people above built their first wall.",
+        "It has no eyes. It doesn't need them. It knows."
+      ]},
+      {"monster": "werewolf", "count": "2d4", "behaviors": [
+        "A pack of the fully-turned — they don't come back from it anymore.",
+        "An entire extended family, all turned. They moved in together. They hunt together."
+      ]},
+      {"monster": "cave_bear", "count": "1d3", "behaviors": [
+        "Three bears, territory overlapping. They are not coordinated. That makes it worse.",
+        "A bear the size of a cart horse. Ancient. Wrong."
+      ]},
+      {"monster": "vampire", "count": "1", "behaviors": [
+        "Something so old it predates the concept of vampire. It just is what it is.",
+        "A primal blood-drinker with no court, no pretension, and nothing to negotiate."
+      ]},
+      {"monster": "troll", "count": "1d2", "behaviors": [
+        "A troll under the oldest part of the dungeon. Night-black and nearly silent.",
+        "Two trolls sharing a territory, each blaming the other for the party's intrusion."
+      ]},
+      {"monster": "pale_crawler", "count": "1", "behaviors": [
+        "An elder pale crawler. The others fled when it moved in.",
+        "It was waiting in the deepest room. It has always been waiting."
+      ]}
+    ]
+  },
+  "gonzo_fantasy": {
+    "levels_1_2": [
+      {"monster": "goblin", "count": "2d4", "behaviors": [
+        "Goblins working a legitimate toll operation. They have a charter. It is notarized.",
+        "Guild goblins on a contracted salvage run. Their paperwork is impeccable.",
+        "Goblins who insist they are the party's hirelings. No one hired them. They are very good at it."
+      ]},
+      {"monster": "homunculus", "count": "1d3", "behaviors": [
+        "A wizard's shopping list that became self-aware and is now aggressively helpful to the wrong people.",
+        "The wizard's messengers, carrying a note they will not let the party read.",
+        "Homunculi defending a laboratory. The laboratory is inside a chest."
+      ]},
+      {"monster": "animated_statue_stone", "count": "1d2", "behaviors": [
+        "A door. It has a face. It talks. It will only open for a correct password it refuses to reveal.",
+        "Dungeon furniture come alive in protest of recent renovations.",
+        "Two statues in an ongoing argument. Interrupting them is unwise."
+      ]},
+      {"monster": "bandit", "count": "2d4", "behaviors": [
+        "The dungeon's official welcome party. They are robbing you. It is a tradition.",
+        "Bandits who got lost. They have been here three weeks. They have opinions about the layout.",
+        "Adventurers. From a different dungeon. They are also confused."
+      ]},
+      {"monster": "imp", "count": "1d4", "behaviors": [
+        "Imps escaped from a summoning circle. The circle was a doodle. They are offended.",
+        "Four imps running a betting pool on the party's survival. They are rooting for the monsters.",
+        "An imp that insists it is the dungeon's manager and the party is a liability."
+      ]},
+      {"monster": "giant_fire_beetle", "count": "1d6", "behaviors": [
+        "Beetles wearing tiny saddles. The goblins are very proud of this.",
+        "Giant fire beetles organized in a perfect formation. Someone trained them.",
+        "A single enormous beetle that has developed opinions about treasure."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "gargoyle", "count": "1d4", "behaviors": [
+        "Gargoyles who moonlight as architectural critics. They have strong opinions about the stonework.",
+        "The dungeon's original décor. They have been here so long they've formed a neighborhood association.",
+        "A gargoyle that is also the quest-giver. It has been waiting here for sixty years."
+      ]},
+      {"monster": "doppelganger", "count": "1d4", "behaviors": [
+        "Doppelgangers that have been copying each other for so long none of them remember the original.",
+        "A doppelganger that has taken the form of the dungeon itself (conceptually).",
+        "Four doppelgangers pretending to be the party. They are better at it than expected."
+      ]},
+      {"monster": "dungeon_mimic", "count": "1", "behaviors": [
+        "A mimic that has been the main door for eleven years. It is tired of this.",
+        "Currently a treasure chest. The treasure inside is also the mimic.",
+        "A mimic imitating the entrance to the boss room. The actual boss room is elsewhere."
+      ]},
+      {"monster": "djinni", "count": "1", "behaviors": [
+        "A djinni bound in a lamp that the goblins have been using as a paperweight.",
+        "Free djinni, furious, granting exactly what was asked for in the worst possible interpretation.",
+        "Djinni who claims to be the dungeon's owner. The dungeon does not dispute this."
+      ]},
+      {"monster": "medusa", "count": "1", "behaviors": [
+        "A medusa who runs a very successful art gallery. The medium is permanent.",
+        "Medusa in the role of quest-giver. The quest involves her ex-husband, who is a statue.",
+        "The medusa is also petrified. Reflexive gaze. Very awkward."
+      ]},
+      {"monster": "flesh_golem", "count": "1", "behaviors": [
+        "A flesh golem assembled incorrectly. It functions anyway, though not as designed.",
+        "The flesh golem that runs the dungeon's tavern. The ale is fine. Don't ask about the ingredients.",
+        "Extremely rude flesh golem. The wizard built it with a surplus of spite."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "djinni", "count": "1d2", "behaviors": [
+        "Two djinn disputing ownership of this room. They will accept the party as arbitrators.",
+        "A djinni who has been wishing for things on behalf of the dungeon for forty years."
+      ]},
+      {"monster": "lich", "count": "1", "behaviors": [
+        "The lich is the dungeon. All of it. It has opinions about the party's route choices.",
+        "A lich that has forgotten it's a lich. Identifies as the dungeon's caretaker. Is doing a fine job."
+      ]},
+      {"monster": "efreeti", "count": "1", "behaviors": [
+        "Efreeti doing exactly what was asked: the dungeon is on fire.",
+        "An efreeti running a legitimate wish-brokerage. The fine print is the problem."
+      ]},
+      {"monster": "vampire_mage", "count": "1", "behaviors": [
+        "The vampire archmage who designed the dungeon. Considers the party a playtester.",
+        "A vampire mage in mid-experiment. The experiment involves the party now."
+      ]},
+      {"monster": "stone_golem", "count": "1", "behaviors": [
+        "The golem is a door. The door is the golem. Opening it requires defeating it.",
+        "Stone golem programmed with the wrong instructions. It is politely and inexorably doing the wrong thing."
+      ]},
+      {"monster": "dungeon_mimic", "count": "1", "behaviors": [
+        "The whole room is a mimic. This is technically possible. It has happened.",
+        "A mimic that has been the exit for three months. It has let people out. It always lets them back in."
+      ]}
+    ]
+  },
+  "gonzo_far_future_mutant": {
+    "levels_1_2": [
+      {"monster": "gamma_mutant", "count": "2d4", "behaviors": [
+        "Scavengers in hazmat scraps, checking the party for edible technology.",
+        "A work-gang maintaining something they don't understand. Protective of it.",
+        "Gamma mutants who have formed a religion around a broken vending machine."
+      ]},
+      {"monster": "giant_rat", "count": "3d6", "behaviors": [
+        "Rats three generations into irradiation. Slightly too large. Slightly too smart.",
+        "A swarm living inside the machinery. Disturbing the machine disturbs the rats.",
+        "Giant rats that glow faintly. They have been eating the walls."
+      ]},
+      {"monster": "death_machine", "count": "1d3", "behaviors": [
+        "Security units still running a patrol loop from before the collapse.",
+        "A death machine that has decided the party is unauthorized personnel. It is correct.",
+        "Feral machines pursuing an optimization goal no one programmed into them."
+      ]},
+      {"monster": "station_mutant", "count": "2d6", "behaviors": [
+        "Tribals with salvaged weapons and strong opinions about territory.",
+        "A community of station mutants who have built something approximating civilization.",
+        "Station mutants on a foraging run, nervous and well-armed."
+      ]},
+      {"monster": "gamma_mutant", "count": "1d6", "behaviors": [
+        "A scouting party from a larger settlement deeper in. They report back.",
+        "Gamma mutants gone feral — the radiation has pushed cognition sideways."
+      ]},
+      {"monster": "gray_ooze", "count": "1", "behaviors": [
+        "Industrial waste that has become something else. It corrodes everything.",
+        "A gray ooze seeping from a ruptured tank. Still growing."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "mutant_brute", "count": "1d3", "behaviors": [
+        "Apex mutants who have lived in the hot zones long enough to thrive there.",
+        "A brute serving as enforcer for a mutant faction. The faction is watching.",
+        "Three mutant brutes competing to be first through a narrow corridor. At the party's expense."
+      ]},
+      {"monster": "bio_horror", "count": "1", "behaviors": [
+        "An escaped bioweapon that has been evolving in the lower levels for decades.",
+        "A bio-horror that has learned to use doors. Not helpful.",
+        "Something the scientists made to solve a problem. They were right about the solution. Wrong about everything else."
+      ]},
+      {"monster": "feral_robot", "count": "1", "behaviors": [
+        "A maintenance unit whose goal-functions cascaded into something violent.",
+        "Last active security chassis in this sector. It is very committed to its original purpose.",
+        "A feral robot that has welded salvage onto itself. It is enormous. It is angry."
+      ]},
+      {"monster": "ochre_jelly", "count": "1", "behaviors": [
+        "Toxic waste aggregate — organic, barely. It eats everything including the floor.",
+        "An ochre jelly that came up through the drainage system. It's bigger than the drain it came from."
+      ]},
+      {"monster": "phase_spider", "count": "1d3", "behaviors": [
+        "Bioengineered phase spiders escaped from a containment unit. Phase capability was not intended.",
+        "Phase spiders hunting in shifts — while one is ethereal the others are not.",
+        "A phase spider using the walls as transit. You can hear it moving through them."
+      ]},
+      {"monster": "wererat", "count": "1d6", "behaviors": [
+        "Viral lycanthropy strain. Wererats acting as a mutagenic cult.",
+        "Wererats who maintain human form because it's tactically useful. They're calculating."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "feral_robot", "count": "1d2", "behaviors": [
+        "Heavy chassis — designed for something industrial. Repurposed itself for war.",
+        "Two feral robots that have been fighting each other for years. The party is a truce opportunity."
+      ]},
+      {"monster": "bio_horror", "count": "1", "behaviors": [
+        "The original. Everything else in this wing grew from it.",
+        "A bio-horror that has absorbed and incorporated mechanical components. Parts of it still function."
+      ]},
+      {"monster": "black_pudding", "count": "1", "behaviors": [
+        "Industrial waste so concentrated it developed persistence. Corrodes everything it contacts.",
+        "A black pudding that has been eating the facility for years. The facility is noticeably smaller."
+      ]},
+      {"monster": "mutant_brute", "count": "2d4", "behaviors": [
+        "An army of mutant brutes organized under a barely-coherent warlord.",
+        "Mutant brutes that have adapted to the hot zones — radiation just makes them angrier."
+      ]},
+      {"monster": "stone_golem", "count": "1", "behaviors": [
+        "A pre-collapse construction unit, still functional. Its build orders are catastrophically outdated.",
+        "The facility's original security golem. It has not received a shutdown command."
+      ]},
+      {"monster": "dragon_young_earth", "count": "1", "behaviors": [
+        "A genetically engineered wyrm escaped from the breeding program. The program's goals were unclear.",
+        "Young earth dragon that has been feeding on the mineral-rich walls. It's considerably larger than young."
+      ]}
+    ]
+  },
+  "gonzo_space_weirdos": {
+    "levels_1_2": [
+      {"monster": "station_mutant", "count": "2d4", "behaviors": [
+        "Locals who have opinions about unauthorized access to their section.",
+        "A crew of station mutants maintaining something in exchange for territorial rights.",
+        "Station mutants who have been here so long they've forgotten what the station was for."
+      ]},
+      {"monster": "void_crawler", "count": "1d4", "behaviors": [
+        "Crawlers phase-shifting in and out of the walls. The walls are not solid in this section.",
+        "One visible, others phased. They take turns.",
+        "A void crawler that has been riding the hull for years. It just came inside."
+      ]},
+      {"monster": "grey_outsider", "count": "1d6", "behaviors": [
+        "Grey outsiders from whatever experiment produced them. Still in scrubs.",
+        "A cell of outsiders with a collective goal they share telepathically. They won't say what it is.",
+        "Grey outsiders who believe the party is the experiment. They have clipboards."
+      ]},
+      {"monster": "giant_rat", "count": "3d6", "behaviors": [
+        "Space rats — technically the same species, technically not. They adapted.",
+        "A rat swarm living in the conduit system. Disturbing the conduits disturbs the rats.",
+        "Rats that have learned to use the vents as escape routes. They are faster than expected."
+      ]},
+      {"monster": "giant_bat", "count": "2d6", "behaviors": [
+        "Colonial bats in a decompressed section with enough atmosphere to sustain them, barely.",
+        "Bats that echolocate through walls. They know the party is coming.",
+        "The bats are leaving. All of them. From this whole section. Fast."
+      ]},
+      {"monster": "station_mutant", "count": "1d6", "behaviors": [
+        "A patrol, nervous, well-armed, and unclear on the rules of engagement.",
+        "Station mutant scavengers who have a good thing going and don't want it complicated."
+      ]}
+    ],
+    "levels_3_4": [
+      {"monster": "rogue_construct", "count": "1d3", "behaviors": [
+        "Maintenance constructs that reclassified everything as waste to be processed.",
+        "A rogue construct that has been repurposing other robots for years. It has an army.",
+        "Two constructs mid-disagreement about a process parameter. The party is a welcome distraction."
+      ]},
+      {"monster": "space_slug", "count": "1d4", "behaviors": [
+        "Space slugs that came aboard in cargo and have been a problem ever since.",
+        "A slug nest — the adults are outside, the young are inside everything valuable.",
+        "A space slug that has eaten through a load-bearing wall. The room is unstable."
+      ]},
+      {"monster": "void_crawler", "count": "1d2", "behaviors": [
+        "An elder void crawler, phasing in and out with full control. It is hunting.",
+        "Two crawlers coordinating — one phases in, the other waits outside to intercept."
+      ]},
+      {"monster": "phase_spider", "count": "1d3", "behaviors": [
+        "Phase spiders using the station's own infrastructure as hunting ground.",
+        "A phase spider that has laid eggs in the between-space. The eggs are starting to hatch.",
+        "Phase spiders and void crawlers sharing territory. Uneasily."
+      ]},
+      {"monster": "doppelganger", "count": "1d4", "behaviors": [
+        "Alien mimics that copy form. They don't quite get the faces right.",
+        "Doppelgangers that have been copying crew members for years. The crew is mostly doppelgangers now.",
+        "A doppelganger that has copied the party leader. It copied them three minutes ago."
+      ]},
+      {"monster": "bio_horror", "count": "1", "behaviors": [
+        "Something from the xenobiology section that should not have been kept in one section.",
+        "A bio-horror adapted to microgravity. It moves in ways that don't work in normal gravity."
+      ]}
+    ],
+    "levels_5_6": [
+      {"monster": "stellar_horror", "count": "1", "behaviors": [
+        "Something that came in through the hull breach in section seven. It has been here since.",
+        "A stellar horror that has been communicating with crew members. The crew members are changed."
+      ]},
+      {"monster": "rogue_construct", "count": "1d3", "behaviors": [
+        "Elite chassis — the original security complement. Still running original directives.",
+        "A rogue construct that has been the de-facto commander of this section for years."
+      ]},
+      {"monster": "lich", "count": "1", "behaviors": [
+        "The station's original AI, stored in a phylactery-analogue. It considers itself the rightful owner.",
+        "A lich who boarded this station three hundred years ago and never left. It has made improvements."
+      ]},
+      {"monster": "djinni", "count": "1", "behaviors": [
+        "A bound djinni the old crew used for life-support backup. The binding is fraying.",
+        "Free djinni, enormous, furious, and technically responsible for the current atmospheric situation."
+      ]},
+      {"monster": "efreeti", "count": "1", "behaviors": [
+        "An efreeti maintaining the reactor by sheer force of will and spite. It wants to leave. It cannot.",
+        "An efreeti that escaped its binding years ago. It's still here because it finds it amusing."
+      ]},
+      {"monster": "feral_robot", "count": "1d2", "behaviors": [
+        "The station's original heavy security units, upgraded by decades of self-modification.",
+        "Two feral robots that have incorporated biological components. They are no longer entirely robots."
+      ]}
+    ]
   }
 }

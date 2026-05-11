@@ -397,5 +397,405 @@
       "stairs_down": ["Spiraling stone stairs down"],
       "stairs_up": ["Spiraling stone stairs up"]
     }
+  },
+  "mutoid_sewer": {
+    "display_name": "Mutoid Sewer",
+    "room_names": [
+      "Outflow Cistern", "Fungal Tunnel", "Refuse Pit", "Stagnant Basin",
+      "Seepage Chamber", "The Drain", "Overflow Vault", "Filter Chamber",
+      "Tide Gate", "Corrosion Grotto", "Effluent Channel", "Breeding Pool"
+    ],
+    "feature_weights": {
+      "~": 5, "F": 4, "B": 4, "D": 4, "I": 3, "*": 2,
+      "C": 2, "T": 1, "P": 1, "A": 0, "c": 0, "S": 0, "W": 0, "t": 0
+    },
+    "monster_table": "mutoid_sewer",
+    "atmosphere": {
+      "smell": [
+        "Alchemical runoff and old rot — acrid and sweet at once",
+        "Fetid water, fungal bloom, and something chemical",
+        "Sulfur and decomposition, thick enough to taste",
+        "Wet stone and strange blooms of bioluminescent mold",
+        "The sharp burn of concentrated waste, rising from below",
+        "Decay undercut by something almost floral — mutation makes strange flowers"
+      ],
+      "sound": [
+        "Dripping from every surface, irregular and wrong",
+        "Something large moving through water, not far off",
+        "A low gurgling that could be pipes or could be breathing",
+        "Frog-calls echoing strangely in the pipes — too resonant, too slow",
+        "The distant rush of outflow in a larger channel",
+        "Silence, then a splash. Silence again."
+      ],
+      "light": [
+        "Phosphorescent slime coating the walls, sickly green",
+        "Near-total darkness, broken by bioluminescent fungal clusters",
+        "Reflections off standing water — light source unknown",
+        "A murky orange glow from deeper in the outflow",
+        "Total darkness, the water barely visible underfoot",
+        "Patches of pale blue light where alchemical runoff meets the stone"
+      ],
+      "temperature": [
+        "Warm and damp — the humidity is oppressive",
+        "Steaming near the outflow pipes, cooler in the open chambers",
+        "Warm, with pockets of cold where deep water rises",
+        "Hot and close, poorly ventilated, the air barely moves",
+        "Humid enough that surfaces are constantly wet",
+        "Warm with a chemical heat that has nothing to do with fire"
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Drainage arch, knee-deep water at the threshold", "Low pipe opening (duck to enter)", "Crumbling sluice arch, algae-thick"],
+      "door_wood": ["Waterlogged timber door, swollen in its frame", "Plank door half-rotted, the bottom gone"],
+      "door_iron": ["Rusted iron grate, several bars missing", "Corroded sluice gate, sealed with mineral deposits"],
+      "door_stuck": ["Iron grate corroded shut (Str check)", "Swollen timber door (Str check)"],
+      "door_locked": ["Iron grate, padlocked with a corroded lock", "Sealed valve wheel, locked with a chain"],
+      "door_secret": ["False stone panel behind a cascade of slime (Search to find)", "Submerged passage visible only when the water is disturbed (Search to find)"],
+      "stairs_down": ["Stone steps descending into standing water"],
+      "stairs_up": ["Iron ladder rungs set into the wall, heavily corroded"]
+    }
+  },
+  "subterranean_wasteland": {
+    "display_name": "Subterranean Wasteland",
+    "room_names": [
+      "Bone-Dust Plain", "Scoured Vault", "Cracked Cistern", "Dust Chamber",
+      "Desolation Gallery", "Desiccated Shrine", "Sand-Filled Hall", "Collapsed Archive",
+      "Rubble Field", "Parched Pit", "Ashen Nave", "The Long Dark"
+    ],
+    "feature_weights": {
+      "P": 5, "D": 5, "A": 3, "*": 3, "T": 2, "W": 2,
+      "B": 1, "F": 1, "C": 1, "I": 1, "t": 1, "~": 0, "c": 0, "S": 0
+    },
+    "monster_table": "subterranean_wasteland",
+    "atmosphere": {
+      "smell": [
+        "Dust and old rust — the smell of nothing left to decay",
+        "Ozone and mineral residue, faint and persistent",
+        "Ancient stone and the dry edge of something arcane",
+        "Clean and dead — no moisture, no life, no rot",
+        "A faint metallic bite where the magical fallout is strongest",
+        "Bone-dry air carrying fine dust that tastes of forgotten stone"
+      ],
+      "sound": [
+        "Wind through cracks in a dead ventilation system — distant and directionless",
+        "The fine settling of disturbed dust",
+        "Silence so complete it has texture",
+        "A faint, rhythmic crack from deep in the walls — thermal contraction",
+        "Your footsteps raising small dust clouds, echoing far",
+        "Nothing. Then, much later, nothing again."
+      ],
+      "light": [
+        "Faint amber glow from arcane residue in the stone — just enough to see shapes",
+        "Absolute dark in the far corners, dim heat-shimmer near the walls",
+        "A fire beetle corpse, still glowing orange, lying in the rubble",
+        "Faint reddish light from deep cracks, source indeterminate",
+        "Total darkness — your light is the only light there has been for centuries",
+        "Pale luminescence from a vein of corrupted mineral running the length of the vault"
+      ],
+      "temperature": [
+        "Bone-dry heat radiating from walls touched by old magic",
+        "Dry and mild — the temperature of deep stone, stripped of moisture",
+        "Warm near the glowing veins, cool in the shadows between",
+        "An arid heat with no humidity whatsoever — lips crack in minutes",
+        "Neutral and perfectly still — uncanny in a place this old",
+        "Faint warmth everywhere, sourceless, like the stone remembers being hotter"
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Carved arch, scoured smooth by centuries of dry wind", "Wide passage, glyphs worn to illegibility", "Narrow arch, half-blocked by rubble"],
+      "door_wood": ["Desiccated wooden door, crumbling at the edges", "Door frame intact; door itself is dust on the floor"],
+      "door_iron": ["Iron door, rust-red but solid", "Iron door sealed by mineral deposits from long-evaporated water"],
+      "door_stuck": ["Iron door, seized with rust (Str check)", "Stone door, sand-drift blocking it (Str check to clear)"],
+      "door_locked": ["Iron door, lock mechanism fused (thief or Str check)", "Stone door, rune-sealed — the runes still hold"],
+      "door_secret": ["False stone panel, scoured flush with the wall (Search to find)", "Concealed behind a collapsed relief (Search to find)"],
+      "stairs_down": ["Worn stone stairs descending, grit on every step"],
+      "stairs_up": ["Stone stairs ascending, heavily eroded"]
+    }
+  },
+  "arthurian_weird": {
+    "display_name": "Arthurian Weird",
+    "room_names": [
+      "Green Chapel", "Hollow Hill Chamber", "Tournament Antechamber", "Mist Hall",
+      "Faerie Court", "The Lady's Bower", "Round Table Hall", "Chapel Perilous",
+      "Quest Chamber", "Chivalric Archive", "The Testing Ground", "Oath-Hall"
+    ],
+    "feature_weights": {
+      "A": 5, "P": 4, "*": 4, "t": 3, "F": 3, "c": 2,
+      "S": 2, "C": 2, "T": 1, "W": 1, "D": 1, "~": 1, "I": 0, "B": 0
+    },
+    "monster_table": "arthurian_weird",
+    "atmosphere": {
+      "smell": [
+        "Rain-wet grass and turned earth — in a chamber with no sky",
+        "Old stone and incense burned for a faith no one practices anymore",
+        "Wildflower and moss, entirely wrong for underground",
+        "The cold-iron smell of old armor, and beneath it something floral",
+        "Mist and green growing things that should not be here",
+        "Beeswax and old wood — a chapel smell, faint and insistent"
+      ],
+      "sound": [
+        "A horn, distant, answering something you didn't hear",
+        "Wind through grass — no grass is visible",
+        "Dripping from an unseen spring, measured and deliberate",
+        "Something like chanting, syllables unclear, not threatening",
+        "The creak of armor, moving, not near you — not yet",
+        "Complete silence, then a single clear bell note, unrepeated"
+      ],
+      "light": [
+        "Sourceless silver-grey light, even and without shadow",
+        "Torchlight that shouldn't reach this far does",
+        "Mist-filtered light from no discernible direction",
+        "Will-o'-wisps — one, two, three — drifting near the ceiling",
+        "Cool blue light from a spring or pool that may not be water",
+        "Total darkness that lifts one step before you need to see"
+      ],
+      "temperature": [
+        "Mild and damp as an English spring morning",
+        "Cool and still, the temperature of a stone chapel in April",
+        "Unseasonably warm for underground, like a summer hollow hill",
+        "Cold mist patches alternate with mild open chambers",
+        "The air is exactly the temperature of the surface. That's not possible.",
+        "Comfortable — and that is the most unsettling thing about this room"
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Stone arch wound with ivy — living, underground, inexplicably", "Pointed arch carved with heraldic devices, fresh paint", "Open arch of interlaced branches, somehow solid"],
+      "door_wood": ["Heavy oak door, iron ring handle, warm to the touch", "Door of woven branches, green and alive at the joints"],
+      "door_iron": ["Iron-bound door bearing a coat of arms not found in any heraldry", "Portcullis of black iron, lowered — mechanism visible above"],
+      "door_stuck": ["Door sealed by a spoken oath (the door remembers)", "Oak door swollen with grass and roots growing from the frame (Str check)"],
+      "door_locked": ["Door locked by compact — only the worthy may pass (GM discretion)", "Iron lock, key held by whoever won the last challenge here"],
+      "door_secret": ["Section of hedge (impossible, solid) — Search to find the gap", "False panel behind a heraldic shield mounted on the wall (Search to find)"],
+      "stairs_down": ["Stone steps descending into mist — the bottom is not visible"],
+      "stairs_up": ["Earthen steps rising toward faint daylight that is definitely not there"]
+    }
+  },
+  "iron_age_dread": {
+    "display_name": "Iron Age Dread",
+    "room_names": [
+      "Earthen Chamber", "Bone Pit", "Bog Shrine", "Cave Mouth",
+      "The Lair", "Ancestral Pit", "Smoke Hollow", "Blood Stone Chamber",
+      "The Long Dark", "Burial Earth", "Fell Hollow", "Darkness Chamber"
+    ],
+    "feature_weights": {
+      "D": 5, "A": 4, "*": 4, "B": 3, "F": 2, "P": 2,
+      "c": 2, "C": 1, "I": 1, "T": 1, "W": 1, "~": 1, "t": 0, "S": 0
+    },
+    "monster_table": "iron_age_dread",
+    "atmosphere": {
+      "smell": [
+        "Old smoke and animal fat — someone was here, and recently",
+        "Wet earth and the iron edge of old blood",
+        "Something not quite right underneath the smell of cold stone",
+        "Charred bone and tallow, the smell of firelight from somewhere else",
+        "Damp fur and the musk of something large that has been here a long time",
+        "Clean cold air and, below it, something wrong you can't name"
+      ],
+      "sound": [
+        "Dripping, far away, with an irregular rhythm that almost sounds intentional",
+        "Something moved in the dark behind you. You're certain of it.",
+        "Wind from nowhere in particular, low and continuous",
+        "Your own breathing, too loud in the silence",
+        "A scrape — stone on stone, or bone on stone — then nothing",
+        "Silence. The kind that means something in the dark has stopped moving."
+      ],
+      "light": [
+        "Pitch dark — your torch is the only fire that has been here in years",
+        "Crude animal-fat rushlight, guttering and yellow, barely reaching the walls",
+        "The embers of a fire, recently abandoned",
+        "Total darkness — even the torchlight seems reluctant",
+        "A faint phosphorescence on the cave walls that doesn't help",
+        "Absolute dark, broken only by what you brought with you"
+      ],
+      "temperature": [
+        "Cold and damp — the deep earth cold, not weather cold",
+        "Cold with pockets colder still, near certain walls, for no reason",
+        "Mild near the entrance, cold quickly, very cold beyond that",
+        "Still and cold, the air barely moving",
+        "The temperature of deep ground — constant, close, oppressive",
+        "Warmer than it should be. Something warm has been here."
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Natural cave opening, bones at the threshold", "Gap in the earthwork, shored with timber", "Low tunnel, the stone worn smooth by years of passage"],
+      "door_wood": ["Crude planks lashed with hide — more barrier than door", "Hide curtain over a low opening"],
+      "door_iron": ["None here. Iron is rare and precious.", "A single iron-banded timber door, out of place"],
+      "door_stuck": ["Rockfall blocking the passage (Str check to shift enough to pass)", "Timbers collapsed across the opening (Str check)"],
+      "door_locked": ["Bar across the far side — someone sealed this from inside", "Hide curtain weighted with stones, lashed from the other side"],
+      "door_secret": ["Slab of stone concealing a narrow shaft (Search to find)", "Earthwork passage behind a collapsed section (Search to find)"],
+      "stairs_down": ["Rough earthen steps down, hand-cut and uneven"],
+      "stairs_up": ["Narrow earthen ramp up, worn smooth"]
+    }
+  },
+  "gonzo_fantasy": {
+    "display_name": "Gonzo Fantasy",
+    "room_names": [
+      "The Room That Is Also A Corridor", "Dungeon Proper", "Where The Monsters Live",
+      "Treasure Repository (Probably)", "The Twist", "Inexplicable Chamber",
+      "Hall of Convenient Coincidences", "Ambiguity Alcove", "Climactic Antechamber",
+      "Storage (Do Not Enter)", "The Bit With The Puzzle", "Exposition Grotto"
+    ],
+    "feature_weights": {
+      "*": 5, "C": 4, "A": 4, "T": 3, "B": 3, "D": 2,
+      "P": 2, "W": 2, "F": 2, "I": 2, "t": 2, "c": 1, "S": 1, "~": 1
+    },
+    "monster_table": "gonzo_fantasy",
+    "atmosphere": {
+      "smell": [
+        "Whatever you least expected",
+        "Someone is cooking something. You cannot identify what.",
+        "Nothing. Suspiciously nothing.",
+        "Exactly what a dungeon should smell like — too exactly",
+        "Something floral that has no business being here",
+        "Ozone and fresh bread, simultaneously, in a way that shouldn't be possible"
+      ],
+      "sound": [
+        "Distant adventurer sounds — not yours — from a dungeon that may or may not overlap with this one",
+        "The dungeon humming to itself. It stops when you listen.",
+        "A perfectly timed dramatic pause",
+        "Faint narration from somewhere above. The words are unclear.",
+        "Total silence, then applause, then silence again",
+        "Something is definitely taking notes on the party's progress"
+      ],
+      "light": [
+        "Inexplicably well-lit, as though someone prepared for visitors",
+        "Torches everywhere, recently placed, still burning — you didn't put them there",
+        "A sun in a jar, sitting on a shelf, not explained",
+        "Sourceless and cheerful and deeply suspicious",
+        "The light follows the party by about ten feet",
+        "Dim but somehow adequate — the dungeon is being accommodating"
+      ],
+      "temperature": [
+        "Exactly right. Aggressively temperate.",
+        "Comfortable in a way that makes you feel you've missed something",
+        "Perfect — suspiciously, uncannily perfect",
+        "Warm near the monsters, cool near the treasure — helpful of it",
+        "The temperature shifts slightly to match whatever mood the room has decided on",
+        "Fine. Everything is fine."
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Arch labeled 'EXIT' in Common, pointing deeper in", "Unnecessarily ornate arch — someone over-invested in this passage", "Open arch with a velvet rope across it"],
+      "door_wood": ["A door with a face on it. The face is talking.", "Perfectly ordinary door. The knob is on the ceiling."],
+      "door_iron": ["Iron door with a sign reading 'BOSS FIGHT (PROBABLY).'", "Iron door. It's sighing. Very faintly, but it's sighing."],
+      "door_stuck": ["Door stuck because it disagrees with the party's plan (Str check or argument)", "The door requires you to knock. Correctly."],
+      "door_locked": ["Locked door — the key is in the next room, which is also locked", "Door locked by a riddle. The riddle is about the door."],
+      "door_secret": ["Secret door that isn't very secret — it winks (Search to open)", "False wall that the dungeon forgot to connect to anything (Search to find)"],
+      "stairs_down": ["Stairs descending, labeled 'HARDER STUFF BELOW'"],
+      "stairs_up": ["Stairs ascending, labeled 'EXIT (DO NOT TRUST)' in three languages"]
+    }
+  },
+  "gonzo_far_future_mutant": {
+    "display_name": "Gonzo Far-Future Mutant",
+    "room_names": [
+      "Lab Bay", "Reactor Overflow", "Mutant Nursery", "Storage Locker C",
+      "Reclamation Pit", "Processing Chamber", "The Tank Room", "Chromosome Archive",
+      "Feral Sector", "Waste Management", "The Old Cafeteria", "Observation Deck (Collapsed)"
+    ],
+    "feature_weights": {
+      "*": 5, "T": 5, "I": 4, "B": 3, "D": 3, "C": 3,
+      "P": 2, "F": 2, "W": 1, "A": 1, "~": 1, "c": 0, "S": 0, "t": 0
+    },
+    "monster_table": "gonzo_far_future_mutant",
+    "atmosphere": {
+      "smell": [
+        "Chemical burn and something biological, neither pleasant",
+        "Ozone, recycled air, and a faint sweetness that shouldn't be sweet",
+        "The smell of hot metal and organic growth competing",
+        "Antiseptic under decay — old cleanliness, new rot",
+        "Something vaguely edible in a vat somewhere. Don't investigate.",
+        "Scorched polymer and living tissue. The combination is its own category."
+      ],
+      "sound": [
+        "Humming machinery — some of it operational, some of it pretending",
+        "Bubbling from tanks in the dark. Something in the tanks is moving.",
+        "System alerts in a language no one here speaks anymore",
+        "The rhythmic clank of a machine doing its job in the absence of supervision",
+        "Feral voices in the deep section — language-adjacent, not quite",
+        "A low subsonic vibration from the reactor that you feel more than hear"
+      ],
+      "light": [
+        "Emergency lighting — red, perpetual, giving everything the look of a warning",
+        "Bioluminescent organisms in tanks and on walls, blue-green and pulsing",
+        "Total darkness in the dead sections; harsh white in the active ones",
+        "A strobe somewhere, long since decoupled from anything meaningful",
+        "Dim and functional — just enough to see the problem",
+        "Bright in patches, dead in others, with no logic to which is which"
+      ],
+      "temperature": [
+        "Hot near the reactor sections, cold in storage — nothing in between",
+        "Humid and warm near the growth vats, dry and sharp elsewhere",
+        "Inconsistent — pockets of each extreme with no transition",
+        "Cold where the power is out, hot where something is still running",
+        "Warm and close — the biological sections generate their own heat",
+        "Climate-controlled pockets surrounded by ambient catastrophe"
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Open bulkhead, seals corroded open", "Collapsed corridor — navigable but structural integrity unclear", "Pressurized tunnel, the hiss of escaping atmosphere at the join"],
+      "door_wood": ["No wood — rotted or burned long ago; replaced with sheet metal or welded scrap"],
+      "door_iron": ["Blast door, jammed at three-quarter open", "Rusted pressure hatch — requires a wheel mechanism to turn (Str check)", "Iris door, still functional, irising slowly"],
+      "door_stuck": ["Blast door jammed by debris (Str check)", "Hatch sealed by pressure differential (Str check or mechanical release)"],
+      "door_locked": ["Hatch requiring a keycode — panel fried, wires exposed (thief or tinker to bypass)", "Magnetically sealed door — still has power"],
+      "door_secret": ["Panel concealing a maintenance crawlspace (Search to find)", "False wall of equipment racks hiding a service corridor (Search to find)"],
+      "stairs_down": ["Descending ladder to a lower section — rungs intact, mostly"],
+      "stairs_up": ["Emergency stairwell, structural integrity uncertain"]
+    }
+  },
+  "gonzo_space_weirdos": {
+    "display_name": "Gonzo Space Weirdos",
+    "room_names": [
+      "Docking Node", "Processing Ring", "Habitat Block", "Coolant Bay",
+      "Observation Blister", "The Spine", "Emergency Bay", "Commissary (Ransacked)",
+      "Cultivation Chamber", "Structural Void", "Communications Array (Broken)", "The Deep Section"
+    ],
+    "feature_weights": {
+      "*": 5, "T": 4, "I": 4, "P": 4, "C": 3, "B": 3,
+      "D": 2, "F": 2, "~": 2, "W": 1, "A": 1, "t": 1, "c": 0, "S": 0
+    },
+    "monster_table": "gonzo_space_weirdos",
+    "atmosphere": {
+      "smell": [
+        "Recycled air and ozone — the unmistakable smell of somewhere sealed",
+        "Something biological from the cultivation section bleeding into the corridor",
+        "Cold metal and the faint sulfur of old electronics",
+        "Nothing — the scrubbers still work here, an unsettling cleanliness",
+        "Vacuum-adjacent wrongness, the smell of a seal that almost failed",
+        "Organic decay mixed with artificial sterility — both losing"
+      ],
+      "sound": [
+        "Hull creaks — the structure settling, or something outside",
+        "Distant systems cycling on and off with no apparent reason",
+        "A rhythmic mechanical sound from the deep sections, steady and unexplained",
+        "Your own breathing, louder than usual — the acoustics are wrong",
+        "Static from a speaker that has been broadcasting nothing for years",
+        "Something moving in the conduit above the ceiling panels"
+      ],
+      "light": [
+        "Dim blue strip lighting, the color of something not quite ready",
+        "Bioluminescence from organisms that have colonized the walls",
+        "Total darkness in the unpowered sections — dead and absolute",
+        "Harsh functional white in the active zones, nothing in between",
+        "Emergency red in this section; the emergency was a long time ago",
+        "Shifting colors from a display screen that is still running, showing nothing"
+      ],
+      "temperature": [
+        "Cold in the unpowered sections — space-adjacent, not survivable long",
+        "Hot near active systems, cold everywhere else — no middle ground",
+        "Pockets of climate control surrounded by ambient temperature",
+        "Cool and regulated — life support is still functioning here",
+        "Variable by the meter — one side of the room is tolerable, the other is not",
+        "Pressurized and temperate — this section is maintained. By something."
+      ]
+    },
+    "exit_flavor": {
+      "archway": ["Open bulkhead, pressure seals retracted", "Structural gap — the hull shifted and left a passage", "Airlock inner door, cycling indicator still blinking"],
+      "door_wood": ["None — there is no wood here. There may have never been."],
+      "door_iron": ["Pressure hatch, manual release only", "Blast door, partially open — the gap is person-width", "Airlock outer door — do not open without confirmation"],
+      "door_stuck": ["Hatch mechanism seized (Str check or tools)", "Blast door with no power — manual override required (Str check)"],
+      "door_locked": ["Hatch locked by a code that still works — the code is a problem", "Magnetically sealed — power still flowing, source unknown"],
+      "door_secret": ["Panel behind a loose equipment rack (Search to find)", "Maintenance crawlway concealed behind conduit bundles (Search to find)"],
+      "stairs_down": ["Ladder descending to a lower deck — the lights are out below"],
+      "stairs_up": ["Access shaft upward — handholds worn smooth by heavy use"]
+    }
   }
 }
