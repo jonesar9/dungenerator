@@ -61,7 +61,7 @@ def validate_args(args: argparse.Namespace) -> None:
 def main(argv: list[str] | None = None) -> None:
     # Ensure UTF-8 output on Windows terminals that default to CP1252
     if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore
 
     parser = build_parser()
     args = parser.parse_args(argv)

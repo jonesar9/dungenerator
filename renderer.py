@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import textwrap
 from dataclasses import asdict
 from typing import Optional
@@ -40,6 +41,18 @@ CONTENTS_DISPLAY = {
     "non_combat_encounter":  "Non-Combat Encounter",
     "special":               "Special (trap)",  # fallback for old seeds
 }
+
+
+# Strip ANSI codes to measure true terminal column width
+_ANSI_RE = re.compile(r'\033\[[0-9;]*m')
+
+
+def _visual_len(s: str) -> int:
+    return len(_ANSI_RE.sub('', s))
+
+
+def _pad_to(s: str, width: int) -> str:
+    return s + ' ' * max(0, width - _visual_len(s))
 
 
 class Renderer:
@@ -127,30 +140,41 @@ class Renderer:
             if 1 <= tr <= rh and 1 <= tc <= rw:
                 grid[tr][tc] = "X"
 
-        # Compass and directional labels
-        lines: list[str] = []
+        # Build map lines
+        map_lines: list[str] = []
 
         # North label
         north_c = exit_positions.get("north", (0, grid_w // 2))[1]
         north_label = "N" if "north" in exit_positions else ""
-        lines.append(self._compass_label("N", north_label, north_c, grid_w))
+        map_lines.append(self._compass_label("N", north_label, north_c, grid_w))
 
         # Rows
         for r in range(grid_h):
-            row_str = self._render_row(r, grid[r], grid_h, rh, exit_positions)
-            lines.append(row_str)
+            map_lines.append(self._render_row(r, grid[r], grid_h, rh, exit_positions))
 
         # South label
         south_c = exit_positions.get("south", (0, grid_w // 2))[1]
         entry_char = "@" if room.entry_direction == "south" else "v"
-        lines.append(self._compass_label("S", entry_char, south_c, grid_w))
-        lines.append("  S (entry)" if room.entry_direction == "south" else "  S")
+        map_lines.append(self._compass_label("S", entry_char, south_c, grid_w))
+        map_lines.append("  S (entry)" if room.entry_direction == "south" else "  S")
 
-        # Legend
-        lines.append("")
-        lines.extend(self._render_legend(room, exit_positions))
+        # Legend lines alongside the map
+        legend_lines = self._render_legend(room, exit_positions)
 
-        return "\n".join(lines)
+        GUTTER = "   "
+        map_width = max(_visual_len(line) for line in map_lines)
+        n = max(len(map_lines), len(legend_lines))
+
+        result: list[str] = []
+        for i in range(n):
+            left = map_lines[i] if i < len(map_lines) else ""
+            right = legend_lines[i] if i < len(legend_lines) else ""
+            if right:
+                result.append(_pad_to(left, map_width) + GUTTER + right)
+            else:
+                result.append(left)
+
+        return "\n".join(result)
 
     def _exit_glyph_and_pos(self, ex: Exit,
                              rw: int, rh: int) -> tuple[str, tuple[int, int]]:

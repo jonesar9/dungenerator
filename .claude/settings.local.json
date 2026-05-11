@@ -7,7 +7,8 @@
       "Bash(python dungeonroom.py --theme mutoid_sewer --rooms 4 --level 2 --seed 7)",
       "Bash(python dungeonroom.py --theme mutoid_sewer --level 2 --seed 7)",
       "Bash(python dungeonroom.py --theme arthurian_weird --level 3 --seed 15)",
-      "Bash(python dungeonroom.py --theme iron_age_dread --level 4 --seed 99 -e 3)"
+      "Bash(python dungeonroom.py --theme iron_age_dread --level 4 --seed 99 -e 3)",
+      "Bash(python dungeonroom.py --seed 7 --size large --exits 4)"
     ]
   }
 }
