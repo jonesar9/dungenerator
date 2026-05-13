@@ -9,7 +9,13 @@
       "Bash(python dungeonroom.py --theme arthurian_weird --level 3 --seed 15)",
       "Bash(python dungeonroom.py --theme iron_age_dread --level 4 --seed 99 -e 3)",
       "Bash(python dungeonroom.py --seed 7 --size large --exits 4)",
-      "Bash(python -m pytest tests/ -v)"
+      "Bash(python -m pytest tests/ -v)",
+      "Bash(find C:\\\\\\\\code\\\\\\\\dungenerator -type f -name \"*.py\" -o -name \"*.js\" -o -name \"*.ts\" -o -name \"*.java\" -o -name \"*.cpp\" -o -name \"*.c\")",
+      "Bash(python -m pytest tests/test_renderer.py -v)",
+      "Bash(python dungeonroom.py --seed 42 --no-color)",
+      "Bash(python dungeonroom.py --seed 99 --size large --no-color)",
+      "Bash(python dungeonroom.py --seed 77 --size medium --no-color)",
+      "Bash(python dungeonroom.py --seed 99 --size large --unicode --no-color)"
     ]
   }
 }
