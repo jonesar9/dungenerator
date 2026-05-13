@@ -96,10 +96,11 @@ def test_both_format_renders():
 
 
 def test_walls_present_in_map():
-    """Map grid must contain # wall characters."""
+    """Map grid must contain wall characters (outline or corner)."""
     room = generate_room(seed=77)
     lines = _ascii_map_lines(room)
-    wall_lines = [l for l in lines if "#" in l]
+    wall_chars = set("#-|")
+    wall_lines = [l for l in lines if any(c in wall_chars for c in l)]
     assert len(wall_lines) >= 2  # at least top and bottom walls
 
 

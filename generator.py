@@ -26,9 +26,9 @@ _THEMES_DIR = _DATA / "themes"
 _THEMES: dict = {}
 
 SIZE_PRESETS = {
-    "small":  {"canvas_w": 40, "canvas_h": 20, "char_per_sq": 2, "feature_cap": 3},
-    "medium": {"canvas_w": 60, "canvas_h": 30, "char_per_sq": 3, "feature_cap": 5},
-    "large":  {"canvas_w": 80, "canvas_h": 40, "char_per_sq": 4, "feature_cap": 7},
+    "small":  {"canvas_w": 40, "canvas_h": 20, "char_per_sq": 2, "rows_per_sq": 1, "feature_cap": 3},
+    "medium": {"canvas_w": 60, "canvas_h": 30, "char_per_sq": 3, "rows_per_sq": 2, "feature_cap": 5},
+    "large":  {"canvas_w": 80, "canvas_h": 40, "char_per_sq": 4, "rows_per_sq": 2, "feature_cap": 7},
 }
 
 # Room dimension table (d6 → width_sq, height_sq)
@@ -86,6 +86,7 @@ def generate_room(
     preset = SIZE_PRESETS.get(size, SIZE_PRESETS["medium"])
     feature_cap = preset["feature_cap"]
     char_per_sq = preset["char_per_sq"]
+    rows_per_sq = preset.get("rows_per_sq", 1)
 
     # Room geometry
     d6 = rng.randint(1, 6)
@@ -93,7 +94,7 @@ def generate_room(
 
     # Shape — organic requires a large enough interior for CA to look meaningful
     rw = width_sq * char_per_sq
-    rh = height_sq * char_per_sq
+    rh = height_sq * rows_per_sq
     available_shapes = ["rect", "l_shape", "organic"] if rw >= 6 and rh >= 6 else ["rect", "l_shape"]
     theme_shape_w = theme_data.get("shape_weights", {})
     shape_weights = [max(theme_shape_w.get(s, 1), 0) for s in available_shapes]
@@ -178,7 +179,7 @@ def generate_room(
 
     # Place features only on floor cells
     mask = make_floor_mask(shape_type, rw, rh, seed)
-    _place_features(room, char_per_sq, canvas_w, canvas_h, preset, mask)
+    _place_features(room, char_per_sq, rows_per_sq, canvas_w, canvas_h, preset, mask)
 
     return room
 
@@ -193,12 +194,12 @@ def _unguarded_treasure_type(level: int, rng: random.Random) -> str:
         return rng.choice(["C", "D", "E"])
 
 
-def _place_features(room: Room, char_per_sq: int,
+def _place_features(room: Room, char_per_sq: int, rows_per_sq: int,
                     canvas_w: Optional[int], canvas_h: Optional[int],
                     preset: dict, mask: list[list[bool]]) -> None:
     """Assign grid (col, row) coordinates to each feature, on floor cells only."""
     w = room.width_sq * char_per_sq
-    h = room.height_sq * char_per_sq
+    h = room.height_sq * rows_per_sq
     occupied: set[tuple[int, int]] = set()
     spiral = _spiral_coords(w // 2, h // 2, w, h)
 

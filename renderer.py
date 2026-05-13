@@ -12,6 +12,29 @@ from models import Exit, Feature, Room, Trap
 from generator import SIZE_PRESETS
 from shapes import make_floor_mask
 
+# ─── Unicode box-drawing wall characters ─────────────────────────────────────
+# Key: (north_wall, south_wall, east_wall, west_wall)
+_BOX = {
+    (False, False, False, False): " ",
+    (True,  False, False, False): "╵",
+    (False, True,  False, False): "╷",
+    (False, False, True,  False): "╶",
+    (False, False, False, True ): "╴",
+    (True,  True,  False, False): "│",
+    (False, False, True,  True ): "─",
+    (True,  False, True,  False): "└",
+    (True,  False, False, True ): "┘",
+    (False, True,  True,  False): "┌",
+    (False, True,  False, True ): "┐",
+    (True,  True,  True,  False): "├",
+    (True,  True,  False, True ): "┤",
+    (True,  False, True,  True ): "┴",
+    (False, True,  True,  True ): "┬",
+    (True,  True,  True,  True ): "┼",
+}
+
+_BOX_CHARS = frozenset(_BOX.values()) - {" "}
+
 # ─── ANSI color codes ─────────────────────────────────────────────────────────
 RESET  = "\033[0m"
 BOLD   = "\033[1m"
@@ -60,19 +83,22 @@ def _pad_to(s: str, width: int) -> str:
 class Renderer:
     def __init__(self, room: Room, size: str = "medium",
                  canvas_w: Optional[int] = None, canvas_h: Optional[int] = None,
-                 color: bool = True, verbose: bool = False):
+                 color: bool = True, verbose: bool = False,
+                 unicode_glyphs: bool = False):
         self.room = room
         self.color = color
         self.verbose = verbose
+        self.unicode_glyphs = unicode_glyphs
 
         preset = SIZE_PRESETS.get(size, SIZE_PRESETS["medium"])
         self.canvas_w = canvas_w or preset["canvas_w"]
         self.canvas_h = canvas_h or preset["canvas_h"]
         self.char_per_sq = preset["char_per_sq"]
+        self.rows_per_sq = preset.get("rows_per_sq", 1)
 
         # Interior room pixel dimensions
         self.room_w = room.width_sq * self.char_per_sq
-        self.room_h = room.height_sq * self.char_per_sq
+        self.room_h = room.height_sq * self.rows_per_sq
 
     # ─── Color helpers ────────────────────────────────────────────────────────
 
@@ -143,6 +169,29 @@ class Renderer:
             tc = room.trap.col + 1
             if 1 <= tr <= rh and 1 <= tc <= rw and mask[room.trap.row][room.trap.col]:
                 grid[tr][tc] = "X"
+
+        if self.unicode_glyphs:
+            # Pass 1: mark voids (reuse ASCII void logic)
+            for r in range(grid_h):
+                for c in range(grid_w):
+                    if grid[r][c] == "#" and self._ascii_wall_char(r, c, grid_h, grid_w, mask) == " ":
+                        grid[r][c] = " "
+            # Pass 2: box-drawing connectivity
+            for r in range(grid_h):
+                for c in range(grid_w):
+                    if grid[r][c] == "#":
+                        grid[r][c] = self._unicode_wall_char(r, c, grid, grid_h, grid_w)
+            # Floor upgrade
+            for r in range(grid_h):
+                for c in range(grid_w):
+                    if grid[r][c] == ".":
+                        grid[r][c] = "·"
+        else:
+            # Classify every '#' cell using the mask — void cells become ' '
+            for r in range(grid_h):
+                for c in range(grid_w):
+                    if grid[r][c] == "#":
+                        grid[r][c] = self._ascii_wall_char(r, c, grid_h, grid_w, mask)
 
         # Build map lines
         map_lines: list[str] = []
@@ -215,6 +264,48 @@ class Renderer:
             row = rng.choice(valid or list(range(2, rh - 1)) or [(rh + 2) // 2])
             return glyph, (row, rw + 1)
 
+    def _ascii_wall_char(self, r: int, c: int, grid_h: int, grid_w: int,
+                         mask: list[list[bool]]) -> str:
+        rh = grid_h - 2
+        rw = grid_w - 2
+
+        def is_floor(mr: int, mc: int) -> bool:
+            return 0 <= mr < rh and 0 <= mc < rw and mask[mr][mc]
+
+        mr, mc = r - 1, c - 1  # grid → mask coords
+
+        # Bounding-box corners have no orthogonal floor neighbors; check diagonal.
+        if (r == 0 or r == grid_h - 1) and (c == 0 or c == grid_w - 1):
+            mir = 0 if r == 0 else rh - 1
+            mic = 0 if c == 0 else rw - 1
+            return "#" if is_floor(mir, mic) else " "
+
+        # Classify by which orthogonal mask neighbors are floor.
+        n = is_floor(mr - 1, mc)
+        s = is_floor(mr + 1, mc)
+        e = is_floor(mr, mc + 1)
+        w = is_floor(mr, mc - 1)
+
+        if not (n or s or e or w):
+            return " "          # void — not adjacent to any floor
+        if (n or s) and not (e or w):
+            return "-"          # horizontal wall segment
+        if (e or w) and not (n or s):
+            return "|"          # vertical wall segment
+        return "#"              # corner or T-junction
+
+    def _unicode_wall_char(self, r: int, c: int, grid: list[list[str]],
+                            grid_h: int, grid_w: int) -> str:
+        def is_wall(rr: int, cc: int) -> bool:
+            if rr < 0 or rr >= grid_h or cc < 0 or cc >= grid_w:
+                return False  # outside grid — not connected
+            ch = grid[rr][cc]
+            return ch != "." and ch != " " and ch != "·"
+
+        key = (is_wall(r - 1, c), is_wall(r + 1, c),
+               is_wall(r, c + 1), is_wall(r, c - 1))
+        return _BOX.get(key, "#")
+
     def _render_row(self, r: int, row: list[str], grid_h: int, rh: int,
                     exit_positions: dict) -> str:
         parts: list[str] = []
@@ -246,9 +337,11 @@ class Renderer:
     def _colorize_glyph(self, ch: str) -> str:
         if not self.color:
             return ch
-        if ch == "#":
+        if ch == " ":
+            return ch
+        if ch in ("#", "-", "|") or ch in _BOX_CHARS:
             return self._c(DIM, ch)
-        if ch == ".":
+        if ch in (".", "·"):
             return self._c(DIM, ch)
         if ch in ("+", "=", "/"):
             return self._c(YELLOW, ch)

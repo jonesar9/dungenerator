@@ -33,6 +33,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Output format (default: ascii)")
     p.add_argument("--no-color", action="store_true",
                    help="Suppress ANSI color codes")
+    p.add_argument("--unicode", action="store_true",
+                   help="Use Unicode box-drawing characters for the room map")
     p.add_argument("-v", "--verbose", action="store_true",
                    help="Include OSE stocking rationale in output")
     p.add_argument("--entry", default="south",
@@ -98,6 +100,7 @@ def main(argv: list[str] | None = None) -> None:
         canvas_h=args.height,
         color=not args.no_color,
         verbose=args.verbose,
+        unicode_glyphs=args.unicode,
     )
 
     fmt = args.format
